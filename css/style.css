@@ -1177,12 +1177,12 @@ img {
 .weather-city-region-text::before {
   content: "";
   position: absolute;
-  top: 24px;
-  left: 0;
-  width: 36px;
-  height: 36px;
-  background: url(../assets/images/common/ico-region.svg) no-repeat 4px 0;
-  background-size: 36px 36px;
+  top: 20px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  background: url(../assets/images/common/ico-region.svg) no-repeat 50% 50%;
+  background-size: 40px 40px;
 }
 
 .weather-city,
