@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KBS 재난현황판</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!--
+      ============================================
+      all-wrap
+      >> scale-container 클래스 있어야 화면 크기 조정 기능 작동
+      >> -all 클래스: 전국판 / -region 클래스: 지역판
+      ============================================
+    -->
+    <div class="all-wrap -all scale-container">
+      <header class="header">
+        <!-- all-wrap 에
+         -all 이면 logo-badge -all (전국)
+         -region 이면 logo-badge -region (지역)
+         -->
+        <div class="header-logo">
+          <img src="../assets/images/common/logo.svg" alt="KBS 재난현황판" />
+          <span class="logo-badge -all">전국</span>
+          <span class="logo-badge -region">지역</span>
+        </div>
+        <div class="header-inner-right">
+          <div class="header-alert">
+            <p class="header-alert-text">폭염특보 현황으로 전환 예정</p>
+            <span class="header-alert-time"> 05 </span>
+          </div>
+          <button type="button" class="btn-header-menu"></button>
+        </div>
+      </header>
+
+      <!-- main 에 각 판 클래스 -class 형태로 있음
+		-main / -cold / -snow / -earthquake / -rain / -heat / -fire / -storm / -dust		-->
+      <main class="main active -main">
+        <!-- Left Panel -->
+        <section class="left-panel">
+          <!-- 전국판 slick-weather-slider-all 클래스로 slick 슬라이더 동작 -->
+          <div class="slick-weather-slider slick-weather-slider-all">
+            <div class="weather-slider-item">
+              <div class="weather-container">
+                <div class="weather-header">
+                  <p class="weather-title">전국 주요 날씨 정보</p>
+                  <span class="weather-time-text">10:20 AM 기준</span>
+                </div>
+                <div class="weather-city">
+                  <div class="weather-title-box">
+                    <p class="weather-label">현재날씨</p>
+                  </div>
+                  <div class="weather-city-detail">
+                    <span class="weather-city-text">서울</span>
+                    <div class="weather-value">
+                      <!-- 각 icon 클래스
+									-sunny // 맑음
+									-sunny-cloudy // 구름조금 (낮)
+									-mostly-cloudy // 구름많음 (낮)
+									-cloudy // 흐림
+									-rainy // 비
+									-snow // 눈
+									-rain-snow // 비 또는 눈
+									-snow-rain // 눈 또는 비
+									-thunderstorm // 낙뢰
+									-fog // 연무
+									-mist // 안개
+									-dust // 황사
+									-moon // 맑음 (밤)
+									-moon-cloudy // 구름조금 (밤)
+									-moon-mostly-cloudy // 구름많음 (밤)
+									-shower // 소나기
+									-rain-heavy // 가끔 비, 한때 비
+									-snow-heavy // 가끔 눈, 한때 눈
+									-rain-snow-heavy // 가끔 비 또는 눈, 한때 비 또는 눈
+									-snow-rain-heavy // 가끔 눈 또는 비, 한때 눈 또는 비
+									-rain-drop // 빗방울
+									-snow-drop // 눈날림
+									-mist-heavy // 박무 (짙은 안개)
+									-->
+                      <div class="weather-icon -snow"></div>
+                      <span class="weather-value-number">24.2</span>
+                      <span class="weather-value-unit">°C</span>
+                    </div>
+                  </div>
+                  <span class="weather-city-state">맑음</span>
+                </div>
+                <div class="weather-air-quality">
+                  <div class="weather-air-box">
+                    <div class="weather-label">
+                      초미세먼지 (PM2.5)
+                      <span class="weather-unit">㎍/m³</span>
+                    </div>
+                    <!--
+									241215 : 추가 클래스 및 태그 순서 변경 (number가 뒤로)
+									좋음 -good
+									보통 -moderate
+									나쁨 -bad
+									매우나쁨 -very-bad
+									-->
+                    <!--
+									241223 : 플레이스 홀더 추가 weather-air-value에 -none 추가
+									-->
+                    <div class="weather-air-value -none">
+                      <p class="disaster-none-text">자료 없음</p>
+                      <!-- 아래부분 -none 클래스로 안나옵니다.  -->
+                      <span class="weather-air-status">매우나쁨</span>
+                      <span class="weather-air-number">13</span>
+                    </div>
+                  </div>
+                  <div class="weather-air-box">
+                    <div class="weather-label">
+                      미세먼지 (PM10)
+                      <span class="weather-unit">㎍/m³</span>
+                    </div>
+                    <div class="weather-air-value -very-bad">
+                      <span class="weather-air-status">매우나쁨</span>
+                      <span class="weather-air-number">13</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="weather-slider-item">
+              <div class="weather-container">
+                <div class="weather-header">
+                  <p class="weather-title">전국 주요 날씨 정보</p>
+                  <span class="weather-time-text">10:20 AM 기준</span>
+                </div>
+                <div class="weather-city">
+                  <div class="weather-title-box">
+                    <p class="weather-label">현재날씨</p>
+                  </div>
+                  <div class="weather-city-detail">
+                    <span class="weather-city-text">부산</span>
+                    <div class="weather-value">
+                      <div class="weather-icon -sunny-cloudy"></div>
+                      <span class="weather-value-number">18.5</span>
+                      <span class="weather-value-unit">°C</span>
+                    </div>
+                  </div>
+                  <span class="weather-city-state">구름조금</span>
+                </div>
+                <div class="weather-air-quality">
+                  <div class="weather-air-box">
+                    <div class="weather-label">
+                      초미세먼지 (PM2.5)
+                      <span class="weather-unit">㎍/m³</span>
+                    </div>
+                    <div class="weather-air-value -good">
+                      <span class="weather-air-status">좋음</span>
+                      <span class="weather-air-number">8</span>
+                    </div>
+                  </div>
+                  <div class="weather-air-box">
+                    <div class="weather-label">
+                      미세먼지 (PM10)
+                      <span class="weather-unit">㎍/m³</span>
+                    </div>
+                    <div class="weather-air-value -moderate">
+                      <span class="weather-air-status">보통</span>
+                      <span class="weather-air-number">35</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cctv-container">
+            <div class="video-desc">
+              <p>실시간 <strong>KBS</strong> 재난 CCTV</p>
+            </div>
+            <div class="slick-video-slider">
+              <div class="video-slider-item">
+                <div class="video-swiper-item">
+                  <div class="video-wrap">
+                    <video class="video" autoplay muted loop>
+                      <source src="../assets/sample.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div class="video-desc -right">
+                    <span class="text-description">제주 서귀포 마라도</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-slider-item">
+                <div class="video-swiper-item">
+                  <div class="video-wrap">
+                    <video class="video" autoplay muted loop>
+                      <source src="../assets/sample.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div class="video-desc -right">
+                    <span class="text-description">제주 서귀포 마라도22222</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Center Map -->
+        <section class="map-panel">
+          <!-- container 맵 -->
+          <div class="map-container">
+            <!-- mapbox 맵 -->
+            <!-- map 샘플용으로 인라인으로 이미지 넣습니다. 나중에 삭제 해주세요. style 전부 삭제 해주세요. -->
+            <div
+              id="map"
+              class="map"
+              style="background: url(../assets/images/temp/00_map.png) no-repeat; background-size: cover"
+            ></div>
+
+            <!-- loading  /  active 클래스로 컨트롤 합니다. -->
+            <div class="loading-container">
+              <div class="loading-pulse">
+                <div class="loading-pulse-circle pulse-1"></div>
+                <div class="loading-pulse-circle pulse-2"></div>
+                <div class="loading-pulse-circle pulse-3"></div>
+                <div class="loading-pulse-base"></div>
+              </div>
+            </div>
+
+            <div class="loading-container">
+              <div class="loading-dot-group">
+                <div class="loading-dot dot-1"></div>
+                <div class="loading-dot dot-2"></div>
+                <div class="loading-dot dot-3"></div>
+                <div class="loading-dot dot-4"></div>
+              </div>
+            </div>
+            <!-- // loading -->
+
+            <!-- // mapbox 맵 -->
+            <div class="map-timestamp">
+              <span class="map-timestamp-text">자료 갱신 시각 (5분)</span>
+              <p class="map-timestamp-time">08-03 10:00</p>
+            </div>
+
+            <!-- map home button -->
+            <button type="button" class="btn-map-home"></button>
+          </div>
+        </section>
+
+        <!-- Right  Panel : 기존 동일 하고 slick 을 쓴것만 다릅니다. -->
+        <section class="right-panel">
+          <div class="slick-disaster-slider">
+            <div class="disaster-slider-item">
+              <div class="disaster-container">
+                <!-- disaster-card 안에 리스트 li에
+							주의보, 경보 클래스 붙입니다.
+						-->
+                <div class="disaster-card -cold">
+                  <!--
+										특보 클래스
+										typoon = '-typoon', // 태풍
+										tsunami = '-tsunami', // 해일
+										snow = '-snow', // 대설
+										cold = '-cold', // 한파
+										heat = '-heat', // 폭염
+										dry = '-dry', // 건조
+										dust = '-dust', // 황사
+										rain = '-rain', // 호우
+										storm = '-storm', // 풍랑
+										wind = '-wind' // 강풍 -->
+
+                  <!-- 특보 없을때
+										-none 클래스 붙임
+										-->
+                  <!-- 한파 -->
+                  <div class="disaster-content -cold">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">한파</span>
+                        <span class="disaster-unit">℃</span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <p class="disaster-text-desc">전국 237개 지역 중</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">40</span>
+                          <span class="disaster-text -small">개 지역</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <!-- 250115 : Slick Slider로 변경 (세로형 ticker)
+										- 기존 2024: 일반 스크립트 ticker
+										- 2025: Slick vertical slider
+										- React 마이그레이션 시: react-slick vertical mode -->
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-cold">
+                        <div class="slick-ticker-list -center">
+                          <!-- 241210 : 이 위치에 주의보, 경보 클래스 추가
+												-alert : 경보
+												-warning : 주의보
+												-->
+                          <div class="ticker-item -alert">
+                            <div class="value">인천</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">파주</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">서울</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">인천2</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">강원</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">평창</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+
+                  <!-- 대설 -->
+                  <div class="disaster-content -snow">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">대설</span>
+                        <span class="disaster-unit">mm/s</span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <p class="disaster-text-desc">인천 덕적도</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">58</span>
+                          <span class="disaster-text -small">m/s</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-snow">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -alert">
+                            <div class="value">서울</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">파주</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">인천</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">강원</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">속초</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">양양</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+
+                  <!-- 강풍 -->
+                  <div class="disaster-content -wind -none">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">강풍</span>
+                        <span class="disaster-unit"></span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <p class="disaster-text-desc">전남 가거도</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">18</span>
+                          <span class="disaster-text -small">m/s</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-wind">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -warning">
+                            <div class="value">전남 가거도</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">완도</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">울릉도 독도</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">목포</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">여수</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">거제</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+
+                  <!-- 건조 -->
+                  <div class="disaster-content -dry -none">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">건조</span>
+                        <span class="disaster-unit"></span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <p class="disaster-text-desc">전국 237개 지역 중</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">47</span>
+                          <span class="disaster-text -small">개 지역</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-dry">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -alert">
+                            <div class="value">서울</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">인천</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">파주</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">강릉</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">동해</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">삼척</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+
+                  <!-- 황사 -->
+                  <div class="disaster-content -dust">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">황사</span>
+                        <span class="disaster-unit"></span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <p class="disaster-text-desc">전국 237개 지역 중</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">40</span>
+                          <span class="disaster-text -small">개 지역</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-dust">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -alert">
+                            <div class="value">서울</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">인천</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">파주</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">대전</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">청주</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">세종</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="disaster-slider-item">
+              <div class="disaster-container">
+                <!-- disaster-card 에
+								폭염일때 -heat 관련 5개특보
+								한파일때 -cold 클래스 관련 5개특보
+								display: flex 됨(클래스로 조절함)
+								-->
+                <div class="disaster-card -heat">
+                  <!-- 폭염 -->
+                  <div class="disaster-content -heat">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">폭염</span>
+                        <span class="disaster-unit">℃</span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <p class="disaster-text-desc">전국 237개 지역 중</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">40</span>
+                          <span class="disaster-text -small">개 지역</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-heat">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -alert">
+                            <div class="value">양산</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">북창원</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">학산</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">대구</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">구미</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">포항</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+
+                  <!-- 호우 -->
+                  <div class="disaster-content -rain">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">호우</span>
+                        <span class="disaster-unit">mm/h</span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <!-- 특보표기 변경됨 텍스트 -->
+                        <p class="disaster-text-desc">인천 백령도</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">57</span>
+                          <span class="disaster-text -small">mm/h</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-rain">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -alert">
+                            <div class="value">부산</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">원주</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">영월</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">춘천</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">홍천</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">횡성</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+
+                  <!-- 풍랑 -->
+                  <div class="disaster-content -storm">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">풍랑</span>
+                        <span class="disaster-unit"></span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <!-- 디스크립션 변경 -->
+                        <p class="disaster-text-desc">남해동부바깥먼바다</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">7</span>
+                          <span class="disaster-text -small">m</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-storm">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -alert">
+                            <div class="value">강원 남부</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">남해 동부 바깥 먼바다</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">남해 동부 안쪽 먼바다</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">동해 남부</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">제주 남쪽</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">서해 중부</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+
+                  <!-- 폭풍해일 -->
+                  <div class="disaster-content -tsunami">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">폭풍해일</span>
+                        <span class="disaster-unit"></span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <p class="disaster-text-desc">통영</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">40</span>
+                          <span class="disaster-text -small">개 지역</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-tsunami">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -alert">
+                            <div class="value">목포</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">무안</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">여수</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">순천</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">광양</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">통영</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+
+                  <!-- 태풍 -->
+                  <div class="disaster-content -typoon">
+                    <div class="disaster-text-wrap">
+                      <div class="disaster-top">
+                        <span class="disaster-icon"></span>
+                        <span class="disaster-name">태풍</span>
+                        <span class="disaster-unit"></span>
+                      </div>
+                      <div class="disaster-bottom">
+                        <p class="disaster-text-desc">18호 끄라톤</p>
+                        <div class="disaster-desc-box">
+                          <span class="disaster-text -large">강</span>
+                          <span class="disaster-text -small"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="disaster-list-container">
+                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-typoon">
+                        <div class="slick-ticker-list -center">
+                          <div class="ticker-item -alert">
+                            <div class="value">서울</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">인천</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">파주</div>
+                          </div>
+                          <div class="ticker-item -alert">
+                            <div class="value">제주</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">서귀포</div>
+                          </div>
+                          <div class="ticker-item -warning">
+                            <div class="value">성산</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="disaster-none-text">현재 특보 없음</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- news in header -->
+      <!-- news-container 에 active 클래스로 view
+       text-scroll.js 에 스크립트 있습니다.
+      복제 무한 스크롤이 문제가 되면 css 수정요청 부탁드립니다.
+      -->
+      <div class="news-container active">
+        <div class="st-text-move">
+          <p>
+            <span class="news-label"> < 이 시각 주요 뉴스 > </span>
+            <span class="news-text"
+              >일시 : 2023년 2.25(토) 22:00 / 훈련상황 : 강원도 및 경분 산간 산불 3단계 발령 상황 가정 / 훈련중점 : 30분
+              내 뉴스특보 열어 30분 이상 진행일시 : 2023년 2.25(토) 22:00 / 훈련상황 : 강원도 및 경분 산간 산불 3단계
+              발령 상황 가정 / 훈련중점 : 30분 내 뉴스특보 열어 30분 이상 진행일시 : 2023년 2.25(토) 22:00 / 훈련상황 :
+              강원도 및 경분 산간 산불 3단계 발령 상황 가정 / 훈련중점 : 30분 내 뉴스특보 열어 30분 이상 진행</span
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- Side Menu -->
+      <div class="side-menu-dim"></div>
+      <div class="side-menu-container">
+        <div class="side-menu-header">
+          <!-- <h2 class="side-menu-title">메뉴</h2> -->
+          <button type="button" class="btn-side-menu-close"></button>
+        </div>
+        <div class="side-menu-content">
+          <nav class="side-menu-nav">
+            <ul class="side-menu-list">
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">태풍</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">지진</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">호우</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">홍수</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">산불</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">미세먼지</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">대설</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">한파</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">폭염</a>
+              </li>
+              <li class="side-menu-item">
+                <!-- 적용 페이지에 active 클래스 -->
+                <a href="" class="side-menu-link active">특보</a>
+              </li>
+              <li class="side-menu-item">
+                <a href="" class="side-menu-link">환경설정</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (Slick 의존성) slick 사용시 html버전 기준 제이쿼리 있어야함 -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS slick-carousel@1.8.1 -->
+    <script src="../js/slick.min.js"></script>
+    <!-- Common JS (Transform Scale 관리) -->
+    <script src="../js/common.js"></script>
+    <!-- Slick 초기화 스크립트 (세로형 ticker + 가로형 sliders) -->
+    <script src="../js/script_slick.js"></script>
+    <!-- Settings JS -->
+    <script src="../js/settings.js"></script>
+    <!-- Text Scroll Animation -->
+    <script src="../js/text-scroll.js"></script>
+  </body>
+</html>

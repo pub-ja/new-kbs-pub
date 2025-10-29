@@ -1,0 +1,308 @@
+/* ========================================
+   SLICK TICKER CUSTOM
+   기존 ticker 디자인과 동일하게 유지
+======================================== */
+
+/* Slick 기본 wrapper */
+.slick-ticker-wrap {
+  overflow: hidden;
+  position: relative;
+  background: var(--panel-bg-gray);
+}
+
+/* Slick ticker list */
+.slick-ticker-list {
+  position: relative;
+  width: 100%;
+  background: #18171d;
+}
+
+/* Slick center alignment */
+.slick-ticker-list.-center .value {
+  text-align: center;
+}
+
+.slick-ticker-list.-left .value {
+  text-align: left;
+}
+
+/* Ticker item 스타일 - 기존과 동일하게 유지 */
+.slick-ticker-wrap .ticker-item {
+  min-height: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  background: var(--panel-bg-dark);
+  border-bottom: 2px solid #18171d;
+}
+
+.slick-ticker-wrap .ticker-item .value {
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 24px;
+}
+
+.slick-ticker-list .slick-slide {
+  margin: 0;
+  outline: none;
+}
+
+.slick-ticker-list .slick-list {
+  overflow: hidden;
+}
+
+.slick-ticker-list .slick-track {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slick dots 숨김 */
+.slick-ticker-wrap .slick-dots {
+  display: none !important;
+}
+
+/* Slick arrows 숨김 */
+.slick-ticker-wrap .slick-arrow {
+  display: none !important;
+}
+
+/* disaster-list-container 내부 slick 스타일 */
+.disaster-list-container .slick-ticker-wrap {
+  background: var(--panel-bg-dark);
+}
+
+.disaster-list-container .slick-ticker-wrap .ticker-item {
+  background: var(--panel-bg-dark);
+}
+
+/* Slick 애니메이션 부드럽게 */
+.slick-ticker-list.slick-initialized {
+  transition: none;
+}
+
+/* ========================================
+   SLICK COMPARE SLIDER (가로형)
+   주요 지역 현재 기온(체감)
+======================================== */
+
+.slick-compare-slider {
+  position: relative;
+  width: 100%;
+}
+
+.slick-compare-slider .slick-list {
+  overflow: hidden;
+}
+
+.slick-compare-slider .slick-track {
+  display: flex;
+}
+
+.slick-compare-slider .slick-slide {
+  margin: 0 1px;
+  outline: none;
+}
+
+.slick-compare-slider .compare-slider-item {
+  display: block !important;
+}
+
+/* Slick dots 숨김 */
+.slick-compare-slider .slick-dots {
+  display: none !important;
+}
+
+/* Slick arrows 숨김 */
+.slick-compare-slider .slick-arrow {
+  display: none !important;
+}
+
+/* ========================================
+   SLICK SLIDER FOR 기본특보판
+======================================== */
+
+/* Weather Slider */
+.slick-weather-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slick-weather-slider .slick-list {
+  overflow: hidden;
+  height: 100%;
+}
+
+.slick-weather-slider .slick-track {
+  display: flex;
+  height: 100%;
+}
+
+.slick-weather-slider .slick-slide {
+  outline: none;
+  height: auto;
+}
+
+.slick-weather-slider .weather-slider-item {
+  display: block !important;
+  height: 100%;
+}
+
+/* Video Slider */
+.slick-video-slider {
+  position: relative;
+  width: 100%;
+}
+
+.slick-video-slider .slick-list {
+  overflow: hidden;
+}
+
+.slick-video-slider .slick-track {
+  display: flex;
+}
+
+.slick-video-slider .slick-slide {
+  outline: none;
+}
+
+.slick-video-slider .video-slider-item {
+  display: block !important;
+}
+
+/* Disaster Slider - 기존 disaster-swiper와 동일하게 */
+.slick-disaster-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slick-disaster-slider .slick-list {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.slick-disaster-slider .slick-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.slick-disaster-slider .slick-slide {
+  outline: none;
+  height: 100%;
+  width: 100%;
+}
+
+.slick-disaster-slider .disaster-slider-item {
+  display: block !important;
+  height: 100%;
+  width: 100%;
+}
+
+/* disaster-container도 100% 높이 */
+.slick-disaster-slider .disaster-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Slick active slide에서 disaster-content 애니메이션 */
+.slick-disaster-slider .disaster-content {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.slick-disaster-slider .slick-active .disaster-content {
+  width: 100%;
+  animation: disasterFadeIn 0.5s ease forwards;
+}
+
+/* 순차 딜레이 적용 */
+.slick-disaster-slider .slick-active .disaster-content:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.slick-disaster-slider .slick-active .disaster-content:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.slick-disaster-slider .slick-active .disaster-content:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.slick-disaster-slider .slick-active .disaster-content:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.slick-disaster-slider .slick-active .disaster-content:nth-child(5) {
+  animation-delay: 0.7s;
+}
+
+/* disasterFadeIn 애니메이션 */
+@keyframes disasterFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 모든 기본특보판 슬라이더 공통 - dots, arrows 숨김 */
+.slick-weather-slider .slick-dots,
+.slick-video-slider .slick-dots,
+.slick-disaster-slider .slick-dots {
+  display: none !important;
+}
+
+.slick-weather-slider .slick-arrow,
+.slick-video-slider .slick-arrow,
+.slick-disaster-slider .slick-arrow {
+  display: none !important;
+}
+
+/* ========================================
+   SLICK FADE-IN ANIMATIONS
+   Swiper에서 사용하던 fadeInUp 애니메이션을 Slick에도 적용
+======================================== */
+
+/* Weather Slider - fadeInUp 애니메이션 */
+.slick-weather-slider .weather-city-text,
+.slick-weather-slider .weather-value,
+.slick-weather-slider .weather-city-state,
+.slick-weather-slider .weather-air-number,
+.slick-weather-slider .weather-air-status,
+.slick-weather-slider .weather-air-value .disaster-none-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: both;
+  animation-delay: 0.3s;
+}
+
+.slick-weather-slider .slick-active .weather-city-text,
+.slick-weather-slider .slick-active .weather-value,
+.slick-weather-slider .slick-active .weather-air-number {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.slick-weather-slider .slick-active .weather-city-state,
+.slick-weather-slider .slick-active .weather-air-status,
+.slick-weather-slider .weather-air-value .disaster-none-text {
+  animation: fadeInUp 0.4s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* fadeInUp 키프레임 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

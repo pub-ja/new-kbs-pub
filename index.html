@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KBS 재난현황판</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* Page Index Table Styles */
+      .page-index-table-wrapper {
+        margin-top: 24px;
+        overflow-x: auto;
+      }
+
+      .page-index-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+      }
+
+      .page-index-table thead tr {
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .page-index-table th {
+        padding: 16px 20px;
+        text-align: left;
+        font-weight: 600;
+        color: #fff;
+        font-size: 18px;
+        white-space: nowrap;
+      }
+
+      .page-index-table th.center {
+        text-align: center;
+      }
+
+      .page-index-table tbody tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .page-index-table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      .page-index-table td {
+        padding: 16px 20px;
+        color: #b0b0b0;
+        font-size: 16px;
+      }
+
+      .page-index-table td.center {
+        text-align: center;
+      }
+
+      .page-index-table td.title {
+        color: #e0e0e0;
+      }
+
+      .page-index-table td.note {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .page-index-table a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+        text-decoration: underline;
+      }
+
+      .page-index-table a:hover {
+        color: #6bb3ff;
+      }
+
+      .page-index-table .status-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 8px;
+      }
+
+      .page-index-table .status-badge.complete {
+        background: rgba(76, 175, 80, 0.2);
+        color: #81c784;
+      }
+
+      .page-index-table .status-badge.in-progress {
+        background: rgba(255, 152, 0, 0.2);
+        color: #ffb74d;
+      }
+
+      .page-index-table td.disabled {
+        opacity: 0.5;
+      }
+
+      .page-index-table td.disabled a {
+        color: #666;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+      .content-page-header {
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- scale-container -->
+    <div class="all-wrap scale-container">
+      <header class="header">
+        <div class="header-logo">
+          <img src="./assets/images/common/logo.svg" alt="KBS 재난현황판" />
+        </div>
+        <!-- <div class="header-inner-right">
+          <button type="button" class="btn-header-menu"></button>
+        </div> -->
+      </header>
+      <main class="main -settings">
+        <section class="content-page-wrapper">
+          <div class="content-page-container">
+            <h2 class="content-page-header">퍼블리싱 Index</h2>
+
+            <div class="content-setting-header">
+              <div class="content-setting-info-group">
+                <h3 class="content-setting-section-title">페이지 관리 목록</h3>
+                <p class="content-setting-section-desc">각 HTML 파일의 정보를 확인하고 페이지로 이동할 수 있습니다.</p>
+              </div>
+            </div>
+
+            <div class="page-index-table-wrapper">
+              <table class="page-index-table">
+                <thead>
+                  <tr>
+                    <th>파일명</th>
+                    <th>페이지 제목</th>
+                    <th class="center">생성일</th>
+                    <th class="center">수정일</th>
+                    <th>비고</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">01-태풍.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">태풍</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">02-지진.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">지진</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">03-호우.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">호우</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">04-홍수.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">홍수</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">05-산불.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">산불</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">06-미세먼지.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">미세먼지</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">07-대설.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">대설</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">08-한파.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">한파</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td class="disabled">
+                      <a href="#" target="_blank">09-폭염.html</a>
+                      <span class="status-badge in-progress">작업 예정</span>
+                    </td>
+                    <td class="title">폭염</td>
+                    <td class="center">-</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/10-01_기본특보판_all.html" target="_blank">10-01_기본특보판_all.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">특보 (전국)</td>
+                    <td class="center">2025-10-29</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/10-02_기본특보판_region.html" target="_blank">10-02_기본특보판_region.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">특보 (지역)</td>
+                    <td class="center">2025-10-29</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/00-환경설정.html" target="_blank">00-환경설정.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">환경설정</td>
+                    <td class="center">2025-10-29</td>
+                    <td class="center">-</td>
+                    <td class="note"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Common JS (Transform Scale 관리) -->
+    <script src="./js/common.js"></script>
+  </body>
+</html>
