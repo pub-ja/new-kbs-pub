@@ -3336,6 +3336,7 @@ img {
 .main.-settings {
   display: block;
 }
+
 .content-setting-section {
   display: flex;
   flex-direction: column;
@@ -3344,7 +3345,6 @@ img {
   background: var(--panel-bg-light-gray);
   padding: 30px;
   border: 1px solid #27262b;
-  border-radius: 12px;
 }
 
 .content-page-section-header {
@@ -4063,7 +4063,7 @@ img {
 .forecast-row {
   display: flex;
   align-items: center;
-  min-height: 52px;
+  min-height: 48px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -4085,6 +4085,17 @@ img {
   justify-content: center;
   font-size: var(--font-size-xs);
   color: #fff;
+}
+
+.forecast-row.forecast-heading {
+  height: 40px;
+  min-height: 40px;
+}
+
+.forecast-heading .forecast-item {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: #c3c3c3;
 }
 
 /* 날씨 아이콘 행 */
