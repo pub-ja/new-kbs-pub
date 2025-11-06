@@ -7,15 +7,24 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
     <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
     <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
+    <!-- Slick Carousel CSS - 슬릭 기본 css -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    /> -->
+    <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <!--
-      ====
+      ============================================
       all-wrap
       >> scale-container 클래스 있어야 화면 크기 조정 기능 작동
       >> -all 클래스: 전국판 / -region 클래스: 지역판
-      ====
+      ============================================
     -->
     <div class="all-wrap scale-container">
       <!--  HEADER  -->
@@ -38,7 +47,9 @@
         </div>
       </header>
 
-      <main class="main -settings">
+      <!-- main 에 각 판 클래스 -class 형태로 있음
+		  -main / -storm / -earthquake / -rain / -flood / -fire / -dust / -snow / -cold / -heat	/ -settings -->
+      <main class="main active -settings">
         <section class="content-page-wrapper">
           <div class="content-page-container">
             <h2 class="content-page-header">환경설정</h2>
@@ -91,12 +102,8 @@
                           → 클릭 시 active 클래스를 옮기고, data-value 값으로 설정 저장
                         -->
                         <div class="toggle-radio-group">
-                          <button type="button" class="toggle-radio-btn active" data-value="on" id="autoSwitchOn">
-                            ON
-                          </button>
-                          <button type="button" class="toggle-radio-btn" data-value="off" id="autoSwitchOff">
-                            OFF
-                          </button>
+                          <button type="button" class="toggle-radio-btn active" data-value="on">ON</button>
+                          <button type="button" class="toggle-radio-btn" data-value="off">OFF</button>
                         </div>
                       </div>
                     </div>
@@ -271,8 +278,8 @@
                   - -secondary: 보조 액션 버튼 (취소, 닫기 등)
                 -->
                 <div class="btn-page-content-group">
-                  <button type="button" class="btn-page -large -primary" id="saveBtn">저장</button>
-                  <button type="button" class="btn-page -large -secondary" id="cancelBtn">취소</button>
+                  <button type="button" class="btn-page -large -primary">저장</button>
+                  <button type="button" class="btn-page -large -secondary">취소</button>
                 </div>
               </div>
             </div>

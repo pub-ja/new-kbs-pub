@@ -7,13 +7,15 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
     <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
     <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
-    <!-- Slick Carousel CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Slick Carousel CSS - 슬릭 기본 css -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-    />
+    /> -->
+    <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <!-- Chart.js
     태풍에서 사용된 chart.js 라이브러리 동일 버전 사용해서 지역 메인에 차트 추가
@@ -49,7 +51,7 @@
       </header>
 
       <!-- main 에 각 판 클래스 -class 형태로 있음
-		-main / -cold / -snow / -earthquake / -rain / -heat / -fire / -storm / -dust		-->
+		  -main / -storm / -earthquake / -rain / -flood / -fire / -dust / -snow / -cold / -heat	/ -settings -->
       <main class="main active -main">
         <!-- Left Panel -->
         <section class="left-panel">
@@ -364,13 +366,10 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <!-- 250115 : Slick Slider로 변경 (세로형 ticker)
-										- 기존 2024: 일반 스크립트 ticker
-										- 2025: Slick vertical slider
-										- React 마이그레이션 시: react-slick vertical mode -->
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-cold">
+                      <div class="slick-ticker-wrap slick-disaster-cold">
                         <div class="slick-ticker-list -center">
-                          <!-- 241210 : 이 위치에 주의보, 경보 클래스 추가
+                          <!--
+                        ticker-item 주의보, 경보 클래스
 												-alert : 경보
 												-warning : 주의보
 												-->
@@ -415,7 +414,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-snow">
+                      <div class="slick-ticker-wrap slick-disaster-snow">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
                             <div class="value">서울</div>
@@ -458,7 +457,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-wind">
+                      <div class="slick-ticker-wrap slick-disaster-wind">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -warning">
                             <div class="value">전남 가거도</div>
@@ -501,7 +500,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-dry">
+                      <div class="slick-ticker-wrap slick-disaster-dry">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
                             <div class="value">서울</div>
@@ -544,7 +543,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-dust">
+                      <div class="slick-ticker-wrap slick-disaster-dust">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
                             <div class="value">서울</div>
@@ -597,7 +596,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-heat">
+                      <div class="slick-ticker-wrap slick-disaster-heat">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
                             <div class="value">양산</div>
@@ -641,7 +640,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-rain">
+                      <div class="slick-ticker-wrap slick-disaster-rain">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
                             <div class="value">부산</div>
@@ -685,7 +684,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-storm">
+                      <div class="slick-ticker-wrap slick-disaster-storm">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
                             <div class="value">강원 남부</div>
@@ -728,7 +727,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-tsunami">
+                      <div class="slick-ticker-wrap slick-disaster-tsunami">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
                             <div class="value">목포</div>
@@ -771,7 +770,7 @@
                       </div>
                     </div>
                     <div class="disaster-list-container">
-                      <div class="slick-ticker-wrap ticker-list-3 slick-disaster-typoon">
+                      <div class="slick-ticker-wrap slick-disaster-typoon">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
                             <div class="value">서울</div>
