@@ -789,6 +789,31 @@
           </div>
         </section>
       </main>
+
+      <!-- alert -->
+
+      <!-- occur 가 block 클래스 입니다.
+		따로 인라인에서 속도를 조절하려면
+		style = "animation-duration: 1s;" 값으로 조절하면 됩니다.
+		-->
+      <!-- 강풍/폭염 -wind , -heat 클래스 추가합니다.
+		지진이 기본으로 클래스가 없고 (-low, -high 로 컬러 구분됩니다.)
+		호우 : -rain
+		강풍 : -wind
+		폭염 : -heat 클래스 추가해서 컬러 변경합니다.
+    민방공 : -civil 클래스 추가해서 폰트 사이즈를 변경합니다.
+    산불 : 컬러가 동일해서 -high 로 사용합니다.
+		위 3개는 -low 필요없습니다. -rain에 붙어있는데 삭제해도 상관없습니다.
+		-->
+      <div class="alert-popup -half -rain occur">
+        <p class="alert-popup-label">집중호우 발생</p>
+        <div class="alert-popup-box">
+          <p class="alert-popup-title">1시간 67mm</p>
+          <p class="alert-popup-desc">동해, 부산 기장군 동남동쪽 53km 해역</p>
+        </div>
+      </div>
+
+      <!-- //alert -->
     </div>
 
     <!-- jQuery (Slick 의존성) slick 사용시 html버전 기준 제이쿼리 있어야함 -->

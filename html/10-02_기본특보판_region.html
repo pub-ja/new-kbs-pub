@@ -184,9 +184,9 @@
 									나쁨 -bad
 									매우나쁨 -very-bad
 									-->
-                    <div class="weather-air-value -none">
+                    <div class="weather-air-value is-empty">
                       <p class="disaster-none-text">데이터 없음</p>
-                      <!-- 아래부분 -none 클래스로 안나옵니다.  -->
+                      <!-- 아래부분 is-empty 클래스로 안나옵니다.  -->
                       <span class="weather-air-status">매우나쁨</span>
                       <span class="weather-air-number">13</span>
                     </div>
@@ -398,8 +398,11 @@
               <p class="map-timestamp-time">08-03 10:00</p>
             </div>
 
-            <!-- map home button -->
-            <button type="button" class="btn-map-home"></button>
+            <!-- map-btn-->
+            <div class="map-btn-group">
+              <button type="button" class="btn-map -reset"></button>
+              <!-- <button type="button" class="btn-map -home"></button> -->
+            </div>
           </div>
         </section>
 
@@ -520,7 +523,7 @@
                   </div>
 
                   <!-- 강풍 -->
-                  <div class="disaster-content -wind -none">
+                  <div class="disaster-content -wind is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -563,7 +566,7 @@
                   </div>
 
                   <!-- 건조 -->
-                  <div class="disaster-content -dry -none">
+                  <div class="disaster-content -dry is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>

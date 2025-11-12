@@ -28,8 +28,8 @@
 
 /* Ticker item 스타일 - 기존과 동일하게 유지 */
 .slick-ticker-wrap .ticker-item {
-  min-height: 54px;
-  height: 54px;
+  min-height: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   background: var(--panel-bg-dark);
@@ -78,43 +78,6 @@
 /* Slick 애니메이션 부드럽게 */
 .slick-ticker-list.slick-initialized {
   transition: none;
-}
-
-/* ========================================
-   SLICK COMPARE SLIDER (가로형)
-   주요 지역 현재 기온(체감)
-======================================== */
-
-.slick-compare-slider {
-  position: relative;
-  width: 100%;
-}
-
-.slick-compare-slider .slick-list {
-  overflow: hidden;
-}
-
-.slick-compare-slider .slick-track {
-  display: flex;
-}
-
-.slick-compare-slider .slick-slide {
-  margin: 0 1px;
-  outline: none;
-}
-
-.slick-compare-slider .compare-slider-item {
-  display: block !important;
-}
-
-/* Slick dots 숨김 */
-.slick-compare-slider .slick-dots {
-  display: none !important;
-}
-
-/* Slick arrows 숨김 */
-.slick-compare-slider .slick-arrow {
-  display: none !important;
 }
 
 /* ========================================
@@ -170,7 +133,6 @@
   display: block !important;
 }
 
-/* Disaster Slider - 기존 disaster-swiper와 동일하게 */
 .slick-disaster-slider {
   position: relative;
   width: 100%;
@@ -305,4 +267,17 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Ticker/List height */
+
+.slick-ticker-wrap {
+  overflow: hidden;
+  position: relative;
+  background: var(--panel-bg-gray);
+}
+
+.slick-ticker-wrap.list-dust .ticker-item {
+  min-height: 94px;
+  border-bottom: 2px solid #18171d;
 }

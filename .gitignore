@@ -41,8 +41,6 @@ yarn-error.log*
 # 빌드 파일
 dist/
 build/
-*.min.js
-*.min.css
 
 # 로그
 logs/

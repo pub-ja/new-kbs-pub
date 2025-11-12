@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KBS 재난현황판</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
+    <!-- Slick Carousel CSS - 슬릭 기본 css -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    /> -->
+    <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Chart.js
+    태풍에서 사용된 chart.js 라이브러리 동일 버전 사용해서 지역 메인에 차트 추가
+    -->
+    <script src="../js/chart.js"></script>
+  </head>
+  <body>
+    <!--
+      ============================================
+      all-wrap
+      >> scale-container 클래스 있어야 화면 크기 조정 기능 작동
+      ============================================
+    -->
+    <div class="all-wrap scale-container">
+      <header class="header">
+        <div class="header-logo">
+          <img src="../assets/images/common/logo.svg" alt="KBS 재난현황판" />
+          <!-- logo-badge modifier 클래스
+           -all : 전국
+           -region : 지역 -->
+          <span class="logo-badge -all">전국</span>
+          <!-- <span class="logo-badge -region">지역</span> -->
+        </div>
+        <div class="header-inner-right">
+          <div class="header-alert">
+            <p class="header-alert-text">폭염특보 현황으로 전환 예정</p>
+            <span class="header-alert-time"> 05 </span>
+          </div>
+          <button type="button" class="btn-header-menu"></button>
+        </div>
+
+        <!-- Side Menu -->
+        <div class="side-menu-dim"></div>
+        <div class="side-menu-container">
+          <div class="side-menu-header">
+            <!-- <h2 class="side-menu-title">메뉴</h2> -->
+            <button type="button" class="btn-side-menu-close"></button>
+          </div>
+          <div class="side-menu-content">
+            <nav class="side-menu-nav">
+              <ul class="side-menu-list">
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">태풍</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">지진</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">호우</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">홍수</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">산불</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">미세먼지</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">대설</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">한파</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">폭염</a>
+                </li>
+                <li class="side-menu-item">
+                  <!-- 적용 페이지에 active 클래스 -->
+                  <span class="side-menu-link active">특보</span>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">환경설정</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- news in header -->
+        <!-- news-container 에 active 클래스로 view
+       text-scroll.js 에 스크립트 있습니다.
+      복제 무한 스크롤이 문제가 되면 css 수정요청 부탁드립니다.
+      -->
+        <div class="news-container">
+          <div class="st-text-move">
+            <p>
+              <span class="news-label"> < 이 시각 주요 뉴스 > </span>
+              <span class="news-text"
+                >일시 : 2023년 2.25(토) 22:00 / 훈련상황 : 강원도 및 경분 산간 산불 3단계 발령 상황 가정 / 훈련중점 :
+                30분 내 뉴스특보 열어 30분 이상 진행일시 : 2023년 2.25(토) 22:00 / 훈련상황 : 강원도 및 경분 산간 산불
+                3단계 발령 상황 가정 / 훈련중점 : 30분 내 뉴스특보 열어 30분 이상 진행일시 : 2023년 2.25(토) 22:00 /
+                훈련상황 : 강원도 및 경분 산간 산불 3단계 발령 상황 가정 / 훈련중점 : 30분 내 뉴스특보 열어 30분 이상
+                진행</span
+              >
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- main 에 각 판 클래스 -class 형태로 있음
+		  -main-region / -main-all / -storm / -earthquake / -rain / -flood / -fire / -dust / -snow / -cold / -heat	/ -settings -->
+      <main class="main active -heat">
+        <!-- Left Panel -->
+        <section class="left-panel">
+          <div class="alert-container">
+            <div class="container-header">
+              <span class="container-header-line"></span>
+              <p class="container-header-text">폭염 특보 발효 지역</p>
+            </div>
+            <!-- alert-grid
+             특보 발효 지역 주의보/경보
+             세로형의 경우 alert-grid에 -row 클래스를 추가합니다.
+             -row 클래스 여부에 따라 스타일 변경과 함께  slick 슬라이더 vertical 로 동작합니다. >> script_slick.js 참고
+            -->
+            <div class="alert-grid -row">
+              <div class="alert-box">
+                <div class="alert-label">경보</div>
+                <div class="alert-count-number -alert">
+                  <span class="text-animate -flash -s20">6</span>
+                  <!-- 지역명만 슬라이더로 동작 -->
+                  <ul
+                    class="alert-location-slider"
+                    data-slick-vertical="true"
+                    data-slick-slides="1"
+                    data-slick-speed="2000"
+                  >
+                    <li class="alert-location-item">
+                      <p class="alert-text-location">강원 철원</p>
+                    </li>
+                    <li class="alert-location-item">
+                      <p class="alert-text-location">경기 수원</p>
+                    </li>
+                    <li class="alert-location-item">
+                      <p class="alert-text-location">서울 강남</p>
+                    </li>
+                  </ul>
+                </div>
+                <p class="disaster-none-text">현재 특보 없음</p>
+              </div>
+              <div class="alert-box">
+                <div class="alert-label">주의보</div>
+                <div class="alert-count-number -warning">
+                  <span class="text-animate -flash -s20">22</span>
+                  <!-- 지역명만 슬라이더로 동작 -->
+                  <ul
+                    class="alert-location-slider"
+                    data-slick-vertical="true"
+                    data-slick-slides="1"
+                    data-slick-speed="2000"
+                  >
+                    <li class="alert-location-item">
+                      <p class="alert-text-location">강원 철원</p>
+                    </li>
+                    <li class="alert-location-item">
+                      <p class="alert-text-location">충북 청주</p>
+                    </li>
+                    <li class="alert-location-item">
+                      <p class="alert-text-location">전남 광주</p>
+                    </li>
+                  </ul>
+                </div>
+                <p class="disaster-none-text">현재 특보 없음</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-container alert-current">
+            <div class="flex-item">
+              <div class="container-header">
+                <span class="container-header-line"></span>
+                <p class="container-header-text">현재 최고 ℃</p>
+              </div>
+              <!-- 현재 최고 -->
+              <div class="alert-item">
+                <div class="alert-count-number">
+                  <p class="alert-text-location">강원 철원</p>
+                  <span class="text-animate">30.5</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex-item">
+              <div class="container-header">
+                <span class="container-header-line"></span>
+                <p class="container-header-text">일 최고 ℃</p>
+              </div>
+              <!-- 일 최고 -->
+              <div class="alert-item">
+                <div class="alert-count-number">
+                  <p class="alert-text-location">강원 철원</p>
+                  <span class="text-animate">30</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-container">
+            <div class="container-header">
+              <span class="container-header-line"></span>
+              <p class="container-header-text">현재 기온 ℃ <span>(일 최고)</span></p>
+            </div>
+            <div class="disaster-list-container list-heat">
+              <div class="slick-ticker-wrap">
+                <ul
+                  class="slick-ticker-list -center"
+                  data-slick-vertical="true"
+                  data-slick-slides="4"
+                  data-slick-speed="2000"
+                >
+                  <li class="ticker-item">
+                    <div class="value">충남 금산 / 28.5 ℃ (29.1)</div>
+                  </li>
+                  <li class="ticker-item">
+                    <div class="value">강원 철원 / 28.3 ℃ (30.2)</div>
+                  </li>
+                  <li class="ticker-item">
+                    <div class="value">경기 파주 / 28.7 ℃ (29.2)</div>
+                  </li>
+                  <li class="ticker-item">
+                    <div class="value">충북 제천 / 28.9 ℃ (29)</div>
+                  </li>
+                  <li class="ticker-item">
+                    <div class="value">충북 제천 / 28.9 ℃ (30.5)</div>
+                  </li>
+                </ul>
+              </div>
+              <p class="disaster-none-text">데이터 없음</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Map Panel - left -->
+        <section class="map-panel">
+          <div class="container-header">
+            <span class="container-header-line"></span>
+            <p class="container-header-text">현재 기온</p>
+          </div>
+          <div class="map-container">
+            <!-- mapbox 맵 -->
+            <div
+              id="map"
+              class="map"
+              style="background: url(../assets/images/temp/05_sub_heat.png) no-repeat; background-size: cover"
+            ></div>
+            <!-- // mapbox 맵 -->
+
+            <!-- 폭염 범례 -->
+            <div class="map-legend -gradient -heat">
+              <ul class="gradient_bar">
+                <li class="bar-segment" style="flex: 1; background: #282828">
+                  <!-- <span class="segment-label">40</span> -->
+                </li>
+                <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #601616, #c22c2c)">
+                  <span class="segment-label">40</span>
+                </li>
+                <li class="bar-segment" style="flex: 6; background: linear-gradient(to bottom, #d13939, #e89b9b)">
+                  <span class="segment-label">36</span>
+                </li>
+                <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #606016, #c2c22c)">
+                  <span class="segment-label">30</span>
+                </li>
+                <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #d1d139, #e8e89b)">
+                  <span class="segment-label">25</span>
+                </li>
+                <li class="bar-segment" style="flex: 0.01; background: #e8e89b">
+                  <span class="segment-label">20</span>
+                </li>
+              </ul>
+              <div class="legend_unit">°C</div>
+            </div>
+
+            <div class="map-timestamp">
+              <span class="map-timestamp-text">자료 갱신 시각(5분)</span>
+              <p class="map-timestamp-time">08-03 10:00</p>
+            </div>
+
+            <!-- map-btn-->
+            <div class="map-btn-group">
+              <button type="button" class="btn-map -reset"></button>
+              <!-- <button type="button" class="btn-map -home"></button> -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Map Panel - right -->
+        <section class="map-panel">
+          <div class="container-header">
+            <span class="container-header-line"></span>
+            <p class="container-header-text">일 최고 기온</p>
+          </div>
+          <div class="map-container">
+            <!-- mapbox 맵 -->
+            <div
+              id="map"
+              class="map"
+              style="background: url(../assets/images/temp/05_sub_heat.png) no-repeat; background-size: cover"
+            ></div>
+            <!-- // mapbox 맵 -->
+
+            <!-- 폭염 범례 -->
+            <div class="map-legend -gradient -heat">
+              <ul class="gradient_bar">
+                <li class="bar-segment" style="flex: 1; background: #282828">
+                  <!-- <span class="segment-label">40</span> -->
+                </li>
+                <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #601616, #c22c2c)">
+                  <span class="segment-label">40</span>
+                </li>
+                <li class="bar-segment" style="flex: 6; background: linear-gradient(to bottom, #d13939, #e89b9b)">
+                  <span class="segment-label">36</span>
+                </li>
+                <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #606016, #c2c22c)">
+                  <span class="segment-label">30</span>
+                </li>
+                <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #d1d139, #e8e89b)">
+                  <span class="segment-label">25</span>
+                </li>
+                <li class="bar-segment" style="flex: 0.01; background: #e8e89b">
+                  <span class="segment-label">20</span>
+                </li>
+              </ul>
+              <div class="legend_unit">°C</div>
+            </div>
+
+            <div class="map-timestamp">
+              <span class="map-timestamp-text">자료 갱신 시각(5분)</span>
+              <p class="map-timestamp-time">08-03 10:00</p>
+            </div>
+
+            <!-- map-btn-->
+            <div class="map-btn-group">
+              <button type="button" class="btn-map -reset"></button>
+              <!-- <button type="button" class="btn-map -home"></button> -->
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- jQuery (Slick 의존성) slick 사용시 html버전 기준 제이쿼리 있어야함 -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS slick-carousel@1.8.1 -->
+    <script src="../js/slick.min.js"></script>
+    <!-- Common JS (Transform Scale 관리) -->
+    <script src="../js/common.js"></script>
+    <!-- Slick 초기화 스크립트 (세로형 ticker + 가로형 sliders) -->
+    <script src="../js/script_slick.js"></script>
+    <!-- Settings JS -->
+    <script src="../js/settings.js"></script>
+    <!-- Temperature Chart Initialization -->
+    <script src="../js/temperature-chart-init.js"></script>
+    <!-- Dust Chart Initialization -->
+    <script src="../js/dust-chart-init.js"></script>
+    <!-- Text Scroll Animation -->
+    <script src="../js/text-scroll.js"></script>
+  </body>
+</html>

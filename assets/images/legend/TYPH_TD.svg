@@ -1,0 +1,27 @@
+<svg id="TD_end" data-name="TD end" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6efff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke: #252525;
+      }
+
+      .cls-2 {
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        stroke-width: 3px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="11.53" cy="11.5" r="10.5"/>
+  <circle id="Ellipse_523_copy" data-name="Ellipse 523 copy" class="cls-2" cx="11.5" cy="11.5" r="10.5"/>
+  <path id="Line_524" data-name="Line 524" class="cls-3" d="M1702.7,775.707l14.84-14.848Z" transform="translate(-1698.59 -756.781)"/>
+  <path id="Line_524_copy" data-name="Line 524 copy" class="cls-3" d="M1702.68,760.859l14.85,14.848Z" transform="translate(-1698.59 -756.781)"/>
+</svg>

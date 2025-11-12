@@ -32,11 +32,11 @@
       }
 
       .page-index-table th {
-        padding: 16px 20px;
+        padding: 10px 20px;
         text-align: left;
         font-weight: 600;
         color: #fff;
-        font-size: 18px;
+        font-size: 16px;
         white-space: nowrap;
       }
 
@@ -53,9 +53,9 @@
       }
 
       .page-index-table td {
-        padding: 16px 20px;
+        padding: 10px 20px;
         color: #b0b0b0;
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .page-index-table td.center {
@@ -112,11 +112,49 @@
         pointer-events: none;
       }
       .content-page-header {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        font-size: 32px;
       }
       .note ol li {
         display: flex;
         gap: 4px;
+      }
+
+      /* Quick Links Styles */
+      .quick-links {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 32px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .quick-links a {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 24px;
+        background: rgba(0, 102, 204, 0.3);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.2s;
+        border: 1px solid rgba(0, 102, 204, 0.5);
+      }
+
+      .quick-links a:hover {
+        background: rgba(0, 102, 204, 0.5);
+        border-color: rgba(0, 102, 204, 0.8);
+        transform: translateY(-2px);
+      }
+
+      .quick-links a::before {
+        content: "→";
+        margin-right: 8px;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -135,6 +173,12 @@
         <section class="content-page-wrapper">
           <div class="content-page-container">
             <h2 class="content-page-header">퍼블리싱 Index</h2>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+              <a href="viewer-index.html" target="_blank">페이지 뷰어 index</a>
+              <a href="legend-index.html" target="_blank">범례 index</a>
+            </div>
 
             <div class="content-setting-header">
               <div class="content-setting-info-group">
@@ -156,92 +200,92 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">01-태풍.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/01-태풍.html" target="_blank">01-태풍.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">태풍</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">02-지진.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/02-지진.html" target="_blank">02-지진.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">지진</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">03-호우.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/03-호우.html" target="_blank">03-호우.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">호우</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">04-홍수.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/04-홍수.html" target="_blank">04-홍수.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">홍수</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">05-산불.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/05-산불.html" target="_blank">05-산불.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">산불</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">06-미세먼지.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/06-미세먼지.html" target="_blank">06-미세먼지.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">미세먼지</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">07-대설.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/07-대설.html" target="_blank">07-대설.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">대설</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">08-한파.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/08-한파.html" target="_blank">08-한파.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">한파</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
                   <tr>
-                    <td class="disabled">
-                      <a href="#" target="_blank">09-폭염.html</a>
-                      <span class="status-badge in-progress">작업 예정</span>
+                    <td>
+                      <a href="html/09-폭염.html" target="_blank">09-폭염.html</a>
+                      <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">폭염</td>
-                    <td class="center">-</td>
+                    <td class="center">2025-11-12</td>
                     <td class="center">-</td>
                     <td class="note"></td>
                   </tr>
@@ -252,9 +296,14 @@
                     </td>
                     <td class="title">특보 (전국)</td>
                     <td class="center">2025-10-29</td>
-                    <td class="center">2025-11-06</td>
+                    <td class="center">2025-11-12</td>
                     <td class="note">
                       <ol>
+                        <li>
+                          <span class="date">25.11.12</span>
+                          <p>헤더 안으로 뉴스, 사이드메뉴 이동</p>
+                          <p>-none 클래스 > is-empty 로 변경</p>
+                        </li>
                         <li>
                           <span class="date">25.11.06</span>
                           <p>ticker-list-3 클래스삭제</p>
@@ -273,9 +322,14 @@
                     </td>
                     <td class="title">특보 (지역)</td>
                     <td class="center">2025-10-29</td>
-                    <td class="center">2025-11-06</td>
+                    <td class="center">2025-11-12</td>
                     <td class="note">
                       <ol>
+                        <li>
+                          <span class="date">25.11.12</span>
+                          <p>헤더 안으로 뉴스, 사이드메뉴 이동</p>
+                          <p>-none 클래스 > is-empty 로 변경</p>
+                        </li>
                         <li>
                           <span class="date">25.11.06</span>
                           <p>단기예보 시간 추가</p>
@@ -293,14 +347,108 @@
                   </tr>
                   <tr>
                     <td>
+                      <a href="html/11-01-popup-강풍알림-half.html" target="_blank">11-01-popup-강풍알림-half.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-강풍알림</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/11-01-popup-강풍알림-half.html" target="_blank">11-01-popup-강풍알림-half.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-강풍알림</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/11-01-popup-강풍알림-half.html" target="_blank">11-01-popup-강풍알림-half.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-강풍알림</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/11-02-popup-지진알림-half.html" target="_blank">11-02-popup-지진알림-half.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-지진알림(half)</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/11-03-popup-지진알림-full.html" target="_blank">11-03-popup-지진알림-full.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-지진알림(full)</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/11-04-popup-폭염알림-half.html" target="_blank">11-04-popup-폭염알림-half.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-폭염알림(half)</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/11-05-popup-호우알림-half.html" target="_blank">11-05-popup-호우알림-half.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-호우알림(half)</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/11-06-popup-산불알림-full.html" target="_blank">11-06-popup-산불알림-full.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-산불알림(full)</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="html/11-07-popup-민방공-full.html" target="_blank">11-06-popup-산불알림-full.html</a>
+                      <span class="status-badge complete">완료</span>
+                    </td>
+                    <td class="title">popup-민방공(full)</td>
+                    <td class="center">2025-11-12</td>
+                    <td class="center"></td>
+                    <td class="note"></td>
+                  </tr>
+                  <tr>
+                    <td>
                       <a href="html/00-환경설정.html" target="_blank">00-환경설정.html</a>
                       <span class="status-badge complete">완료</span>
                     </td>
                     <td class="title">환경설정</td>
                     <td class="center">2025-10-29</td>
-                    <td class="center">2025-11-06</td>
+                    <td class="center">2025-11-12</td>
                     <td class="note">
                       <ol>
+                        <li>
+                          <span class="date">25.11.12</span>
+                          <p>헤더 안으로 뉴스, 사이드메뉴 이동</p>
+                        </li>
                         <li>
                           <span class="date">25.11.06</span>
                           <p>필요없는 id삭제, heading 주석통일</p>

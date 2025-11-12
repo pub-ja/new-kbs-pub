@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>범례 모음 - KBS 재난현황판</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/legend.css" />
+    <style>
+      body {
+        padding: 40px;
+        background: #1a1c2e;
+        color: #fff;
+        overflow-y: auto;
+      }
+      .legend-showcase {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .legend-showcase h1 {
+        font-size: 32px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .legend-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+      .legend-section {
+        background: rgba(21, 23, 35, 0.7);
+        padding: 30px;
+        border-radius: 8px;
+      }
+      .legend-section h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+      .map-legend {
+        position: relative;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="legend-showcase">
+      <h1>범례 (Legend)</h1>
+      <!-- Gradient Legends -->
+      <h2 style="font-size: 24px; margin-bottom: 20px; margin-top: 40px">그라디언트 범례</h2>
+      <div class="legend-grid">
+        <div class="legend-section">
+          <h2>호우 1시간 누적(1hr)</h2>
+
+          <div class="map-legend -gradient -rain">
+            <ul class="gradient_bar">
+              <li class="bar-segment" style="flex: 1; background: #333333">
+                <!-- <span class="segment-label">110</span> -->
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #bf0000, #fa8585)">
+                <span class="segment-label">110</span>
+              </li>
+              <li class="bar-segment" style="flex: 4; background: linear-gradient(to bottom, #9200e4, #da87ff)">
+                <span class="segment-label">60</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #000390, #b3b4de)">
+                <span class="segment-label">30</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #0077b3, #87d9ff)">
+                <span class="segment-label">10</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #008000, #d5ff9c)">
+                <span class="segment-label">5</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #ccaa00, #ffea6e)">
+                <span class="segment-label">1.0</span>
+              </li>
+              <li class="bar-segment" style="flex: 1; background: #eeeeee">
+                <span class="segment-label">0.0</span>
+              </li>
+            </ul>
+            <div class="legend_unit">mm</div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>호우 1일 누적(Daily)</h2>
+
+          <div class="map-legend -gradient -rain">
+            <ul class="gradient_bar">
+              <li class="bar-segment" style="flex: 1; background: #333333">
+                <!-- <span class="segment-label">700</span> -->
+              </li>
+              <li class="bar-segment" style="flex: 6; background: linear-gradient(to bottom, #bf0000, #fa8585)">
+                <span class="segment-label">700</span>
+              </li>
+              <li class="bar-segment" style="flex: 6; background: linear-gradient(to bottom, #7f00bf, #da87ff)">
+                <span class="segment-label">180</span>
+              </li>
+              <li class="bar-segment" style="flex: 4; background: linear-gradient(to bottom, #1f219d, #b3b4de)">
+                <span class="segment-label">110</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #0077b3, #87d9ff)">
+                <span class="segment-label">70</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #008000, #d5ff9c)">
+                <span class="segment-label">20</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #ccaa00, #ffea6e)">
+                <span class="segment-label">10</span>
+              </li>
+              <li class="bar-segment" style="flex: 1; background: #eeeeee">
+                <span class="segment-label">0</span>
+              </li>
+            </ul>
+            <div class="legend_unit">mm</div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>대설 (Snow)</h2>
+          <div class="map-legend -gradient -snow">
+            <ul class="gradient_bar">
+              <li class="bar-segment" style="flex: 1; background: #333333">
+                <span class="segment-label">100</span>
+              </li>
+              <li class="bar-segment" style="flex: 6; background: linear-gradient(to bottom, #c60000, #fa8585)">
+                <span class="segment-label">70</span>
+              </li>
+              <li class="bar-segment" style="flex: 6; background: linear-gradient(to bottom, #7f00bf, #da87ff)">
+                <span class="segment-label">20</span>
+              </li>
+              <li class="bar-segment" style="flex: 6; background: linear-gradient(to bottom, #ccaa00, #ffea6e)">
+                <span class="segment-label">5</span>
+              </li>
+              <li class="bar-segment" style="flex: 1; background: #ffffff">
+                <span class="segment-label">0.1</span>
+              </li>
+            </ul>
+            <div class="legend_unit">cm</div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>한파 (Cold)</h2>
+          <div class="map-legend -gradient -cold">
+            <ul class="gradient_bar">
+              <li class="bar-segment" style="flex: 10; background: linear-gradient(to bottom, #16605e, #9be8e6)">
+                <span class="segment-label">10</span>
+              </li>
+              <li class="bar-segment" style="flex: 10; background: linear-gradient(to bottom, #161660, #9b9be8)">
+                <span class="segment-label">0</span>
+              </li>
+              <li class="bar-segment" style="flex: 10; background: linear-gradient(to bottom, #601660, #e89be8)">
+                <span class="segment-label">-10</span>
+              </li>
+              <li class="bar-segment" style="flex: 1; background: #e6e6e6">
+                <span class="segment-label">-20</span>
+              </li>
+            </ul>
+            <div class="legend_unit">°C</div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>폭염 (Heat)</h2>
+          <div class="map-legend -gradient -heat">
+            <ul class="gradient_bar">
+              <li class="bar-segment" style="flex: 1; background: #282828">
+                <!-- <span class="segment-label">40</span> -->
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #601616, #c22c2c)">
+                <span class="segment-label">40</span>
+              </li>
+              <li class="bar-segment" style="flex: 6; background: linear-gradient(to bottom, #d13939, #e89b9b)">
+                <span class="segment-label">36</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #606016, #c2c22c)">
+                <span class="segment-label">30</span>
+              </li>
+              <li class="bar-segment" style="flex: 5; background: linear-gradient(to bottom, #d1d139, #e8e89b)">
+                <span class="segment-label">25</span>
+              </li>
+              <li class="bar-segment" style="flex: 0.01; background: #e8e89b">
+                <span class="segment-label">20</span>
+              </li>
+            </ul>
+            <div class="legend_unit">°C</div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>레이더 (Radar)</h2>
+          <div class="map-legend -gradient -radar">
+            <ul class="gradient_bar">
+              <li class="bar-segment" style="flex: 1; background: #333333">
+                <!-- <span class="segment-label">150</span> -->
+              </li>
+              <li class="bar-segment" style="flex: 11; background: linear-gradient(to bottom, #8219c7, #e0aefa)">
+                <span class="segment-label">140</span>
+              </li>
+              <li class="bar-segment" style="flex: 8; background: linear-gradient(to bottom, #a9120c, #ea6269)">
+                <span class="segment-label">50</span>
+              </li>
+              <li class="bar-segment" style="flex: 8; background: linear-gradient(to bottom, #f37270, #fcf17f)">
+                <span class="segment-label">16</span>
+              </li>
+              <li class="bar-segment" style="flex: 10; background: linear-gradient(to bottom, #297f20, #a5fca0)">
+                <span class="segment-label">5</span>
+              </li>
+              <li class="bar-segment" style="flex: 9; background: linear-gradient(to bottom, #2d77af, #b5e5fd)">
+                <span class="segment-label">1.0</span>
+              </li>
+              <li class="bar-segment" style="flex: 1; background: #eeeeee">
+                <span class="segment-label">0.01</span>
+                <span class="segment-label -first">0</span>
+              </li>
+            </ul>
+            <div class="legend_unit">mm/hr</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Icon Legends -->
+      <h2 style="font-size: 24px; margin-bottom: 20px; margin-top: 40px">아이콘 범례</h2>
+      <div class="legend-grid">
+        <div class="legend-section">
+          <h2>미세먼지 (Dust)</h2>
+          <div class="map-legend -dust">
+            <ul class="legend-list">
+              <li>
+                <span class="circleicon -red"></span>
+                <span class="legend-text">매우나쁨</span>
+              </li>
+              <li>
+                <span class="circleicon -orange"></span>
+                <span class="legend-text">나쁨</span>
+              </li>
+              <li>
+                <span class="circleicon -green"></span>
+                <span class="legend-text">보통</span>
+              </li>
+              <li>
+                <span class="circleicon -skyblue"></span>
+                <span class="legend-text">좋음</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <style>
+          /* temp */
+          .map-legend.-typoon,
+          .map-legend.-earthquake {
+            top: auto;
+          }
+        </style>
+
+        <div class="legend-section">
+          <h2>태풍</h2>
+          <!-- 태풍 범례 -->
+          <div class="map-legend -typoon">
+            <div class="legend_icontable">
+              <ul class="legend-list">
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="assets/images/legend/TYPH_TD.svg" />
+                  </div>
+                  <span>열대저압부</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -past" src="assets/images/legend/TYPH_past.svg" />
+                  </div>
+                  <span>태풍중심 이동경로</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -mild" src="assets/images/legend/TYPH_mild.svg" />
+                  </div>
+                  <span>중심풍속 17~24m/s</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -strong" src="assets/images/legend/TYPH_strong.svg" />
+                  </div>
+                  <span>중심풍속 24m/s 이상</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="borderline -dark">dark border</div>
+                  </div>
+                  <span>태풍 과거 이동 경로</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="borderline -dashred">red border</div>
+                  </div>
+                  <span>태풍 이동 경로</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="circleicon -yellowline">yellow circle</div>
+                  </div>
+                  <span>강풍 15m/s 이상</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="circleicon -orangeline">orangeline circle</div>
+                  </div>
+                  <span>강풍 25m/s 이상</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="circleicon -purple">purple circle</div>
+                  </div>
+                  <span>70% 확률 예상 위치</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>지진</h2>
+          <!-- 지진 범례 -->
+          <div class="map-legend -earthquake">
+            <div class="legend_icontable">
+              <p class="legend_title">최신 지진데이터</p>
+              <div class="icon_wrap -point">
+                <span class="icon_earthquake"></span>
+              </div>
+            </div>
+            <div class="legend-divider"></div>
+            <div class="legend_icontable">
+              <p class="legend_title">주요 지점</p>
+              <ul class="legend-list">
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="assets/images/legend/EART_pwrplant.svg" />
+                  </div>
+                  <span>원전</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="assets/images/legend/EART_location.svg" />
+                  </div>
+                  <span>지점</span>
+                </li>
+              </ul>
+            </div>
+            <div class="legend-divider"></div>
+            <div class="legend_icontable">
+              <p class="legend_title">규모</p>
+              <ul class="legend-list">
+                <li>
+                  <div class="icon_wrap">
+                    <div class="icon_eq eq5"></div>
+                  </div>
+                  <span class="legend-text">6.0 ~</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="icon_eq eq4"></div>
+                  </div>
+                  <span class="legend-text">5.0 ~ 5.9</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="icon_eq eq3"></div>
+                  </div>
+                  <span class="legend-text">4.0 ~ 4.9</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="icon_eq eq2"></div>
+                  </div>
+                  <span class="legend-text">3.0 ~ 3.9</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="icon_eq eq1"></div>
+                  </div>
+                  <span class="legend-text">2.0 ~ 2.9</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>홍수영향 분포도</h2>
+          <!-- 지진 범례 -->
+          <div class="map-legend -flood">
+            <div class="legend_icontable">
+              <p class="legend_title">침수심</p>
+              <ul class="legend-list">
+                <li>
+                  <span class="box_color" style="background: #fdfbc7"></span>
+                  <span class="legend-text">0.5m 이하</span>
+                </li>
+                <li>
+                  <span class="box_color" style="background: #e6dd99"></span>
+                  <span class="legend-text">0.5m ~ 1.0m</span>
+                </li>
+                <li>
+                  <span class="box_color" style="background: #38fefd"></span>
+                  <span class="legend-text">1.0m ~ 2.0m</span>
+                </li>
+                <li>
+                  <span class="box_color" style="background: #ce9afb"></span>
+                  <span class="legend-text">2.0m ~ 5.0m</span>
+                </li>
+                <li>
+                  <span class="box_color" style="background: #ce3f87"></span>
+                  <span class="legend-text">5.0m 이상</span>
+                </li>
+              </ul>
+              <div class="legend-divider"></div>
+              <ul class="legend-list">
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="assets/images/legend/FLOD_dam.svg" />
+                  </div>
+                  <span>댐</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="assets/images/legend/FLOD_pool.svg" />
+                  </div>
+                  <span>보</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>산불 발생</h2>
+          <!-- 지진 범례 -->
+          <div class="map-legend -fire">
+            <div class="legend_icontable">
+              <ul class="legend-list">
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="assets/images/legend/FIRE_fire_out.svg" />
+                  </div>
+                  <span class="legend-text">산불 진화완료</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="assets/images/legend/FIRE_fire_inprogress.svg" />
+                  </div>
+                  <span class="legend-text">산불 진화중</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h2>산불 상황도</h2>
+          <!-- 지진 범례 -->
+          <div class="map-legend -fire">
+            <div class="legend_icontable">
+              <ul class="legend-list">
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="assets/images/legend/fire@2x.png" />
+                  </div>
+                  <span class="legend-text">발화 추정지</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="borderline -orangeline2">dark border</div>
+                  </div>
+                  <span>저지선</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="borderline -redline">dark border</div>
+                  </div>
+                  <span>화선</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="borderline -yellowline">dark border</div>
+                  </div>
+                  <span>진화완료</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
