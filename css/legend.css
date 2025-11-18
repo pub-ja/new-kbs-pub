@@ -22,7 +22,8 @@
   padding: 20px;
 }
 
-.map-legend.-fire .legend_icontable .icon_wrap {
+.map-legend.-fire .legend_icontable .icon_wrap,
+.map-legend.-typoon .legend_icontable .icon_wrap {
   min-width: 24px;
   width: 24px;
 }
