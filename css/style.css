@@ -4014,3 +4014,217 @@ img {
     transform: translateX(-50%);
   }
 }
+
+/* ============================================
+   Result Page
+   ============================================ */
+.main.-result-page .content-page-wrapper {
+  position: relative;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin-bottom: 94px;
+  overflow: visible;
+}
+
+.result-page-icon {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  background: url(../assets/images/common/ico-page-warning.svg) no-repeat center
+    center;
+}
+
+.result-page-code {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.result-page-desc {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  margin-top: 12px;
+  text-align: center;
+  font-size: var(--font-size-xxs);
+  color: #c3c3c3;
+  font-weight: var(--font-weight-light);
+}
+
+.result-page-title {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+.result-page-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.result-page-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-page-bg-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.result-page-bg-box .bg-icon {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: 56px 56px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.45;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-40px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-20px) rotate(3deg);
+  }
+}
+
+.result-page-bg-box .bg-icon:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 7s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(2) {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1s;
+  animation-duration: 9s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(3) {
+  bottom: 10%;
+  left: 15%;
+  animation-delay: 2s;
+  animation-duration: 8s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(4) {
+  bottom: 30%;
+  right: 16%;
+  animation-delay: 3s;
+  animation-duration: 10s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(5) {
+  top: 50%;
+  left: 15%;
+  animation-delay: 1.5s;
+  animation-duration: 7.5s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(6) {
+  top: 40%;
+  right: 5%;
+  animation-delay: 2.5s;
+  animation-duration: 8.5s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(7) {
+  bottom: 9%;
+  right: 28%;
+  animation-delay: 3.5s;
+  animation-duration: 9.5s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(8) {
+  top: 32%;
+  left: 27%;
+  animation-delay: 4s;
+  animation-duration: 11s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(9) {
+  bottom: 10%;
+  left: 35%;
+  animation-delay: 0.5s;
+  animation-duration: 8.2s;
+}
+
+.result-page-bg-box .bg-icon:nth-child(10) {
+  top: 15%;
+  right: 40%;
+  animation-delay: 2.8s;
+  animation-duration: 9.8s;
+}
+
+.result-page-bg-box .bg-icon.-typoon {
+  background-image: url("../assets/images/disaster/ico-typoon.svg");
+}
+
+.result-page-bg-box .bg-icon.-snow {
+  background-image: url("../assets/images/disaster/ico-snow.svg");
+}
+
+.result-page-bg-box .bg-icon.-wind {
+  background-image: url("../assets/images/disaster/ico-wind.svg");
+}
+
+.result-page-bg-box .bg-icon.-storm {
+  background-image: url("../assets/images/disaster/ico-storm.svg");
+}
+
+.result-page-bg-box .bg-icon.-rain {
+  background-image: url("../assets/images/disaster/ico-rain.svg");
+}
+
+.result-page-bg-box .bg-icon.-heat {
+  background-image: url("../assets/images/disaster/ico-heat.svg");
+}
+
+.result-page-bg-box .bg-icon.-cold {
+  background-image: url("../assets/images/disaster/ico-cold.svg");
+}
+
+.result-page-bg-box .bg-icon.-dust {
+  background-image: url("../assets/images/disaster/ico-dust.svg");
+}
+
+.result-page-bg-box .bg-icon.-dry {
+  background-image: url("../assets/images/disaster/ico-dry.svg");
+}
+
+.result-page-bg-box .bg-icon.-tsunami {
+  background-image: url("../assets/images/disaster/ico-tsunami.svg");
+}
