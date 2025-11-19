@@ -17,6 +17,21 @@
   background: #18171d;
 }
 
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-slide > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.ticker-item {
+  display: flex !important;
+}
+
 /* Slick center alignment */
 .slick-ticker-list.-center .value {
   text-align: center;
@@ -280,4 +295,34 @@
 .slick-ticker-wrap.list-dust .ticker-item {
   min-height: 94px;
   border-bottom: 2px solid #18171d;
+}
+
+/* height 개선 */
+.disaster-list-container .slick-list {
+  height: 180px !important;
+}
+
+.list-typhoon .slick-list,
+.list-earthquake-distance .slick-list,
+.list-snow .slick-list {
+  height: 210px !important;
+}
+
+.list-heat .slick-list,
+.list-cold .slick-list,
+.list-rain .slick-list,
+.list-dust .slick-list {
+  height: 280px !important;
+}
+
+.list-earthquake-intensity .slick-list {
+  height: 350px !important;
+}
+
+.list-fire .slick-list {
+  height: 640px !important;
+}
+
+.alert-grid.-row .alert-location-slider .slick-list {
+  width: 200px;
 }
