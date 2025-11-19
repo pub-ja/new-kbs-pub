@@ -1089,7 +1089,7 @@ img {
 }
 
 .flex-container.alert-current-text .alert-item {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -4284,4 +4284,9 @@ img {
 
 .result-page-bg-box .bg-icon.-tsunami {
   background-image: url("../assets/images/disaster/ico-tsunami.svg");
+}
+
+/* mapbox */
+.mapboxgl-ctrl-bottom-left {
+  display: none;
 }

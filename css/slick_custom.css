@@ -326,3 +326,19 @@
 .alert-grid.-row .alert-location-slider .slick-list {
   width: 200px;
 }
+
+.traffic-control-slider {
+  position: relative;
+  width: 100%;
+  flex: 1;
+}
+
+.traffic-control-slider .slick-list {
+  overflow: hidden;
+  height: 100%;
+}
+
+.traffic-control-slider .slick-track {
+  display: flex;
+  height: 100%;
+}
