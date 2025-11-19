@@ -137,7 +137,7 @@
 
             <!-- 수위 정보 (fade 슬라이더) -->
             <div class="flood-level-box">
-              <ul
+              <div
                 class="flood-level-slider"
                 data-slick-vertical="false"
                 data-slick-slides="1"
@@ -146,7 +146,7 @@
                 data-slick-type="flood-level"
               >
                 <!-- 지역 1: 나주시 나주대교 -->
-                <li class="flood-level-item" data-region-code="naju">
+                <div class="flood-level-item" data-region-code="naju">
                   <div class="flood-level-header">
                     <div class="flood-level-title">
                       <span class="badge -warning">주의보</span>
@@ -186,10 +186,10 @@
                       </div>
                     </div>
                   </div>
-                </li>
+                </div>
 
                 <!-- 지역 2: 철원군 한탄강대교 -->
-                <li class="flood-level-item" data-region-code="cheorwon">
+                <div class="flood-level-item" data-region-code="cheorwon">
                   <div class="flood-level-header">
                     <div class="flood-level-title">
                       <span class="badge -alert">경보</span>
@@ -229,8 +229,8 @@
                       </div>
                     </div>
                   </div>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -247,7 +247,7 @@
             <div class="container-header -sub">
               <p class="container-header-text">인접 댐 정보</p>
             </div>
-            <ul
+            <div
               class="dam-slider"
               data-slick-vertical="false"
               data-slick-slides="1"
@@ -257,7 +257,7 @@
               data-dam-data-only-time="3000"
             >
               <!-- 나주 인접댐 1: 담양댐 (CCTV 있음) -->
-              <li class="dam-item" data-region-code="naju" data-has-cctv="true">
+              <div class="dam-item" data-region-code="naju" data-has-cctv="true">
                 <p class="dam-title">담양댐</p>
                 <div class="dam-content-area">
                   <div class="dam-data-wrap">
@@ -316,10 +316,10 @@
                     <img class="dam-img-cctv" src="../assets/images/temp/img_cctv_sample.jpg" alt="한탄강댐 이미지" />
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- 나주 인접댐 2: 장성댐 (CCTV 없음) -->
-              <li class="dam-item" data-region-code="naju" data-has-cctv="false">
+              <div class="dam-item" data-region-code="naju" data-has-cctv="false">
                 <p class="dam-title">장성댐</p>
                 <div class="dam-content-area">
                   <div class="dam-data-wrap">
@@ -376,10 +376,10 @@
                   </div>
                   <!-- CCTV 없음 -->
                 </div>
-              </li>
+              </div>
 
               <!-- 한탄강 인접댐: 한탄강댐 (CCTV 있음) -->
-              <li class="dam-item" data-region-code="cheorwon" data-has-cctv="true">
+              <div class="dam-item" data-region-code="cheorwon" data-has-cctv="true">
                 <p class="dam-title">한탄강댐</p>
                 <div class="dam-content-area">
                   <div class="dam-data-wrap">
@@ -438,8 +438,8 @@
                     <img src="../assets/images/temp/img_cctv_sample.jpg" alt="한탄강댐 이미지" />
                   </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </section>
 
