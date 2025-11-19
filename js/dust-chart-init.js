@@ -44,7 +44,7 @@
       },
       scales: {
         x: {
-          display: true,
+          display: false,
           grid: { display: false },
           ticks: {
             color: "#BECBD6",
