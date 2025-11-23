@@ -290,6 +290,76 @@ main 태그에 재난별 modifier 클래스 추가:
 
 ## 🔄 Slick 슬라이더 설정
 
+### React Slick 대응을 위한 구조
+
+슬라이더는 `ul/li` 대신 **`div` 구조**로 작성되었습니다.
+
+**이유:**
+
+- React Slick 사용 시 `<Slider>` 컴포넌트가 `div`로 렌더링됨
+- Slick이 자동으로 `.slick-list`, `.slick-track` 등의 래퍼 div를 생성
+- 퍼블 단계에서 미리 div 구조로 만들어두면 React 전환 시 구조가 일치하여 CSS 수정 없이 적용 가능
+
+```html
+<!-- div 구조 (현재 사용) -->
+<div class="slick-ticker-list" data-slick-vertical="true">
+  <div class="ticker-item">...</div>
+  <div class="ticker-item">...</div>
+</div>
+```
+
+#### React Slick 렌더링 구조 차이 및 CSS 보정
+
+**퍼블리싱 HTML (Slick 초기화 후):**
+
+```html
+<div class="slick-ticker-list">
+  <!-- ticker-item과 slick-slide가 같은 요소 -->
+  <div class="ticker-item -warning slick-slide slick-active">
+    <div class="value">영덕</div>
+  </div>
+</div>
+```
+
+**React Slick 렌더링 결과:**
+
+```html
+<div class="slick-slider slick-ticker-list">
+  <div class="slick-list" style="height: 0px">
+    <!-- ⚠️ 높이 문제 -->
+    <div class="slick-track">
+      <div class="slick-slide slick-active">
+        <!-- slick-slide -->
+        <div>
+          <!-- React Slick이 자동 생성하는 래퍼 div -->
+          <div class="ticker-item -warning">
+            <!-- ticker-item이 분리됨 -->
+            <div class="value">영덕</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+**문제점:**
+
+1. React Slick이 자동으로 래퍼 div를 추가하면서 `slick-slide`와 `ticker-item`이 분리됨
+2. flex 구조가 깨짐
+3. 초기화 순서 문제로 `.slick-list`의 height가 0으로 계산됨
+
+**CSS 보정 (slick_custom.css):**
+
+```css
+/* React Slick 높이 보정 */
+.slick-list {
+  height: auto !important; /* 또는 명시적인 높이값 */
+}
+```
+
+이러한 구조 차이 때문에 퍼블리싱에서 미리 div 구조를 사용하고, CSS에서 `!important`로 높이를 보정했습니다.
+
 ### 1. data 속성으로 제어
 
 ```html
@@ -354,18 +424,21 @@ main 태그에 재난별 modifier 클래스 추가:
 #### 데이터 속성 설명
 
 **슬라이더 설정:**
+
 - `data-slick-type="dam"` - 댐 슬라이더 타입 지정 (필수)
 - `data-dam-data-time="3000"` - 데이터 화면 표시 시간 (ms)
 - `data-dam-cctv-time="3000"` - CCTV 화면 표시 시간 (ms)
 - `data-dam-data-only-time="3000"` - CCTV 없을 때 데이터 표시 시간 (ms)
 
 **댐 아이템 설정:**
+
 - `data-region-code="지역코드"` - 댐이 속한 지역 코드 (예: naju, cheorwon)
 - `data-has-cctv="true/false"` - CCTV 유무
 
 #### CCTV 유무에 따른 구조
 
 **CCTV가 있는 경우 (data-has-cctv="true"):**
+
 ```html
 <li class="dam-item" data-region-code="naju" data-has-cctv="true">
   <p class="dam-title">담양댐</p>
@@ -381,13 +454,18 @@ main 태그에 재난별 modifier 클래스 추가:
     </div>
     <!-- 오른쪽: CCTV 이미지 -->
     <div class="dam-img-wrap">
-      <img class="dam-img-cctv" src="../assets/images/temp/img_cctv_sample.jpg" alt="댐 CCTV" />
+      <img
+        class="dam-img-cctv"
+        src="../assets/images/temp/img_cctv_sample.jpg"
+        alt="댐 CCTV"
+      />
     </div>
   </div>
 </li>
 ```
 
 **CCTV가 없는 경우 (data-has-cctv="false"):**
+
 ```html
 <li class="dam-item" data-region-code="naju" data-has-cctv="false">
   <p class="dam-title">장성댐</p>
@@ -418,18 +496,18 @@ main 태그에 재난별 modifier 클래스 추가:
 ```javascript
 // 댐 데이터 업데이트
 const damData = {
-  regionCode: 'naju',
-  damName: '담양댐',
+  regionCode: "naju",
+  damName: "담양댐",
   hasCCTV: true,
   currentLevel: 4.74,
-  restrictLevel: 5.60,
-  normalLevel: 6.00,
+  restrictLevel: 5.6,
+  normalLevel: 6.0,
   // ... 기타 데이터
 };
 
 // CCTV 이미지 URL 업데이트
 if (damData.hasCCTV) {
-  $('.dam-img-cctv').attr('src', damData.cctvImageUrl);
+  $(".dam-img-cctv").attr("src", damData.cctvImageUrl);
 }
 ```
 
@@ -605,32 +683,22 @@ new Chart(ctx, {
 06-미세먼지.html에서 data 속성으로 제공:
 
 ```html
+<!-- 초미세먼지(PM2.5) 차트 -->
 <canvas
   id="dustChart"
-  data-chart-values="[12,10,8,10,12,15,18,22,28,32,38,42,48,52,57,55,52,48,42,38,32,28,22,18,15]"
->
-</canvas>
+  data-chart-values="[12,10,8,10,12,15,18,22,28,32,38,42,48,52,57,55,52,48,42,38,32,28,22,18]"
+></canvas>
+
+<!-- 미세먼지(PM10) 차트 -->
+<canvas
+  id="dustChart2"
+  data-chart-values="[15,20,28,35,45,60,75,88,105,125,145,165,175,170,160,150,135,110,90,70,55,42,32,25]"
+></canvas>
 ```
 
-25개 값 = 0시~24시 (총 25시간)
-
-### 5. 이미지 비율 유지하며 꽉 채우기
-
-```css
-/* 부모 컨테이너 */
-.image-wrap {
-  width: 300px;
-  height: 200px;
-  overflow: hidden;
-}
-
-/* 이미지 */
-.image-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 비율 유지, 넘치는 부분 잘림 */
-}
-```
+**데이터 형식:**
+- 24개 값 = 0시~23시 (24시간)
+- JSON 배열 형식으로 입력
 
 ---
 
@@ -673,19 +741,10 @@ new Chart(ctx, {
 
 - [ ] 모든 샘플 이미지 경로 확인 (`assets/images/temp/` 내 파일)
 - [ ] 지도 API 연동 완료 후 인라인 style 속성 제거
-- [ ] Chart.js 데이터를 API 연동으로 교체
-- [ ] CCTV 영상 스트리밍 연동
-- [ ] 뉴스 텍스트 실시간 API 연동
-- [ ] 재난 데이터 API 연동
-- [ ] 크로스 브라우징 테스트 (Chrome, Edge, Firefox, Safari)
-- [ ] 반응형 화면 (1920x1080 최적화) 테스트
-- [ ] JavaScript 콘솔 에러 확인
 - [ ] 슬라이더 동작 확인 (세로/가로)
 - [ ] 팝업 알림 동작 확인
 
 ---
-
-## 📂 파일 네이밍 규칙
 
 ### HTML 파일
 
@@ -723,22 +782,25 @@ new Chart(ctx, {
 
 ---
 
-## 📞 문의사항
-
-퍼블리싱 관련 문의사항은 개발팀에 전달해주세요.
-
----
-
-## 📄 라이선스
-
-Copyright © KBS All Rights Reserved.
-
----
-
 ## 📌 업데이트 내역
+
+### 2025-11-19
+
+- 대설 페이지 가로 슬라이더 수정 및 맵박스 로고 삭제
+- 슬라이더 div로 변경 (태풍, 지진, 호우, 홍수, 산불, 대설, 한파, 폭염)
+- 로고 포인터 추가
+- 지진 이미지 컨테이너 왼쪽 하단 추가
+- 미세먼지 x 범례 label 하드코딩 수정
+- slick 리액 보정 수정
+
+### 2025-11-18
+
+- 오류페이지 업데이트
 
 ### 2025-11-12
 
+- 태풍 범례 아이콘 사이 간격 조정
+- 범례 index에 규모 아이콘 modifier 클래스 하이픈 추가
 - viewer-index.html 버튼 텍스트를 재난명으로 변경
 - viewer-index.html에 환경설정 페이지 추가
 - index.html 상단에 빠른 링크 추가 (페이지 뷰어, 범례 모음)
