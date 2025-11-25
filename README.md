@@ -589,18 +589,6 @@ if (damData.hasCCTV) {
 <div class="map-legend -flood">...</div>
 ```
 
-### 맵 타임스탬프 배경 박스
-
-밝은 지도의 경우 `-bgbox` 클래스 추가:
-
-```html
-<div class="map-timestamp -bgbox">
-  <!-- 밝은 배경 추가 -->
-  <span class="map-timestamp-text">자료 갱신 시각 (5분)</span>
-  <p class="map-timestamp-time">08-03 10:00</p>
-</div>
-```
-
 ---
 
 ## 🎬 애니메이션 클래스
@@ -697,6 +685,7 @@ new Chart(ctx, {
 ```
 
 **데이터 형식:**
+
 - 24개 값 = 0시~23시 (24시간)
 - JSON 배열 형식으로 입력
 
