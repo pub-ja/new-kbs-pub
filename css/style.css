@@ -735,7 +735,7 @@ img {
   flex-direction: column;
   transition: transform 0.4s ease;
   width: 100%;
-  background: #18171d;
+  background: var(--panel-bg-gray);
 }
 
 .slick-ticker-list.-center .value {
@@ -918,6 +918,7 @@ img {
 }
 
 .alert-grid.-single .alert-count-number {
+  flex: 1;
   height: 186px;
   row-gap: 15px;
 }
@@ -1023,7 +1024,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 124px;
+  height: 130px;
   background: var(--panel-bg-gray);
   font-size: var(--font-size-xl-plus);
   font-weight: var(--font-weight-bold);
@@ -1093,7 +1094,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 212px;
+  height: 203px;
   background: var(--panel-bg-gray);
 }
 
@@ -1882,6 +1883,14 @@ img {
   padding: 15px 15px 10px;
 }
 
+.map-timestamp.-center {
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 440px;
+  text-align: center;
+}
+
 .map-timestamp::after {
   content: "";
   position: absolute;
@@ -1907,12 +1916,14 @@ img {
 
 .map-timestamp-text {
   font-size: var(--font-size-sm);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
 .map-timestamp-time {
   font-size: var(--font-size-lg);
   margin-top: 3px;
   font-weight: var(--font-weight-medium);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .map-btn-group {
@@ -3485,13 +3496,17 @@ img {
   height: 170px;
   margin: 0 auto;
   font-size: 12px;
-  background: var(--panel-bg-dark);
+  background: #2f2f38;
   background-size: contain;
   background-position: 50% 100%;
   background-repeat: no-repeat;
 }
 
 /* 수위 차트 배경 이미지 (레벨별) */
+.flood-level-container.-lv0 {
+  background-image: url(../assets/images/disaster/flood/flood-lv0.svg);
+}
+
 .flood-level-container.-lv1 {
   background-image: url(../assets/images/disaster/flood/flood-lv1.svg);
 }
@@ -3519,13 +3534,23 @@ img {
   background: rgba(0, 0, 0, 0.3);
 }
 
+.flood-value-base::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 22px;
+  right: -16px;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
 /* 현재 수위 (우하단) */
 .flood-value-current {
   position: absolute;
   z-index: 2;
   display: inline-block;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
   margin: 0;
   font-size: 4.083em;
   font-weight: 600;
@@ -3541,7 +3566,7 @@ img {
   justify-content: flex-end;
   align-items: flex-end;
   text-align: right;
-  padding: 0 10px;
+  padding: 0 20px 2px 10px;
   border-right: 1px solid rgba(255, 255, 255, 0.7);
 }
 
@@ -3576,6 +3601,7 @@ img {
   font-size: var(--font-size-xxs);
   color: #fff;
   padding: 2px 5px;
+  white-space: nowrap;
 }
 
 .flood-value-current .flood-value-box {
@@ -3597,6 +3623,7 @@ img {
   font-size: var(--font-size-md-xl);
   color: #fff;
   line-height: 1;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .flood-level-wrap > .level-item.-warning::after,
@@ -4038,7 +4065,8 @@ img {
 .alert-img-container {
   display: none;
   position: absolute;
-  bottom: 10px;
+  z-index: 999;
+  bottom: 16px;
   left: 16px;
 }
 
@@ -4048,7 +4076,7 @@ img {
 
 .-earthquake .alert-img-wrap {
   width: 400px;
-  height: 275px;
+  height: 270px;
   opacity: 0;
   transform: translateY(20px);
   animation: slideUpFadeIn 0.5s ease-out forwards;
