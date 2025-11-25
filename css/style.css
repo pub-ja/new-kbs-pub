@@ -2641,6 +2641,7 @@ img {
 
 .alert-current-text.is-empty .disaster-none-text {
   background: var(--panel-bg-light-gray);
+  font-size: var(--font-size-md-xl);
 }
 
 .is-empty .container-detail-content {
