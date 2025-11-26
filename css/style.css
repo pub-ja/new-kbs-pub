@@ -506,10 +506,12 @@ img {
 }
 
 .container-header-text > .unit {
-  font-size: var(--font-size-xxs);
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  right: 15px;
+  bottom: 11px;
+  margin-left: 8px;
+  font-size: var(--font-size-sm);
+  color: #c3c3c3;
 }
 
 .container-header.-sub .container-header-text {
@@ -580,7 +582,7 @@ img {
   display: block;
   margin-top: 10px;
   font-size: var(--font-size-xs);
-  color: #949494;
+  color: #999999;
   text-align: right;
 }
 
@@ -1103,11 +1105,11 @@ img {
 }
 
 /* Weather Container */
-.slick-weather-slider .weather-container {
+.weather-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 12px;
+  gap: 20px;
   padding: 30px 24px;
   height: 100%;
   background: var(--panel-bg-light-gray-alpha);
@@ -1147,20 +1149,28 @@ img {
 .weather-city-region-text {
   width: 100%;
   position: relative;
-  padding: 10px 0 32px 50px;
-  font-size: var(--font-size-lg);
+  padding: 0 0 10px 50px;
+  font-size: var(--font-size-md-xl);
   font-weight: var(--font-weight-bold);
 }
 
 .weather-city-region-text::before {
   content: "";
   position: absolute;
-  top: 20px;
+  top: 7px;
   left: 0px;
   width: 40px;
   height: 40px;
   background: url(../assets/images/common/ico-region.svg) no-repeat 50% 50%;
-  background-size: 40px 40px;
+  background-size: 34px auto;
+}
+
+.-main-all .weather-city {
+  margin-bottom: 20px;
+}
+
+.-main-all .weather-header {
+  margin-bottom: 20px;
 }
 
 .weather-city,
@@ -3213,7 +3223,7 @@ img {
 
 .footer-notice .copyright {
   font-size: var(--font-size-tiny);
-  color: #949494;
+  color: #999999;
   text-align: center;
 }
 
@@ -3320,11 +3330,6 @@ img {
   height: 100% !important;
 }
 
-/* 체감온도 행 */
-.forecast-feel-temp .forecast-item {
-  font-weight: 500;
-}
-
 .st-text-move {
   display: flex;
   flex: 0 0 auto;
@@ -3333,6 +3338,7 @@ img {
   transition: 0.3s;
   position: relative;
 }
+
 .st-text-move p {
   display: flex;
   align-items: center;
@@ -3388,12 +3394,12 @@ img {
 
 .data-table-title-text {
   font-size: var(--font-size-md);
-  color: #fff;
+  color: #ffffff;
 }
 
 .data-time-text {
   font-size: var(--font-size-xxs);
-  color: #999;
+  color: #999999;
 }
 
 .data-table thead th {
@@ -3452,11 +3458,11 @@ img {
 }
 
 /* 수위 정보 헤더 */
-.flood-level-header {
+.flood-level-item .flood-level-header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: 8px;
+  row-gap: 12px;
   margin-bottom: 10px;
 }
 
@@ -3475,7 +3481,7 @@ img {
 
 .data-info-timestamp {
   display: inline-block;
-  color: #898f92;
+  color: #c3c3c3;
   font-size: var(--font-size-xxs);
 }
 
@@ -3657,9 +3663,10 @@ img {
 .status-icon.-same {
   background-image: url(../assets/images/common/ico-status-same.svg);
 }
+
 .value-unit {
   text-align: right;
-  color: #898f92;
+  color: #c3c3c3;
   font-size: var(--font-size-xxs);
 }
 

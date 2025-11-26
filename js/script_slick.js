@@ -9,6 +9,12 @@
  * Slick Weather Slider (날씨 슬라이더)
  *
  * 기본특보판 전용
+ * 현재 날씨와 단기예보 아이템 개수 차이가 많이 난다고 해서 n배수로 동작하게 하려고 했는데
+ * autoplaySpeed 로는 동기화가 되지 않고 각각 안맞게 돌아서
+ * 동기화를 위해 autoplay 를 제거하고 수동 제어해서 한번에 적용하도록 수정했습니다.
+ * 동기화 없이 autoplaySpeed로 배수 초를 적용했는데 문제가 없다면 기존대로 autoplay: true, autoplaySpeed 로 각각 초를 주어서 동기화 해주셔도 됩니다.
+ * ex) 현재 날씨 4000, 단기예보 (4000 * 2) 8000 >> 8초에 동시에 변경 되도록
+ *
  */
 class SlickWeatherSlider {
   constructor() {
@@ -21,18 +27,16 @@ class SlickWeatherSlider {
       this.slider = $(".slick-weather-slider").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 6000,
+        autoplay: false, // 수동 제어
         arrows: false,
         dots: false,
         infinite: true,
         speed: 800,
-        fade: true, // fade 효과
+        fade: true,
         cssEase: "cubic-bezier(0.25, 0.8, 0.25, 1)",
         pauseOnHover: false,
         pauseOnFocus: false,
       });
-      console.log("Slick Weather Slider initialized");
     }
   }
 
@@ -41,6 +45,51 @@ class SlickWeatherSlider {
       this.slider.slick("unslick");
       this.slider = null;
     }
+  }
+
+  getSlider() {
+    return this.slider;
+  }
+}
+
+/**
+ * Slick Short Term Slider (단기예보 슬라이더)
+ *
+ * 기본특보판 전용
+ */
+class SlickShortTermSlider {
+  constructor() {
+    this.slider = null;
+    this.init();
+  }
+
+  init() {
+    if ($(".slick-short-term-slider").length) {
+      this.slider = $(".slick-short-term-slider").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false, // 수동 제어
+        arrows: false,
+        dots: false,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: "cubic-bezier(0.25, 0.8, 0.25, 1)",
+        pauseOnHover: false,
+        pauseOnFocus: false,
+      });
+    }
+  }
+
+  destroy() {
+    if (this.slider && this.slider.slick) {
+      this.slider.slick("unslick");
+      this.slider = null;
+    }
+  }
+
+  getSlider() {
+    return this.slider;
   }
 }
 
@@ -194,7 +243,25 @@ class SlickDisasterTickers {
  */
 document.addEventListener("DOMContentLoaded", () => {
   // 기본특보판 슬라이더 초기화
-  new SlickWeatherSlider();
+  const weatherSlider = new SlickWeatherSlider();
+  const shortTermSlider = new SlickShortTermSlider();
+
+  // 날씨와 단기예보 슬라이더 동기화
+  // 날씨: 4초마다, 단기예보: 8초마다 (날씨 2번 = 단기예보 1번)
+  if (weatherSlider.getSlider()) {
+    let weatherCount = 0;
+
+    setInterval(() => {
+      weatherSlider.getSlider().slick("slickNext");
+      weatherCount++;
+
+      // 8초마다 단기예보 슬라이더도 함께 전환 (있는 경우에만)
+      if (weatherCount % 2 === 0 && shortTermSlider.getSlider()) {
+        shortTermSlider.getSlider().slick("slickNext");
+      }
+    }, 4000);
+  }
+
   new SlickVideoSlider();
   new SlickDisasterSlider();
   new SlickDisasterTickers();
