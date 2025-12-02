@@ -1985,7 +1985,9 @@ img {
 }
 
 .dust-container-wrap .alert-text-location {
+  padding: 0 10px;
   font-size: var(--font-size-sm-xs);
+  text-align: center;
 }
 
 .dust-chart-container {
@@ -3390,6 +3392,7 @@ img {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: auto;
 }
 
 .data-table-title-text {
@@ -3455,6 +3458,10 @@ img {
 
 .flood-level-item {
   width: 100%;
+}
+
+.flood-level-item > div {
+  height: auto;
 }
 
 /* 수위 정보 헤더 */
@@ -4132,6 +4139,11 @@ img {
     center;
 }
 
+.result-page-icon.-maintenance {
+  background: url(../assets/images/common/ico-page-maintenance.svg) no-repeat
+    center center;
+}
+
 .result-page-code {
   text-align: center;
   font-size: var(--font-size-sm);
@@ -4325,4 +4337,57 @@ img {
 /* mapbox */
 .mapboxgl-ctrl-bottom-left {
   display: none;
+}
+
+/* overlay */
+.overlay-container {
+  display: none;
+  position: absolute;
+  z-index: 1001; /* map-loading 1000 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #191b2e;
+}
+
+.overlay-container.active {
+  display: flex;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  text-align: center;
+}
+
+.overlay-icon {
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto;
+  background: url(../assets/images/common/ico-page-warning.svg) no-repeat center
+    center;
+  background-size: 100% auto;
+}
+
+.overlay-title {
+  color: #bec8d6;
+  font-size: var(--font-size-md-sm);
+}
+
+.overlay-text-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.overlay-desc {
+  font-size: var(--font-size-xs);
+  text-align: center;
+  color: #999999;
 }
