@@ -62,7 +62,6 @@
   outline: none;
 }
 
-
 .slick-ticker-list .slick-track {
   display: flex;
   flex-direction: column;
@@ -96,10 +95,13 @@
    SLICK SLIDER FOR 기본특보판
 ======================================== */
 
-/* Weather Slider & Short Terms Slider & Traffic Control Slider */
+/* 가로형 slider */
 .slick-weather-slider,
 .slick-short-terms-slider,
-.traffic-control-slider {
+.traffic-control-slider,
+.data-table-slider,
+.flood-level-slider,
+.dam-slider {
   position: relative;
   width: 100%;
   height: 100%;
@@ -107,19 +109,27 @@
 
 .slick-weather-slider .slick-list,
 .slick-short-terms-slider .slick-list,
-.traffic-control-slider .slick-list {
+.traffic-control-slider .slick-list,
+.data-table-slider .slick-list,
+.flood-level-slider .slick-list,
+.dam-slider .slick-list {
   height: 100%;
 }
 
 .slick-weather-slider .slick-track,
 .slick-short-terms-slider .slick-track,
-.traffic-control-slider .slick-track {
+.traffic-control-slider .slick-track,
+.data-table-slider .slick-track,
+.flood-level-slider .slick-track,
+.dam-slider {
   display: flex;
   height: 100%;
 }
 
 .slick-weather-slider .slick-slide,
-.slick-short-terms-slider .slick-slide {
+.slick-short-terms-slider .slick-slide,
+.data-table-slider .slick-slide,
+.dam-slider .slick-slide {
   outline: none;
   height: auto;
 }
@@ -134,7 +144,6 @@
   position: relative;
   width: 100%;
 }
-
 
 .slick-video-slider .slick-track {
   display: flex;
@@ -350,4 +359,8 @@
 
 .alert-grid.-row .alert-location-slider .slick-list {
   width: 200px;
+}
+
+.alert-grid:not(.-row) .alert-location-slider .slick-list {
+  height: 48px !important;
 }
