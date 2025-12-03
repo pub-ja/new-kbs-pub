@@ -586,6 +586,19 @@ img {
   text-align: right;
 }
 
+.container-detail-content .disaster-none-text {
+  font-size: var(--font-size-md-xl);
+}
+
+.-typoon .container-detail-content {
+  height: 388px;
+  padding: 22px 18px;
+}
+
+.-earthquake .container-detail-content {
+  height: 388px;
+}
+
 /* Badge */
 .badge {
   display: inline-flex;
@@ -737,7 +750,7 @@ img {
   flex-direction: column;
   transition: transform 0.4s ease;
   width: 100%;
-  background: var(--panel-bg-gray);
+  background: var(--panel-bg-dark);
 }
 
 .slick-ticker-list.-center .value {
@@ -2522,10 +2535,6 @@ img {
   height: 640px;
 }
 
-.-typoon .container-detail-content {
-  padding: 22px 18px;
-}
-
 .-typoon .detail-list {
   row-gap: 10px;
   font-size: var(--font-size-sm);
@@ -2597,7 +2606,9 @@ img {
 .weather-air-value.is-empty .weather-air-number,
 .alert-dust-row.is-empty .alert-dust-slider,
 .data-table-container.is-empty .data-table-slider,
-.alert-current-text.is-empty .traffic-control-slider {
+.alert-current-text.is-empty .traffic-control-slider,
+.container-detail-content.is-empty .detail-list,
+.container-detail-content.is-empty .text-desc {
   display: none;
 }
 
@@ -2654,10 +2665,6 @@ img {
 .alert-current-text.is-empty .disaster-none-text {
   background: var(--panel-bg-light-gray);
   font-size: var(--font-size-md-xl);
-}
-
-.is-empty .container-detail-content {
-  padding: 35px 30px;
 }
 
 .main.-rain .right-panel .disaster-list-container.is-empty .disaster-none-text {
