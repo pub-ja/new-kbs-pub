@@ -121,7 +121,7 @@
 .traffic-control-slider .slick-track,
 .data-table-slider .slick-track,
 .flood-level-slider .slick-track,
-.dam-slider {
+.dam-slider .slick-track {
   display: flex;
   height: 100%;
 }
