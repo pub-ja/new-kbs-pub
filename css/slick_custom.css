@@ -108,7 +108,7 @@
 }
 
 .slick-weather-slider .slick-list,
-.slick-short-terms-slider .slick-list,
+.slick-short-term-slider .slick-list,
 .traffic-control-slider .slick-list,
 .data-table-slider .slick-list,
 .flood-level-slider .slick-list,
@@ -117,7 +117,7 @@
 }
 
 .slick-weather-slider .slick-track,
-.slick-short-terms-slider .slick-track,
+.slick-short-term-slider .slick-track,
 .traffic-control-slider .slick-track,
 .data-table-slider .slick-track,
 .flood-level-slider .slick-track,
@@ -127,7 +127,7 @@
 }
 
 .slick-weather-slider .slick-slide,
-.slick-short-terms-slider .slick-slide,
+.slick-short-term-slider .slick-slide,
 .data-table-slider .slick-slide,
 .dam-slider .slick-slide {
   outline: none;
