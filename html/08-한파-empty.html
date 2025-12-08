@@ -133,10 +133,10 @@
              -row 클래스 여부에 따라 스타일 변경과 함께  slick 슬라이더 vertical 로 동작합니다. >> script_slick.js 참고
             -->
             <div class="alert-grid -row">
-              <div class="alert-box">
+              <div class="alert-box is-empty">
                 <div class="alert-label">경보</div>
                 <div class="alert-count-number -alert">
-                  <span class="text-animate -flash -s20">6</span>
+                  <span class="text-animate -flash -s20">0</span>
                   <!-- 지역명만 슬라이더로 동작 -->
                   <div
                     class="alert-location-slider"
@@ -157,10 +157,10 @@
                   <p class="disaster-none-text">발효 지역 없음</p>
                 </div>
               </div>
-              <div class="alert-box">
+              <div class="alert-box is-empty">
                 <div class="alert-label">주의보</div>
                 <div class="alert-count-number -warning">
-                  <span class="text-animate -flash -s20">22</span>
+                  <span class="text-animate -flash -s20">0</span>
                   <!-- 지역명만 슬라이더로 동작 -->
                   <div
                     class="alert-location-slider"
@@ -189,7 +189,7 @@
                 <span class="container-header-line"></span>
                 <p class="container-header-text">현재 최저 <span class="unit">℃</span></p>
               </div>
-              <div class="alert-item">
+              <div class="alert-item is-empty">
                 <div class="alert-count-number">
                   <p class="alert-text-location">강원 철원</p>
                   <span class="text-animate">-10</span>
@@ -202,8 +202,7 @@
                 <span class="container-header-line"></span>
                 <p class="container-header-text">일 최저 <span class="unit">℃</span></p>
               </div>
-              <!-- 일 최저용 슬라이더 -->
-              <div class="alert-item">
+              <div class="alert-item is-empty">
                 <div class="alert-count-number">
                   <p class="alert-text-location">강원 철원</p>
                   <span class="text-animate">-8</span>
@@ -221,7 +220,7 @@
             disaster-list-container + 개별 클래스 (height 조절용)
             비어 있을 때는 is-empty 클래스 추가 (-none 클래스 변경)
             -->
-            <div class="disaster-list-container list-cold">
+            <div class="disaster-list-container list-cold is-empty">
               <div class="slick-ticker-wrap">
                 <div
                   class="slick-ticker-list -center"

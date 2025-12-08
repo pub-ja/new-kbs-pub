@@ -130,7 +130,7 @@
             <div class="alert-grid -single">
               <div class="alert-box">
                 <div class="alert-count-number -alert">
-                  <span class="value-text-number text-animate -flash -s20">3.2</span>
+                  <span class="value-text-number text-animate -flash -s20">0</span>
                   <em class="alert-count-text">규모</em>
                   <p class="disaster-none-text"></p>
                 </div>
@@ -143,7 +143,7 @@
               <p class="container-header-text">상세 정보</p>
             </div>
             <!-- container-detail-content 에 is-empty 클래스 추가 -->
-            <div class="container-detail-content">
+            <div class="container-detail-content is-empty">
               <ul class="detail-list">
                 <li>
                   <span>발생시각 : </span>
@@ -170,7 +170,7 @@
               <span class="container-header-line"></span>
               <p class="container-header-text">주요 지점과의 거리 <span class="unit">km</span></p>
             </div>
-            <div class="disaster-list-container list-earthquake-distance">
+            <div class="disaster-list-container list-earthquake-distance is-empty">
               <div class="slick-ticker-wrap">
                 <div
                   class="slick-ticker-list -center"
@@ -301,7 +301,8 @@
               <span class="container-header-line"></span>
               <p class="container-header-text">진도 상세정보 (계기진도)</p>
             </div>
-            <div class="container-content -img">
+            <!-- is-empty 필요한 경우 아래 클래스 추가 img 형제 위치에 disaster-none-text 추가 -->
+            <div class="container-content -img is-empty">
               <img class="img-earthquake" src="../assets/images/temp/img-earthquake.png" alt="계기진도" />
               <p class="disaster-none-text">데이터 없음</p>
             </div>
@@ -311,7 +312,8 @@
               <span class="container-header-line"></span>
               <p class="container-header-text">지자체별 진도</p>
             </div>
-            <div class="disaster-list-container list-earthquake-intensity">
+            <!--  -->
+            <div class="disaster-list-container list-earthquake-intensity is-empty">
               <div class="slick-ticker-wrap">
                 <div
                   class="slick-ticker-list -center"

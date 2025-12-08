@@ -119,28 +119,24 @@
 
       <!-- main 에 각 판 클래스 -class 형태로 있음
 		  -main-region / -main-all / -storm / -earthquake / -rain / -flood / -fire / -dust / -snow / -cold / -heat	/ -settings -->
-      <main class="main active -snow">
+      <main class="main active -rain">
         <!-- Left Panel -->
         <section class="left-panel">
           <div class="alert-container">
             <div class="container-header">
               <span class="container-header-line"></span>
-              <p class="container-header-text">대설 특보 발효 지역</p>
+              <p class="container-header-text">호우 특보 발효 지역</p>
             </div>
             <!-- alert-grid
              특보 발효 지역 주의보/경보
              세로형의 경우 alert-grid에 -row 클래스를 추가합니다.
              -row 클래스 여부에 따라 스타일 변경과 함께  slick 슬라이더 vertical 로 동작합니다. >> script_slick.js 참고
             -->
-            <div class="alert-grid -row">
-              <!--
-              alert-box
-              비어 있을 때는 is-empty 클래스 추가 (-none 클래스 변경)
-              -->
-              <div class="alert-box">
+            <div class="alert-grid">
+              <div class="alert-box is-empty">
                 <div class="alert-label">경보</div>
-                <div class="alert-count-number -alert">
-                  <span class="text-animate -flash -s20">6</span>
+                <div class="alert-count-number -alert is-empty">
+                  <span class="text-animate -flash -s20">0</span>
                   <!-- 지역명만 슬라이더로 동작 -->
                   <div
                     class="alert-location-slider"
@@ -161,14 +157,10 @@
                   <p class="disaster-none-text">발효 지역 없음</p>
                 </div>
               </div>
-              <!--
-              alert-box
-              비어 있을 때는 is-empty 클래스 추가 (-none 클래스 변경)
-              -->
-              <div class="alert-box">
+              <div class="alert-box is-empty">
                 <div class="alert-label">주의보</div>
                 <div class="alert-count-number -warning">
-                  <span class="text-animate -flash -s20">22</span>
+                  <span class="text-animate -flash -s20">0</span>
                   <!-- 지역명만 슬라이더로 동작 -->
                   <div
                     class="alert-location-slider"
@@ -194,65 +186,183 @@
           <div class="list-container">
             <div class="container-header">
               <span class="container-header-line"></span>
-              <p class="container-header-text">현재 적설, 신적설 <span class="unit">cm</span></p>
+              <p class="container-header-text">1시간 강수량 <span>(일누적)</span> <span class="unit">mm</span></p>
             </div>
-            <div class="disaster-list-container list-snow">
+            <!--
+            disaster-list-container + 개별 클래스 (height 조절용)
+            비어 있을 때는 is-empty 클래스 추가 (-none 클래스 변경)
+            -->
+            <div class="disaster-list-container list-rain is-empty">
               <div class="slick-ticker-wrap">
                 <div
                   class="slick-ticker-list -center"
                   data-slick-vertical="true"
-                  data-slick-slides="3"
-                  data-slick-speed="1000"
+                  data-slick-slides="4"
+                  data-slick-speed="2000"
                 >
                   <div class="ticker-item">
-                    <div class="value">제주 사계리(애월읍) 20.1, 0.5</div>
+                    <div class="value">양주 74 (231)</div>
                   </div>
                   <div class="ticker-item">
-                    <div class="value">제주 삼각봉(오라이동) 35.3, 0.5</div>
+                    <div class="value">수원 68.5 (226.7)</div>
                   </div>
                   <div class="ticker-item">
-                    <div class="value">제주 한라산남벽(토평동) 5.3, 1.8</div>
+                    <div class="value">의정부 66 (216.3)</div>
                   </div>
                   <div class="ticker-item">
-                    <div class="value">제주 한라산남벽(토평동) 5.3, 1.8</div>
+                    <div class="value">안양 52.5 (200)</div>
                   </div>
                 </div>
               </div>
               <p class="disaster-none-text">데이터 없음</p>
             </div>
           </div>
-          <!-- data 없으면 아래 alert-current-text 에 is-empty 클래스 추가 -->
-          <div class="flex-container alert-current-text">
-            <div class="flex-item">
-              <div class="container-header">
-                <span class="container-header-line"></span>
-                <p class="container-header-text">교통 통제 정보</p>
-              </div>
-              <div class="traffic-control-slider" data-slick-vertical="false" data-slick-speed="3000">
-                <div class="alert-item">
-                  <p class="alert-text-title">영동고속도로</p>
-                  <p class="alert-text-desc">대관령IC~강릉IC</p>
-                  <p class="alert-text-desc">강릉방향 통제</p>
+          <div class="data-container">
+            <div class="container-header">
+              <span class="container-header-line"></span>
+              <p class="container-header-text">강우 전망 <span>(초단기)</span></p>
+            </div>
+            <!--
+            data-table-container
+            비어 있을 때는 is-empty 클래스 추가
+            -->
+            <div class="data-table-container is-empty">
+              <!-- 지역별 가로 슬라이더 -->
+              <div class="data-table-slider" data-slick-vertical="false" data-slick-slides="1" data-slick-speed="2000">
+                <!-- 지역 1: 양주 -->
+                <div class="data-table-wrap">
+                  <div class="data-table-title">
+                    <p class="data-table-title-text">양주</p>
+                    <span class="data-time-text">10:20 AM 기준</span>
+                  </div>
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>예상 강수량</th>
+                        <th>강수 확률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="data-label">14시</td>
+                        <td><span class="data-table-value">27mm</span></td>
+                        <td><span class="data-table-value">70%</span></td>
+                      </tr>
+                      <tr>
+                        <td class="data-label">15시</td>
+                        <td><span class="data-table-value">27mm</span></td>
+                        <td><span class="data-table-value">60%</span></td>
+                      </tr>
+                      <tr>
+                        <td class="data-label">16시</td>
+                        <td><span class="data-table-value">27mm</span></td>
+                        <td><span class="data-table-value">40%</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="alert-item">
-                  <p class="alert-text-title">국도 44호선</p>
-                  <p class="alert-text-desc">진부령 구간</p>
-                  <p class="alert-text-desc">양방향 전면 통제</p>
+
+                <!-- 지역 2: 수원 -->
+                <div class="data-table-wrap">
+                  <div class="data-table-title">
+                    <p class="data-table-title-text">수원</p>
+                    <span class="data-time-text">10:20 AM 기준</span>
+                  </div>
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>예상 강수량</th>
+                        <th>강수 확률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="data-label">14시</td>
+                        <td><span class="data-table-value">28.5mm</span></td>
+                        <td><span class="data-table-value">65%</span></td>
+                      </tr>
+                      <tr>
+                        <td class="data-label">15시</td>
+                        <td><span class="data-table-value">25mm</span></td>
+                        <td><span class="data-table-value">55%</span></td>
+                      </tr>
+                      <tr>
+                        <td class="data-label">16시</td>
+                        <td><span class="data-table-value">22mm</span></td>
+                        <td><span class="data-table-value">45%</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="alert-item">
-                  <p class="alert-text-title">서울 내부순환로</p>
-                  <p class="alert-text-desc">북부구간</p>
-                  <p class="alert-text-desc">1차로 통제 중</p>
+
+                <!-- 지역 3: 의정부 -->
+                <div class="data-table-wrap">
+                  <div class="data-table-title">
+                    <p class="data-table-title-text">의정부</p>
+                    <span class="data-time-text">10:20 AM 기준</span>
+                  </div>
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>예상 강수량</th>
+                        <th>강수 확률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="data-label">14시</td>
+                        <td><span class="data-table-value">30mm</span></td>
+                        <td><span class="data-table-value">75%</span></td>
+                      </tr>
+                      <tr>
+                        <td class="data-label">15시</td>
+                        <td><span class="data-table-value">28mm</span></td>
+                        <td><span class="data-table-value">68%</span></td>
+                      </tr>
+                      <tr>
+                        <td class="data-label">16시</td>
+                        <td><span class="data-table-value">25mm</span></td>
+                        <td><span class="data-table-value">50%</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="alert-item">
-                  <p class="alert-text-title">중부내륙고속도로</p>
-                  <p class="alert-text-desc">남이천~여주JC</p>
-                  <p class="alert-text-desc">양방향 서행</p>
-                </div>
-                <div class="alert-item">
-                  <p class="alert-text-title">인천대교</p>
-                  <p class="alert-text-desc">전 구간</p>
-                  <p class="alert-text-desc">양방향 시속 40km 제한</p>
+
+                <!-- 지역 4: 안양 -->
+                <div class="data-table-wrap">
+                  <div class="data-table-title">
+                    <p class="data-table-title-text">안양</p>
+                    <span class="data-time-text">10:20 AM 기준</span>
+                  </div>
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>예상 강수량</th>
+                        <th>강수 확률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="data-label">14시</td>
+                        <td><span class="data-table-value">24mm</span></td>
+                        <td><span class="data-table-value">70%</span></td>
+                      </tr>
+                      <tr>
+                        <td class="data-label">15시</td>
+                        <td><span class="data-table-value">22mm</span></td>
+                        <td><span class="data-table-value">62%</span></td>
+                      </tr>
+                      <tr>
+                        <td class="data-label">16시</td>
+                        <td><span class="data-table-value">20mm</span></td>
+                        <td><span class="data-table-value">48%</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
               <p class="disaster-none-text">데이터 없음</p>
@@ -265,7 +375,7 @@
           <div class="map-panel-item">
             <div class="container-header">
               <span class="container-header-line"></span>
-              <p class="container-header-text">적설에 따른 교통 상황</p>
+              <p class="container-header-text">1시간 누적 강수량</p>
             </div>
             <div class="map-container">
               <!-- mapbox 맵 -->
@@ -276,33 +386,47 @@
               ></div>
               <!-- // mapbox 맵 -->
 
+              <!-- 호우 범례 -->
+              <div class="map-legend -colorcode" style="--bar-count: 31">
+                <ul class="discrete_bar">
+                  <li class="show-data" style="background: #333333"><span>110</span></li>
+                  <li style="background: #bf0000"><span>100</span></li>
+                  <li style="background: #d50000"><span>90</span></li>
+                  <li style="background: #ee0b0b"><span>80</span></li>
+                  <li style="background: #f63e3e"><span>70</span></li>
+                  <li class="show-data" style="background: #fa8585"><span>60</span></li>
+                  <li style="background: #9200e4"><span>50</span></li>
+                  <li style="background: #ad07ff"><span>40</span></li>
+                  <li style="background: #c23eff"><span>35</span></li>
+                  <li class="show-data" style="background: #da87ff"><span>30</span></li>
+                  <li style="background: #000390"><span>25</span></li>
+                  <li style="background: #1f219d"><span>20</span></li>
+                  <li style="background: #4c4eb1"><span>15</span></li>
+                  <li style="background: #8081c7"><span>12</span></li>
+                  <li class="show-data" style="background: #b3b4de"><span>10</span></li>
+                  <li style="background: #0077b3"><span>9</span></li>
+                  <li style="background: #008dde"><span>8</span></li>
+                  <li style="background: #07abff"><span>7</span></li>
+                  <li style="background: #3ec1ff"><span>6</span></li>
+                  <li class="show-data" style="background: #87d9ff"><span>5</span></li>
+                  <li style="background: #008000"><span>4</span></li>
+                  <li style="background: #00a400"><span>3</span></li>
+                  <li style="background: #00d500"><span>2</span></li>
+                  <li style="background: #1ef31e"><span>1.5</span></li>
+                  <li class="show-data" style="background: #d5ff9c"><span>1.0</span></li>
+                  <li style="background: #ccaa00"><span>0.8</span></li>
+                  <li style="background: #e0b900"><span>0.6</span></li>
+                  <li style="background: #f9cd00"><span>0.4</span></li>
+                  <li style="background: #ffdc1f"><span>0.2</span></li>
+                  <li class="show-data" style="background: #ffea6e"><span>0.0</span></li>
+                  <li style="background: #eeeeee"></li>
+                </ul>
+              </div>
+
               <!-- 밝은 지도의 경우 -bgbox 클래스 추가 -->
               <div class="map-timestamp">
                 <span class="map-timestamp-text">자료 갱신 시각(5분)</span>
                 <p class="map-timestamp-time">08-03 10:00</p>
-              </div>
-
-              <!-- 대설 범례 -->
-              <div class="map-legend -colorcode" style="--bar-count: 17">
-                <ul class="discrete_bar">
-                  <li class="show-data" style="background: #333333"><span>70</span></li>
-                  <li style="background: #c60000"><span>50</span></li>
-                  <li style="background: #d50000"><span>40</span></li>
-                  <li style="background: #ee0b0b"><span>30</span></li>
-                  <li style="background: #f63e3e"><span>25</span></li>
-                  <li class="show-data" style="background: #fa8585"><span>20</span></li>
-                  <li style="background: #7f00bf"><span>15</span></li>
-                  <li style="background: #9200e4"><span>10</span></li>
-                  <li style="background: #ad07ff"><span>8</span></li>
-                  <li style="background: #c23eff"><span>6</span></li>
-                  <li class="show-data" style="background: #da87ff"><span>5</span></li>
-                  <li style="background: #ccaa00"><span>4</span></li>
-                  <li style="background: #e0b900"><span>3</span></li>
-                  <li style="background: #f9cd00"><span>2</span></li>
-                  <li style="background: #ffdc1f"><span>1.0</span></li>
-                  <li class="show-data" style="background: #ffea6e"><span>0.1</span></li>
-                  <li style="background: #ffffff"><span>0</span></li>
-                </ul>
               </div>
 
               <!-- map-btn-->
@@ -316,7 +440,7 @@
           <div class="map-panel-item">
             <div class="container-header">
               <span class="container-header-line"></span>
-              <p class="container-header-text">적설 분포도</p>
+              <p class="container-header-text">일 누적 강수량</p>
             </div>
             <div class="map-container">
               <!-- mapbox 맵 -->
@@ -333,25 +457,39 @@
                 <p class="map-timestamp-time">08-03 10:00</p>
               </div>
 
-              <div class="map-legend -colorcode" style="--bar-count: 17">
+              <div class="map-legend -colorcode" style="--bar-count: 31">
                 <ul class="discrete_bar">
-                  <li class="show-data" style="background: #333333"><span>70</span></li>
-                  <li style="background: #c60000"><span>50</span></li>
-                  <li style="background: #d50000"><span>40</span></li>
-                  <li style="background: #ee0b0b"><span>30</span></li>
-                  <li style="background: #f63e3e"><span>25</span></li>
-                  <li class="show-data" style="background: #fa8585"><span>20</span></li>
-                  <li style="background: #7f00bf"><span>15</span></li>
-                  <li style="background: #9200e4"><span>10</span></li>
-                  <li style="background: #ad07ff"><span>8</span></li>
-                  <li style="background: #c23eff"><span>6</span></li>
-                  <li class="show-data" style="background: #da87ff"><span>5</span></li>
-                  <li style="background: #ccaa00"><span>4</span></li>
-                  <li style="background: #e0b900"><span>3</span></li>
-                  <li style="background: #f9cd00"><span>2</span></li>
-                  <li style="background: #ffdc1f"><span>1.0</span></li>
-                  <li class="show-data" style="background: #ffea6e"><span>0.1</span></li>
-                  <li style="background: #ffffff"><span>0</span></li>
+                  <li class="show-data" style="background: #333333"><span>700</span></li>
+                  <li style="background: #bf0000"><span>500</span></li>
+                  <li style="background: #d50000"><span>400</span></li>
+                  <li style="background: #ee0b0b"><span>300</span></li>
+                  <li style="background: #f63e3e"><span>200</span></li>
+                  <li class="show-data" style="background: #fa8585"><span>180</span></li>
+                  <li style="background: #7f00bf"><span>160</span></li>
+                  <li style="background: #9200e4"><span>140</span></li>
+                  <li style="background: #ad07ff"><span>130</span></li>
+                  <li style="background: #c23eff"><span>120</span></li>
+                  <li class="show-data" style="background: #da87ff"><span>110</span></li>
+                  <li style="background: #1f219d"><span>100</span></li>
+                  <li style="background: #4c4eb1"><span>90</span></li>
+                  <li style="background: #8081c7"><span>80</span></li>
+                  <li class="show-data" style="background: #b3b4de"><span>70</span></li>
+                  <li style="background: #0077b3"><span>60</span></li>
+                  <li style="background: #008dde"><span>50</span></li>
+                  <li style="background: #07abff"><span>40</span></li>
+                  <li style="background: #3ec1ff"><span>30</span></li>
+                  <li class="show-data" style="background: #87d9ff"><span>20</span></li>
+                  <li style="background: #008000"><span>18</span></li>
+                  <li style="background: #00a400"><span>16</span></li>
+                  <li style="background: #00d500"><span>14</span></li>
+                  <li style="background: #1ef31e"><span>12</span></li>
+                  <li class="show-data" style="background: #d5ff9c"><span>10</span></li>
+                  <li style="background: #ccaa00"><span>8</span></li>
+                  <li style="background: #e0b900"><span>6</span></li>
+                  <li style="background: #f9cd00"><span>4</span></li>
+                  <li style="background: #ffdc1f"><span>2</span></li>
+                  <li class="show-data" style="background: #ffea6e"><span>0</span></li>
+                  <li style="background: #eeeeee"></li>
                 </ul>
               </div>
 
@@ -363,7 +501,6 @@
             </div>
           </div>
         </section>
-
         <!-- right Panel -->
         <section class="right-panel">
           <div class="container-header">
@@ -379,6 +516,7 @@
             ></div>
             <!-- // mapbox 맵 -->
 
+            <!-- 호우 범례 -->
             <div class="map-legend -colorcode" style="--bar-count: 46">
               <ul class="discrete_bar">
                 <li class="show-data" style="background: #333333"><span>140</span></li>

@@ -1859,6 +1859,21 @@ img {
   align-items: flex-end;
 }
 
+.container-content.-img.is-empty .img-earthquake {
+  display: none;
+}
+
+.container-content.-img .disaster-none-text,
+.flood-level-box .disaster-none-text,
+.dam-container .disaster-none-text {
+  font-size: var(--font-size-md-xl);
+}
+
+.alert-grid:not(.-row) .alert-box.is-empty .disaster-none-text {
+  font-size: var(--font-size-sm-xs);
+  height: 40px;
+}
+
 /* Map Container */
 .map-container {
   z-index: 1;
@@ -1995,6 +2010,7 @@ img {
 .dust-container-group {
   display: flex;
   gap: 2px;
+  height: 220px;
 }
 
 .dust-container-wrap .alert-text-location {
@@ -2018,7 +2034,7 @@ img {
 
 .dust-chart-container .chart-wrapper {
   height: 220px;
-  padding: 15px 20px 40px;
+  padding: 15px 20px 36px;
   position: relative;
   background: var(--panel-bg-gray);
 }
@@ -2027,7 +2043,7 @@ img {
   position: absolute;
   display: flex;
   justify-content: space-between;
-  bottom: 17px;
+  bottom: 8px;
   right: 30px;
   width: 370px;
 }
@@ -2600,7 +2616,7 @@ img {
 .disaster-list-container.is-empty .slick-ticker-list,
 .current-container.is-empty .chart-content,
 .detail-container.is-empty .detail-slider,
-.alert-box.is-empty .alert-count-number,
+.alert-box.is-empty .alert-location-slider,
 .list-container.is-empty .list-dust,
 .weather-air-value.is-empty .weather-air-status,
 .weather-air-value.is-empty .weather-air-number,
@@ -2608,7 +2624,16 @@ img {
 .data-table-container.is-empty .data-table-slider,
 .alert-current-text.is-empty .traffic-control-slider,
 .container-detail-content.is-empty .detail-list,
-.container-detail-content.is-empty .text-desc {
+.container-detail-content.is-empty .text-desc,
+.flood-level-box.is-empty .flood-level-slider,
+.dam-container.is-empty .dam-slider,
+.dust-container-group.is-empty .dust-alert-container,
+.dust-container-group.is-empty .dust-chart-container,
+.alert-item.is-empty .alert-count-number {
+  display: none;
+}
+
+.-typoon .alert-box.is-empty .alert-count-number {
   display: none;
 }
 
@@ -2637,13 +2662,10 @@ img {
 }
 
 .alert-grid.-row .alert-box.is-empty .disaster-none-text {
-  font-size: var(--font-size-md-sm);
-  height: 124px;
+  font-size: var(--font-size-sm);
+  height: 130px;
+  min-width: 45%;
   min-height: 124px;
-}
-
-.alert-grid:not(.-row) .alert-box.is-empty .disaster-none-text {
-  height: 155px;
 }
 
 .weather-air-value.is-empty {
@@ -2694,6 +2716,17 @@ img {
 .main.-typoon .current-container.is-empty .disaster-none-text {
   height: 300px;
   font-size: var(--font-size-md-xl);
+}
+
+.dust-container-group .disaster-none-text {
+  flex: 1;
+  background: var(--panel-bg-gray);
+  font-size: var(--font-size-md-xl);
+}
+
+.alert-item.is-empty .disaster-none-text {
+  height: 130px;
+  background: var(--panel-bg-gray);
 }
 
 /* ============================================
@@ -3454,6 +3487,7 @@ img {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 300px;
   background: var(--panel-bg-light-gray);
   padding: 24px 20px;
   margin-top: 10px;
@@ -3689,6 +3723,7 @@ img {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 387px;
   background: var(--panel-bg-dark);
   padding: 0;
 }

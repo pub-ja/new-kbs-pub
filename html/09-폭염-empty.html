@@ -119,13 +119,13 @@
 
       <!-- main 에 각 판 클래스 -class 형태로 있음
 		  -main-region / -main-all / -storm / -earthquake / -rain / -flood / -fire / -dust / -snow / -cold / -heat	/ -settings -->
-      <main class="main active -cold">
+      <main class="main active -heat">
         <!-- Left Panel -->
         <section class="left-panel">
           <div class="alert-container">
             <div class="container-header">
               <span class="container-header-line"></span>
-              <p class="container-header-text">한파 특보 발효 지역</p>
+              <p class="container-header-text">폭염 특보 발효 지역</p>
             </div>
             <!-- alert-grid
              특보 발효 지역 주의보/경보
@@ -133,10 +133,10 @@
              -row 클래스 여부에 따라 스타일 변경과 함께  slick 슬라이더 vertical 로 동작합니다. >> script_slick.js 참고
             -->
             <div class="alert-grid -row">
-              <div class="alert-box">
+              <div class="alert-box is-empty">
                 <div class="alert-label">경보</div>
                 <div class="alert-count-number -alert">
-                  <span class="text-animate -flash -s20">6</span>
+                  <span class="text-animate -flash -s20">0</span>
                   <!-- 지역명만 슬라이더로 동작 -->
                   <div
                     class="alert-location-slider"
@@ -157,10 +157,10 @@
                   <p class="disaster-none-text">발효 지역 없음</p>
                 </div>
               </div>
-              <div class="alert-box">
+              <div class="alert-box is-empty">
                 <div class="alert-label">주의보</div>
                 <div class="alert-count-number -warning">
-                  <span class="text-animate -flash -s20">22</span>
+                  <span class="text-animate -flash -s20">0</span>
                   <!-- 지역명만 슬라이더로 동작 -->
                   <div
                     class="alert-location-slider"
@@ -187,12 +187,13 @@
             <div class="flex-item">
               <div class="container-header">
                 <span class="container-header-line"></span>
-                <p class="container-header-text">현재 최저 <span class="unit">℃</span></p>
+                <p class="container-header-text">현재 최고 <span class="unit">℃</span></p>
               </div>
-              <div class="alert-item">
+              <!-- 현재 최고 -->
+              <div class="alert-item is-empty">
                 <div class="alert-count-number">
                   <p class="alert-text-location">강원 철원</p>
-                  <span class="text-animate">-10</span>
+                  <span class="text-animate">30.5</span>
                 </div>
                 <p class="disaster-none-text">데이터 없음</p>
               </div>
@@ -200,13 +201,13 @@
             <div class="flex-item">
               <div class="container-header">
                 <span class="container-header-line"></span>
-                <p class="container-header-text">일 최저 <span class="unit">℃</span></p>
+                <p class="container-header-text">일 최고 <span class="unit">℃</span></p>
               </div>
-              <!-- 일 최저용 슬라이더 -->
-              <div class="alert-item">
+              <!-- 일 최고 -->
+              <div class="alert-item is-empty">
                 <div class="alert-count-number">
                   <p class="alert-text-location">강원 철원</p>
-                  <span class="text-animate">-8</span>
+                  <span class="text-animate">30</span>
                 </div>
                 <p class="disaster-none-text">데이터 없음</p>
               </div>
@@ -215,13 +216,9 @@
           <div class="list-container">
             <div class="container-header">
               <span class="container-header-line"></span>
-              <p class="container-header-text">현재 기온 <span>(일 최저)</span> <span class="unit">℃</span></p>
+              <p class="container-header-text">현재 기온 <span>(일 최고)</span> <span class="unit">℃</span></p>
             </div>
-            <!--
-            disaster-list-container + 개별 클래스 (height 조절용)
-            비어 있을 때는 is-empty 클래스 추가 (-none 클래스 변경)
-            -->
-            <div class="disaster-list-container list-cold">
+            <div class="disaster-list-container list-heat is-empty">
               <div class="slick-ticker-wrap">
                 <div
                   class="slick-ticker-list -center"
@@ -230,19 +227,19 @@
                   data-slick-speed="2000"
                 >
                   <div class="ticker-item">
-                    <div class="value">충남 금산 -12.5 (-14.1)</div>
+                    <div class="value">충남 금산 28.5 (29.1)</div>
                   </div>
                   <div class="ticker-item">
-                    <div class="value">강원 철원 -15.3 (-16.8)</div>
+                    <div class="value">강원 철원 28.3 (30.2)</div>
                   </div>
                   <div class="ticker-item">
-                    <div class="value">경기 파주 -13.7 (-15.2)</div>
+                    <div class="value">경기 파주 28.7 (29.2)</div>
                   </div>
                   <div class="ticker-item">
-                    <div class="value">충북 제천 -11.9 (-13.5)</div>
+                    <div class="value">충북 제천 28.9 (29)</div>
                   </div>
                   <div class="ticker-item">
-                    <div class="value">충북 제천 -11.9 (-13.5)</div>
+                    <div class="value">충북 제천 28.9 (30.5)</div>
                   </div>
                 </div>
               </div>
@@ -262,44 +259,34 @@
             <div
               id="map"
               class="map"
-              style="background: url(../assets/images/temp/01_sub_cold.png) no-repeat; background-size: cover"
+              style="background: url(../assets/images/temp/05_sub_heat.png) no-repeat; background-size: cover"
             ></div>
             <!-- // mapbox 맵 -->
 
-            <!-- 한파 범례 -->
-            <div class="map-legend -colorcode" style="--bar-count: 31">
+            <!-- 폭염 범례 -->
+            <div class="map-legend -colorcode" style="--bar-count: 21">
               <ul class="discrete_bar">
-                <li class="show-data" style="background: #16605e"><span>9</span></li>
-                <li style="background: #1b7876"><span>8</span></li>
-                <li style="background: #21918e"><span>7</span></li>
-                <li style="background: #26a9a6"><span>6</span></li>
-                <li style="background: #2cc2be"><span>5</span></li>
-                <li style="background: #39d1ce"><span>4</span></li>
-                <li style="background: #51d7d4"><span>3</span></li>
-                <li style="background: #6adcda"><span>2</span></li>
-                <li style="background: #82e2e0"><span>1</span></li>
-                <li class="show-data" style="background: #9be8e6"><span>0</span></li>
-                <li style="background: #161660"><span>-1</span></li>
-                <li style="background: #1b1b78"><span>-2</span></li>
-                <li style="background: #212191"><span>-3</span></li>
-                <li style="background: #2626a9"><span>-4</span></li>
-                <li style="background: #2c2cc2"><span>-5</span></li>
-                <li style="background: #3939d1"><span>-6</span></li>
-                <li style="background: #5151d7"><span>-7</span></li>
-                <li style="background: #6a6adc"><span>-8</span></li>
-                <li style="background: #8282e2"><span>-9</span></li>
-                <li class="show-data" style="background: #9b9be8"><span>-10</span></li>
-                <li style="background: #601660"><span>-11</span></li>
-                <li style="background: #781b78"><span>-12</span></li>
-                <li style="background: #912191"><span>-13</span></li>
-                <li style="background: #a926a9"><span>-14</span></li>
-                <li style="background: #c22cc2"><span>-15</span></li>
-                <li style="background: #d139d1"><span>-16</span></li>
-                <li style="background: #d751d7"><span>-17</span></li>
-                <li style="background: #dc6adc"><span>-18</span></li>
-                <li style="background: #e282e2"><span>-19</span></li>
-                <li class="show-data" style="background: #e89be8"><span>-20</span></li>
-                <li style="background: #e6e6e6"></li>
+                <li class="show-data" style="background: #282828"><span>40</span></li>
+                <li style="background: #601616"><span>39</span></li>
+                <li style="background: #781b1b"><span>38</span></li>
+                <li style="background: #912121"><span>37</span></li>
+                <li style="background: #a92626"><span>36</span></li>
+                <li style="background: #c22c2c"><span>35</span></li>
+                <li style="background: #d13939"><span>34</span></li>
+                <li style="background: #d75151"><span>33</span></li>
+                <li style="background: #dc6a6a"><span>32</span></li>
+                <li style="background: #e28282"><span>31</span></li>
+                <li class="show-data" style="background: #e89b9b"><span>30</span></li>
+                <li style="background: #606016"><span>29</span></li>
+                <li style="background: #78781b"><span>28</span></li>
+                <li style="background: #919121"><span>27</span></li>
+                <li style="background: #a9a926"><span>26</span></li>
+                <li style="background: #c2c22c"><span>25</span></li>
+                <li style="background: #d1d139"><span>24</span></li>
+                <li style="background: #d7d751"><span>23</span></li>
+                <li style="background: #dcdc6a"><span>22</span></li>
+                <li style="background: #e2e282"><span>21</span></li>
+                <li class="show-data" style="background: #e8e89b"><span>20</span></li>
               </ul>
             </div>
 
@@ -320,51 +307,41 @@
         <section class="map-panel">
           <div class="container-header">
             <span class="container-header-line"></span>
-            <p class="container-header-text">일 최저 기온</p>
+            <p class="container-header-text">일 최고 기온</p>
           </div>
           <div class="map-container">
             <!-- mapbox 맵 -->
             <div
               id="map"
               class="map"
-              style="background: url(../assets/images/temp/01_sub_cold.png) no-repeat; background-size: cover"
+              style="background: url(../assets/images/temp/05_sub_heat.png) no-repeat; background-size: cover"
             ></div>
             <!-- // mapbox 맵 -->
 
-            <!-- 한파 범례 -->
-            <div class="map-legend -colorcode" style="--bar-count: 31">
+            <!-- 폭염 범례 -->
+            <div class="map-legend -colorcode" style="--bar-count: 21">
               <ul class="discrete_bar">
-                <li class="show-data" style="background: #16605e"><span>9</span></li>
-                <li style="background: #1b7876"><span>8</span></li>
-                <li style="background: #21918e"><span>7</span></li>
-                <li style="background: #26a9a6"><span>6</span></li>
-                <li style="background: #2cc2be"><span>5</span></li>
-                <li style="background: #39d1ce"><span>4</span></li>
-                <li style="background: #51d7d4"><span>3</span></li>
-                <li style="background: #6adcda"><span>2</span></li>
-                <li style="background: #82e2e0"><span>1</span></li>
-                <li class="show-data" style="background: #9be8e6"><span>0</span></li>
-                <li style="background: #161660"><span>-1</span></li>
-                <li style="background: #1b1b78"><span>-2</span></li>
-                <li style="background: #212191"><span>-3</span></li>
-                <li style="background: #2626a9"><span>-4</span></li>
-                <li style="background: #2c2cc2"><span>-5</span></li>
-                <li style="background: #3939d1"><span>-6</span></li>
-                <li style="background: #5151d7"><span>-7</span></li>
-                <li style="background: #6a6adc"><span>-8</span></li>
-                <li style="background: #8282e2"><span>-9</span></li>
-                <li class="show-data" style="background: #9b9be8"><span>-10</span></li>
-                <li style="background: #601660"><span>-11</span></li>
-                <li style="background: #781b78"><span>-12</span></li>
-                <li style="background: #912191"><span>-13</span></li>
-                <li style="background: #a926a9"><span>-14</span></li>
-                <li style="background: #c22cc2"><span>-15</span></li>
-                <li style="background: #d139d1"><span>-16</span></li>
-                <li style="background: #d751d7"><span>-17</span></li>
-                <li style="background: #dc6adc"><span>-18</span></li>
-                <li style="background: #e282e2"><span>-19</span></li>
-                <li class="show-data" style="background: #e89be8"><span>-20</span></li>
-                <li style="background: #e6e6e6"></li>
+                <li class="show-data" style="background: #282828"><span>40</span></li>
+                <li style="background: #601616"><span>39</span></li>
+                <li style="background: #781b1b"><span>38</span></li>
+                <li style="background: #912121"><span>37</span></li>
+                <li style="background: #a92626"><span>36</span></li>
+                <li style="background: #c22c2c"><span>35</span></li>
+                <li style="background: #d13939"><span>34</span></li>
+                <li style="background: #d75151"><span>33</span></li>
+                <li style="background: #dc6a6a"><span>32</span></li>
+                <li style="background: #e28282"><span>31</span></li>
+                <li class="show-data" style="background: #e89b9b"><span>30</span></li>
+                <li style="background: #606016"><span>29</span></li>
+                <li style="background: #78781b"><span>28</span></li>
+                <li style="background: #919121"><span>27</span></li>
+                <li style="background: #a9a926"><span>26</span></li>
+                <li style="background: #c2c22c"><span>25</span></li>
+                <li style="background: #d1d139"><span>24</span></li>
+                <li style="background: #d7d751"><span>23</span></li>
+                <li style="background: #dcdc6a"><span>22</span></li>
+                <li style="background: #e2e282"><span>21</span></li>
+                <li class="show-data" style="background: #e8e89b"><span>20</span></li>
               </ul>
             </div>
 

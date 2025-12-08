@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>재난현황판 뷰어</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Malgun Gothic", sans-serif;
+        background: #1a1a1a;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .line {
+        position: absolute;
+        top: 1140px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #ffffff;
+      }
+
+      .menu-bar {
+        display: flex;
+        background: #2a2a2a;
+        border-bottom: 2px solid #444;
+        padding: 10px;
+        gap: 5px;
+      }
+
+      .menu-item {
+        padding: 10px 20px;
+        background: #3a3a3a;
+        color: #ccc;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: all 0.2s;
+      }
+
+      .menu-item:hover {
+        background: #4a4a4a;
+        color: #fff;
+      }
+
+      .menu-item.active {
+        background: #0066cc;
+        color: #fff;
+      }
+
+      .viewer-frame {
+        width: 100%;
+        height: calc(100vh - 62px);
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="menu-bar">
+      <button class="menu-item" onclick="loadPage('01-태풍-empty.html', this)">태풍(empty)</button>
+      <button class="menu-item" onclick="loadPage('02-지진-empty.html', this)">지진(empty)</button>
+      <button class="menu-item" onclick="loadPage('03-호우-empty.html', this)">호우(empty)</button>
+      <button class="menu-item" onclick="loadPage('04-홍수-empty.html', this)">홍수(empty)</button>
+      <button class="menu-item" onclick="loadPage('05-산불-empty.html', this)">산불(empty)</button>
+      <button class="menu-item" onclick="loadPage('06-미세먼지-empty.html', this)">미세먼지(empty)</button>
+      <button class="menu-item" onclick="loadPage('07-대설-empty.html', this)">대설(empty)</button>
+      <button class="menu-item" onclick="loadPage('08-한파-empty.html', this)">한파(empty)</button>
+      <button class="menu-item" onclick="loadPage('09-폭염-empty.html', this)">폭염(empty)</button>
+      <button class="menu-item" onclick="loadPage('99-01-오류페이지.html', this)">404Page</button>
+      <button class="menu-item" onclick="loadPage('99-02-점검중페이지.html', this)">점검중</button>
+      <button class="menu-item" onclick="loadPage('99-03-map-container-overlay.html', this)">map overlay</button>
+    </div>
+
+    <!-- <div class="line"></div> -->
+    <iframe id="viewer" class="viewer-frame" src="html/01-태풍.html"></iframe>
+
+    <script>
+      function loadPage(filename, button) {
+        // Update iframe source
+        document.getElementById("viewer").src = "html/" + filename;
+
+        // Update active state
+        document.querySelectorAll(".menu-item").forEach((item) => {
+          item.classList.remove("active");
+        });
+        button.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

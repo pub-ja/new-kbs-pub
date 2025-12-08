@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KBS 재난현황판</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/favicon.png" />
+    <!-- Slick Carousel CSS - 슬릭 기본 css -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    /> -->
+    <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Chart.js
+    태풍에서 사용된 chart.js 라이브러리 동일 버전 사용해서 지역 메인에 차트 추가
+    -->
+    <script src="../js/chart.js"></script>
+    <!-- Chart.js Annotation Plugin -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script> -->
+    <script src="../js/chartjs-plugin-annotation.min.js"></script>
+  </head>
+  <body>
+    <!--
+      ============================================
+      all-wrap
+      >> scale-container 클래스 있어야 화면 크기 조정 기능 작동
+      ============================================
+    -->
+    <div class="all-wrap scale-container">
+      <header class="header">
+        <div class="header-logo">
+          <img src="../assets/images/common/logo.svg" alt="KBS 재난현황판" />
+          <!-- logo-badge modifier 클래스
+           -all : 전국
+           -region : 지역 -->
+          <span class="logo-badge -all">전국</span>
+          <!-- <span class="logo-badge -region">지역</span> -->
+        </div>
+        <div class="header-inner-right">
+          <div class="header-alert">
+            <p class="header-alert-text">폭염특보 현황으로 전환 예정</p>
+            <span class="header-alert-time"> 05 </span>
+          </div>
+          <button type="button" class="btn-header-menu"></button>
+        </div>
+
+        <!-- Side Menu -->
+        <div class="side-menu-dim"></div>
+        <div class="side-menu-container">
+          <div class="side-menu-header">
+            <!-- <h2 class="side-menu-title">메뉴</h2> -->
+            <button type="button" class="btn-side-menu-close"></button>
+          </div>
+          <div class="side-menu-content">
+            <nav class="side-menu-nav">
+              <ul class="side-menu-list">
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">태풍</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">지진</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">호우</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">홍수</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">산불</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">미세먼지</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">대설</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">한파</a>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">폭염</a>
+                </li>
+                <li class="side-menu-item">
+                  <!-- 적용 페이지에 active 클래스 -->
+                  <span class="side-menu-link active">특보</span>
+                </li>
+                <li class="side-menu-item">
+                  <a href="" class="side-menu-link">환경설정</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- news in header -->
+        <!-- news-container 에 active 클래스로 view
+       text-scroll.js 에 스크립트 있습니다.
+      복제 무한 스크롤이 문제가 되면 css 수정요청 부탁드립니다.
+      -->
+        <div class="news-container">
+          <div class="st-text-move">
+            <p>
+              <span class="news-label"> < 이 시각 주요 뉴스 > </span>
+              <span class="news-text"
+                >일시 : 2023년 2.25(토) 22:00 / 훈련상황 : 강원도 및 경분 산간 산불 3단계 발령 상황 가정 / 훈련중점 :
+                30분 내 뉴스특보 열어 30분 이상 진행일시 : 2023년 2.25(토) 22:00 / 훈련상황 : 강원도 및 경분 산간 산불
+                3단계 발령 상황 가정 / 훈련중점 : 30분 내 뉴스특보 열어 30분 이상 진행일시 : 2023년 2.25(토) 22:00 /
+                훈련상황 : 강원도 및 경분 산간 산불 3단계 발령 상황 가정 / 훈련중점 : 30분 내 뉴스특보 열어 30분 이상
+                진행</span
+              >
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- main 에 각 판 클래스 -class 형태로 있음
+		  -main-region / -main-all / -storm / -earthquake / -rain / -flood / -fire / -dust / -snow / -cold / -heat	/ -settings -->
+      <main class="main active -typoon">
+        <!-- Left Panel -->
+        <section class="left-panel">
+          <div class="alert-container flex-1">
+            <div class="container-header">
+              <span class="container-header-line"></span>
+              <p class="container-header-text">태풍 주요 정보</p>
+            </div>
+            <div class="alert-grid -single">
+              <!--
+              alert-box
+              비어 있을 때는 is-empty 클래스 추가 (-none 클래스 변경)
+              -->
+              <div class="alert-box is-empty">
+                <div class="alert-count-number">
+                  <span class="value-text-number text-animate -flash -s20 -small"> 18호 </span>
+                  <span class="value-text-number text-animate -flash -s20">끄라톤</span>
+                </div>
+                <p class="disaster-none-text">데이터 없음</p>
+              </div>
+            </div>
+          </div>
+          <div class="detail-container is-empty">
+            <div class="container-header">
+              <span class="container-header-line"></span>
+              <p class="container-header-text">상세 정보</p>
+            </div>
+            <!-- container-detail-content 에 is-empty 클래스 추가 -->
+            <div class="container-detail-content is-empty">
+              <ul class="detail-list">
+                <li>
+                  <span>발생일자 : </span>
+                  <span>2024-10-19</span>
+                </li>
+                <li>
+                  <span>최대풍속 : </span>
+                  <span>45m/s</span>
+                </li>
+                <li>
+                  <span>강도 : </span>
+                  <span>강</span>
+                </li>
+                <li>
+                  <span>강풍반경 : </span>
+                  <span>50km</span>
+                </li>
+                <li>
+                  <span>이동속도 : </span>
+                  <span>38km/h</span>
+                </li>
+                <li>
+                  <span>중심기압 : </span>
+                  <span>945hPa</span>
+                </li>
+                <li>
+                  <span>현재 위치 : </span>
+                  <span>일본 가고시마 남남서쪽 해상 문구가 (두줄이 될 경우) </span>
+                </li>
+              </ul>
+              <p class="text-desc">발표 시각 : 2024-10-19 오전 3:00</p>
+              <p class="disaster-none-text">데이터 없음</p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="container-header">
+              <span class="container-header-line"></span>
+              <p class="container-header-text">태풍 특보 발효 지역</p>
+            </div>
+            <!--
+            disaster-list-container + 개별 클래스 (height 조절용)
+            비어 있을 때는 is-empty 클래스 추가 (-none 클래스 변경)
+            -->
+            <div class="disaster-list-container list-typhoon is-empty">
+              <div class="slick-ticker-wrap">
+                <div
+                  class="slick-ticker-list -center"
+                  data-slick-vertical="true"
+                  data-slick-slides="3"
+                  data-slick-speed="1000"
+                >
+                  <div class="ticker-item">
+                    <div class="value">서울</div>
+                  </div>
+                  <div class="ticker-item">
+                    <div class="value">파주</div>
+                  </div>
+                  <div class="ticker-item">
+                    <div class="value">인천</div>
+                  </div>
+                  <div class="ticker-item">
+                    <div class="value">부산</div>
+                  </div>
+                  <div class="ticker-item">
+                    <div class="value">대전</div>
+                  </div>
+                </div>
+              </div>
+              <p class="disaster-none-text">발효 지역 없음</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Center Map -->
+        <section class="map-panel">
+          <div class="container-header">
+            <span class="container-header-line"></span>
+            <p class="container-header-text">예상 진로</p>
+          </div>
+          <div class="map-container">
+            <!-- mapbox 맵 -->
+            <!-- map 샘플용으로 인라인으로 이미지 넣습니다. 나중에 삭제 해주세요. style 전부 삭제 해주세요. -->
+            <div
+              id="map"
+              class="map"
+              style="background: url(../assets/images/temp/07_sub_typoon.png) no-repeat; background-size: cover"
+            ></div>
+            <!-- // mapbox 맵 -->
+            <div class="map-timestamp">
+              <span class="map-timestamp-text">자료 갱신 시각 (5분)</span>
+              <p class="map-timestamp-time">08-03 10:00</p>
+            </div>
+
+            <!-- 태풍 범례 -->
+            <div class="map-legend -typoon">
+              <div class="legend_icontable">
+                <ul class="legend-list">
+                  <li>
+                    <div class="icon_wrap">
+                      <img class="icon" src="../assets/images/legend/TYPH_TD.svg" />
+                    </div>
+                    <span>열대저압부</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <img class="icon_typhoon -past" src="../assets/images/legend/TYPH_past.svg" />
+                    </div>
+                    <span>태풍중심 이동경로</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <img class="icon_typhoon -mild" src="../assets/images/legend/TYPH_mild.svg" />
+                    </div>
+                    <span>중심풍속 17~24m/s</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <img class="icon_typhoon -strong" src="../assets/images/legend/TYPH_strong.svg" />
+                    </div>
+                    <span>중심풍속 24m/s 이상</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <div class="borderline -dark">dark border</div>
+                    </div>
+                    <span>태풍 과거 이동 경로</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <div class="borderline -dashred">red border</div>
+                    </div>
+                    <span>태풍 이동 경로</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <div class="circleicon -yellowline">yellow circle</div>
+                    </div>
+                    <span>강풍 15m/s 이상</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <div class="circleicon -orangeline">orangeline circle</div>
+                    </div>
+                    <span>강풍 25m/s 이상</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <div class="circleicon -purple">purple circle</div>
+                    </div>
+                    <span>70% 확률 예상 위치</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- map-btn-->
+            <div class="map-btn-group">
+              <button type="button" class="btn-map -reset"></button>
+              <!-- <button type="button" class="btn-map -home"></button> -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Panel -->
+        <section class="right-panel">
+          <!--
+            current-container
+            비어 있을 때는 is-empty 클래스 추가
+            -->
+          <div class="current-container is-empty">
+            <div class="container-header">
+              <span class="container-header-line"></span>
+              <p class="container-header-text">태풍 규모 예측</p>
+            </div>
+            <div class="container-content -chart">
+              <div class="chart-content">
+                <span class="chart-label -y">최대풍속</span>
+                <span class="chart-unit -y">(m/s)</span>
+                <span class="chart-label -y1">중심기압</span>
+                <span class="chart-unit -y1">(hpa)</span>
+                <canvas id="myChart" class="chart-canvas"></canvas>
+              </div>
+              <script>
+                // ../js/chartjs-plugin-annotation.min.js 범례 라인 추가시 필요합니다.
+                const ctx = document.getElementById("myChart").getContext("2d");
+                new Chart(ctx, {
+                  type: "line",
+                  data: {
+                    labels: ["20일 00시", "20일 01시", "20일 02시", "20일 03시", "20일 04시", "20일 05시", "20일 06시"],
+                    datasets: [
+                      {
+                        label: "최대풍속",
+                        data: [20, 20, 25, 27, 30, 34, 35],
+                        borderColor: "#8349FF",
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        pointBackgroundColor: "#8349FF",
+                        yAxisID: "y",
+                      },
+                      {
+                        label: "중심기압",
+                        data: [1000, 999, 999, 995, 994, 980, 970],
+                        borderColor: "#FF4CD2",
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        pointBackgroundColor: "#FF4CD2",
+                        yAxisID: "y1",
+                      },
+                    ],
+                  },
+                  options: {
+                    animation: {
+                      duration: 2000,
+                      easing: "easeInOutQuart",
+                      animations: {
+                        x: {
+                          type: "number",
+                          easing: "linear",
+                          duration: (ctx) => {
+                            return ctx.index * 300; // 각 데이터 포인트마다 시간차
+                          },
+                          from: (ctx) => {
+                            return ctx.chart.scales.x.getPixelForValue(ctx.index - 1);
+                          },
+                        },
+                        y: {
+                          type: "number",
+                          duration: (ctx) => {
+                            return ctx.index * 300;
+                          },
+                          from: (ctx) => ctx.chart.scales.y.getPixelForValue(0),
+                        },
+                      },
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                      mode: "index",
+                      intersect: false,
+                    },
+                    scales: {
+                      y: {
+                        border: {
+                          display: true,
+                          color: "#474A54",
+                        },
+                        type: "linear",
+                        display: true,
+                        position: "left",
+                        min: 0,
+                        max: 75,
+                        ticks: {
+                          color: "#fff",
+                          stepSize: 25,
+                          callback: function (value) {
+                            if ([0, 25, 50, 75].includes(value)) {
+                              return value;
+                            }
+                            return "";
+                          },
+                          font: {
+                            size: 16,
+                            family: "Spoqa Han Sans Neo",
+                          },
+                        },
+                        grid: {
+                          drawOnChartArea: false, // 차트 영역 내 격자선 제거
+                          drawBorder: true, // 테두리선 표시
+                          borderColor: "#3E4353", // 테두리선 색상
+                          color: "transparent", // 격자선 색상을 투명하게
+                        },
+                      },
+                      y1: {
+                        border: {
+                          display: true,
+                          color: "#474A54",
+                        },
+                        type: "linear",
+                        display: true,
+                        position: "right",
+                        min: 870,
+                        max: 1020,
+                        ticks: {
+                          color: "#fff",
+                          stepSize: 30,
+                          callback: function (value) {
+                            if ([870, 900, 930, 960, 990, 1020].includes(value)) {
+                              // 지정된 값들만 표시
+                              return value;
+                            }
+                            return "";
+                          },
+                          font: {
+                            size: 16,
+                            family: "Spoqa Han Sans Neo",
+                          },
+                        },
+                        grid: {
+                          drawOnChartArea: false, // 차트 영역 내 격자선 제거
+                          drawBorder: true, // 테두리선 표시
+                          borderColor: "#3E4353", // 테두리선 색상
+                          color: "transparent", // 격자선 색상을 투명하게
+                        },
+                      },
+                      x: {
+                        border: {
+                          display: true,
+                          color: "#474A54",
+                        },
+                        ticks: {
+                          color: "#fff",
+                          maxTicksLimit: 3,
+                          font: { size: 20, family: "Spoqa Han Sans Neo" },
+                        },
+                        grid: {
+                          drawOnChartArea: false, // 차트 영역 내 격자선 제거
+                          drawBorder: true, // 테두리선 표시
+                          borderColor: "#3E4353", // 테두리선 색상
+                          color: "transparent", // 격자선 색상을 투명하게
+                        },
+                      },
+                    },
+                    plugins: {
+                      legend: {
+                        display: false,
+                      },
+                      title: {
+                        display: true,
+                        text: "강도",
+                        color: "#fff",
+                        font: {
+                          size: 22,
+                          family: "Spoqa Han Sans Neo",
+                        },
+                        align: "center",
+                        padding: {
+                          top: 10,
+                          bottom: 10,
+                        },
+                      },
+                      annotation: {
+                        annotations: {
+                          초강력: {
+                            type: "line",
+                            yMin: 54,
+                            yMax: 54,
+                            borderColor: "#D51403", // 빨간색
+                            borderWidth: 1,
+                            borderDash: [5, 5],
+                            label: {
+                              content: "초강력",
+                              display: true,
+                              position: "start",
+                              color: "#D51403",
+                              font: {
+                                family: "Spoqa Han Sans Neo",
+                              },
+                            },
+                          },
+                          매우강: {
+                            type: "line",
+                            yMin: 44,
+                            yMax: 44,
+                            borderColor: "#F53C1B", // 주황색
+                            borderWidth: 1,
+                            borderDash: [5, 5],
+                            label: {
+                              content: "매우강",
+                              display: true,
+                              position: "start",
+                              color: "#F53C1B",
+                              font: {
+                                family: "Spoqa Han Sans Neo",
+                              },
+                            },
+                          },
+                          강: {
+                            type: "line",
+                            yMin: 33,
+                            yMax: 33,
+                            borderColor: "#F6751E", // 노란색
+                            borderWidth: 1,
+                            borderDash: [5, 5],
+                            label: {
+                              content: "강",
+                              display: true,
+                              position: "start",
+                              color: "#F6751E",
+                              font: {
+                                family: "Spoqa Han Sans Neo",
+                              },
+                            },
+                          },
+                          중: {
+                            type: "line",
+                            yMin: 25,
+                            yMax: 25,
+                            borderColor: "#F79E1F", // 초록색
+                            borderWidth: 1,
+                            borderDash: [5, 5],
+                            label: {
+                              content: "중",
+                              display: true,
+                              position: "start",
+                              color: "#F79E1F",
+                              font: {
+                                family: "Spoqa Han Sans Neo",
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                });
+              </script>
+              <!-- disaster-none-text 위치 -->
+              <p class="disaster-none-text">데이터 없음</p>
+            </div>
+          </div>
+          <div class="grid-container">
+            <div class="container-header">
+              <span class="container-header-line"></span>
+              <p class="container-header-text">연관 재난특보 현황</p>
+            </div>
+            <div class="grid-box-group">
+              <!--
+                grid-box + -개별 클래스
+                특보 없을 때는 is-empty 클래스 추가 (-none 클래스 변경)
+              -->
+              <!-- 풍랑 -->
+              <div class="grid-box -storm is-empty">
+                <div class="disaster-top">
+                  <span class="disaster-icon"></span>
+                  <span class="disaster-name">풍랑</span>
+                </div>
+                <div class="disaster-bottom">
+                  <div
+                    class="detail-slider -min"
+                    data-slick-vertical="true"
+                    data-slick-slides="1"
+                    data-slick-speed="3000"
+                  >
+                    <div class="detail-slide">
+                      <p class="disaster-value">강원남부</p>
+                    </div>
+                    <div class="detail-slide">
+                      <p class="disaster-value">강원남부222</p>
+                    </div>
+                  </div>
+                  <span class="disaster-desc">7개 지역</span>
+                </div>
+                <p class="disaster-none-text">특보 없음</p>
+              </div>
+              <!-- 호우 -->
+              <div class="grid-box -rain is-empty">
+                <div class="disaster-top">
+                  <span class="disaster-icon"></span>
+                  <span class="disaster-name">호우</span>
+                </div>
+                <div class="disaster-bottom">
+                  <div
+                    class="detail-slider -min"
+                    data-slick-vertical="true"
+                    data-slick-slides="1"
+                    data-slick-speed="3000"
+                  >
+                    <div class="detail-slide">
+                      <p class="disaster-value">서울</p>
+                    </div>
+                    <div class="detail-slide">
+                      <p class="disaster-value">서울</p>
+                    </div>
+                  </div>
+                  <!--
+								unit 사용 안함
+								<span class="unit">mm/h</span>
+								-->
+                  <span class="disaster-desc">130개 지역</span>
+                </div>
+                <p class="disaster-none-text">특보 없음</p>
+              </div>
+              <!-- 폭풍해일 -->
+              <div class="grid-box -tsunami is-empty">
+                <div class="disaster-top">
+                  <span class="disaster-icon"></span>
+                  <span class="disaster-name">폭풍해일</span>
+                </div>
+                <div class="disaster-bottom">
+                  <div
+                    class="detail-slider -min"
+                    data-slick-vertical="true"
+                    data-slick-slides="1"
+                    data-slick-speed="3000"
+                  >
+                    <div class="detail-slide">
+                      <p class="disaster-value">동해남부남쪽바깥먼바다</p>
+                    </div>
+                  </div>
+                  <span class="disaster-desc">7개 지역</span>
+                </div>
+                <p class="disaster-none-text">특보 없음</p>
+              </div>
+              <!-- 강풍 -->
+              <div class="grid-box -wind is-empty">
+                <div class="disaster-top">
+                  <span class="disaster-icon"></span>
+                  <span class="disaster-name">강풍</span>
+                </div>
+                <div class="disaster-bottom">
+                  <div
+                    class="detail-slider -min"
+                    data-slick-vertical="true"
+                    data-slick-slides="1"
+                    data-slick-speed="3000"
+                  >
+                    <div class="detail-slide">
+                      <p class="disaster-value">동해남부남쪽바깥먼바다</p>
+                    </div>
+                    <div class="detail-slide">
+                      <p class="disaster-value">동해남부남쪽바깥먼바다</p>
+                    </div>
+                  </div>
+                  <!--
+								unit 사용 안함
+								<span class="unit">mm/h</span>
+								-->
+                  <span class="disaster-desc">7개 지역</span>
+                </div>
+                <p class="disaster-none-text">특보 없음</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- jQuery (Slick 의존성) slick 사용시 html버전 기준 제이쿼리 있어야함 -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS slick-carousel@1.8.1 -->
+    <script src="../js/slick.min.js"></script>
+    <!-- Common JS (Transform Scale 관리) -->
+    <script src="../js/common.js"></script>
+    <!-- Slick 초기화 스크립트 (세로형 ticker + 가로형 sliders) -->
+    <script src="../js/script_slick.js"></script>
+    <!-- Settings JS -->
+    <script src="../js/settings.js"></script>
+    <!-- Temperature Chart Initialization -->
+    <script src="../js/temperature-chart-init.js"></script>
+    <!-- Dust Chart Initialization -->
+    <script src="../js/dust-chart-init.js"></script>
+    <!-- Text Scroll Animation -->
+    <script src="../js/text-scroll.js"></script>
+  </body>
+</html>

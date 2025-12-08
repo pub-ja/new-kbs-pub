@@ -21,6 +21,9 @@
     태풍에서 사용된 chart.js 라이브러리 동일 버전 사용해서 지역 메인에 차트 추가
     -->
     <script src="../js/chart.js"></script>
+    <!-- Chart.js Annotation Plugin -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script> -->
+    <script src="../js/chartjs-plugin-annotation.min.js"></script>
   </head>
   <body>
     <!--
@@ -117,89 +120,36 @@
         </div>
       </header>
 
-      <!-- main 에 각 판 클래스 -class 형태로 있음
-		  -main-region / -main-all / -storm / -earthquake / -rain / -flood / -fire / -dust / -snow / -cold / -heat	/ -settings -->
-      <main class="main active -earthquake">
+      <main class="main active -fire">
         <!-- Left Panel -->
         <section class="left-panel">
           <div class="alert-container">
             <div class="container-header">
               <span class="container-header-line"></span>
-              <p class="container-header-text">최신지진</p>
+              <p class="container-header-text">실시간 산불 현황</p>
             </div>
-            <div class="alert-grid -single">
+            <div class="alert-grid">
               <div class="alert-box">
+                <div class="alert-label">진화중</div>
                 <div class="alert-count-number -alert">
-                  <span class="value-text-number text-animate -flash -s20">3.2</span>
-                  <em class="alert-count-text">규모</em>
-                  <p class="disaster-none-text"></p>
+                  <span class="text-animate -flash">0</span>
+                </div>
+              </div>
+              <div class="alert-box">
+                <div class="alert-label">진화완료</div>
+                <div class="alert-count-number -good">
+                  <span class="text-animate -flash">0</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="detail-container">
+          <div class="detail-container is-empty">
             <div class="container-header">
               <span class="container-header-line"></span>
               <p class="container-header-text">상세 정보</p>
             </div>
-            <!-- container-detail-content 에 is-empty 클래스 추가 -->
-            <div class="container-detail-content">
-              <ul class="detail-list">
-                <li>
-                  <span>발생시각 : </span>
-                  <span>2024-10-07 07:59</span>
-                </li>
-                <li>
-                  <span>위치 : </span>
-                  <span>전북 장수군 북쪽 17km 지역 (두줄일 경우)</span>
-                </li>
-                <li>
-                  <span>주소 : </span>
-                  <span>장수군 천천면 연평리 12-12 (두줄이 될 경우)</span>
-                </li>
-                <li>
-                  <span>깊이 : </span>
-                  <span>6km</span>
-                </li>
-              </ul>
-              <p class="disaster-none-text">데이터 없음</p>
-            </div>
-          </div>
-          <div class="container">
-            <div class="container-header">
-              <span class="container-header-line"></span>
-              <p class="container-header-text">주요 지점과의 거리 <span class="unit">km</span></p>
-            </div>
-            <div class="disaster-list-container list-earthquake-distance">
-              <div class="slick-ticker-wrap">
-                <div
-                  class="slick-ticker-list -center"
-                  data-slick-vertical="true"
-                  data-slick-slides="3"
-                  data-slick-speed="2000"
-                >
-                  <div class="ticker-item">
-                    <div class="value">월성원전 47</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">울산 57</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">새울원전 63</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">부산 60</div>
-                  </div>
-                </div>
-              </div>
-              <p class="disaster-none-text">발효 지역 없음</p>
-            </div>
-          </div>
-          <!-- 아래 박스는 기본적으로 display: none 입니다. active 클래스로 조절합니다.
-          -->
-          <div class="alert-img-container">
-            <div class="alert-img-wrap">
-              <img src="../assets/images/temp/temp-earth-img.jpg" />
+            <div class="disaster-list-container list-fire">
+              <p class="disaster-none-text">현재 산불 없음</p>
             </div>
           </div>
         </section>
@@ -208,14 +158,15 @@
         <section class="map-panel">
           <div class="container-header">
             <span class="container-header-line"></span>
-            <p class="container-header-text">발생 위치</p>
+            <p class="container-header-text">산불 발생</p>
           </div>
           <div class="map-container">
+            <!-- mapbox 맵 -->
             <!-- map 샘플용으로 인라인으로 이미지 넣습니다. 나중에 삭제 해주세요. style 전부 삭제 해주세요. -->
             <div
               id="map"
               class="map"
-              style="background: url(../assets/images/temp/03_sub_earthquake.png) no-repeat; background-size: cover"
+              style="background: url(../assets/images/temp/06_sub_fire.png) no-repeat; background-size: cover"
             ></div>
             <!-- // mapbox 맵 -->
             <div class="map-timestamp">
@@ -223,69 +174,26 @@
               <p class="map-timestamp-time">08-03 10:00</p>
             </div>
 
-            <!-- 지진 범례 -->
-            <div class="map-legend -earthquake">
+            <!-- 산불 범례 -->
+            <div class="map-legend -fire">
               <div class="legend_icontable">
-                <p class="legend_title">최신 지진데이터</p>
-                <div class="icon_wrap -point">
-                  <span class="icon_earthquake"></span>
-                </div>
-              </div>
-              <div class="legend-divider"></div>
-              <div class="legend_icontable">
-                <p class="legend_title">주요 지점</p>
                 <ul class="legend-list">
                   <li>
                     <div class="icon_wrap">
-                      <img class="icon" src="../assets/images/legend/EART_pwrplant.svg" />
+                      <img class="icon" src="../assets/images/legend/FIRE_fire_out.svg" />
                     </div>
-                    <span>원전</span>
+                    <span class="legend-text">산불 진화완료</span>
                   </li>
                   <li>
                     <div class="icon_wrap">
-                      <img class="icon" src="../assets/images/legend/EART_location.svg" />
+                      <img class="icon" src="../assets/images/legend/FIRE_fire_inprogress.svg" />
                     </div>
-                    <span>지점</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="legend-divider"></div>
-              <div class="legend_icontable">
-                <p class="legend_title">규모</p>
-                <ul class="legend-list">
-                  <li>
-                    <div class="icon_wrap">
-                      <div class="icon_eq -eq5"></div>
-                    </div>
-                    <span class="legend-text">6.0 ~</span>
-                  </li>
-                  <li>
-                    <div class="icon_wrap">
-                      <div class="icon_eq -eq4"></div>
-                    </div>
-                    <span class="legend-text">5.0 ~ 5.9</span>
-                  </li>
-                  <li>
-                    <div class="icon_wrap">
-                      <div class="icon_eq -eq3"></div>
-                    </div>
-                    <span class="legend-text">4.0 ~ 4.9</span>
-                  </li>
-                  <li>
-                    <div class="icon_wrap">
-                      <div class="icon_eq -eq2"></div>
-                    </div>
-                    <span class="legend-text">3.0 ~ 3.9</span>
-                  </li>
-                  <li>
-                    <div class="icon_wrap">
-                      <div class="icon_eq -eq1"></div>
-                    </div>
-                    <span class="legend-text">2.0 ~ 2.9</span>
+                    <span class="legend-text">산불 진화중</span>
                   </li>
                 </ul>
               </div>
             </div>
+
             <!-- map-btn-->
             <div class="map-btn-group">
               <button type="button" class="btn-map -reset"></button>
@@ -296,53 +204,59 @@
 
         <!-- Right Panel -->
         <section class="right-panel">
-          <div class="container flex-1">
-            <div class="container-header">
-              <span class="container-header-line"></span>
-              <p class="container-header-text">진도 상세정보 (계기진도)</p>
-            </div>
-            <div class="container-content -img">
-              <img class="img-earthquake" src="../assets/images/temp/img-earthquake.png" alt="계기진도" />
-              <p class="disaster-none-text">데이터 없음</p>
-            </div>
+          <div class="container-header">
+            <span class="container-header-line"></span>
+            <p class="container-header-text">현재 산불 위기 경보</p>
           </div>
-          <div class="container">
-            <div class="container-header">
-              <span class="container-header-line"></span>
-              <p class="container-header-text">지자체별 진도</p>
-            </div>
-            <div class="disaster-list-container list-earthquake-intensity">
-              <div class="slick-ticker-wrap">
-                <div
-                  class="slick-ticker-list -center"
-                  data-slick-vertical="true"
-                  data-slick-slides="5"
-                  data-slick-speed="2000"
-                >
-                  <div class="ticker-item">
-                    <div class="value">남해군 3</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">산청군 3</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">합천군 3</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">함양군 2</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">거창군 2</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">함양군 2</div>
-                  </div>
-                  <div class="ticker-item">
-                    <div class="value">함양군 2</div>
-                  </div>
-                </div>
+          <div class="map-container">
+            <!-- mapbox 맵 -->
+            <div
+              id="map"
+              class="map"
+              style="background: url(../assets/images/temp/05_sub_fire02.png) no-repeat; background-size: cover"
+            ></div>
+            <!-- // mapbox 맵 -->
+
+            <div class="map-legend -fire">
+              <div class="legend_icontable">
+                <ul class="legend-list">
+                  <li>
+                    <div class="icon_wrap">
+                      <img class="icon" src="../assets/images/legend/fire@2x.png" />
+                    </div>
+                    <span class="legend-text">발화 추정지</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <div class="borderline -orangeline2">dark border</div>
+                    </div>
+                    <span>저지선</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <div class="borderline -redline">dark border</div>
+                    </div>
+                    <span>화선</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <div class="borderline -yellowline">dark border</div>
+                    </div>
+                    <span>진화완료</span>
+                  </li>
+                </ul>
               </div>
-              <p class="disaster-none-text">데이터 없음</p>
+            </div>
+
+            <div class="map-timestamp">
+              <span class="map-timestamp-text">자료 갱신 시각(5분)</span>
+              <p class="map-timestamp-time">08-03 10:00</p>
+            </div>
+
+            <!-- map-btn-->
+            <div class="map-btn-group">
+              <button type="button" class="btn-map -reset"></button>
+              <!-- <button type="button" class="btn-map -home"></button> -->
             </div>
           </div>
         </section>
