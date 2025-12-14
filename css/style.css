@@ -439,6 +439,18 @@ img {
   width: calc((100% - 22%) / 2);
 }
 
+.main-weather-container {
+  height: 530px;
+}
+
+.-main-region .main-weather-container {
+  height: 470px;
+}
+
+.main-short-term-container {
+  height: 494px;
+}
+
 /* ============================================
    Common UI Components
    ============================================ */
@@ -1439,11 +1451,8 @@ img {
   row-gap: 12px;
   padding: 28px 25px;
   width: 100%;
+  height: 434px;
   background: var(--panel-bg-light-gray);
-}
-
-.-main .cctv-container {
-  padding: 20px 24px;
 }
 
 .cctv-container .video-desc {
@@ -2629,12 +2638,32 @@ img {
 .dam-container.is-empty .dam-slider,
 .dust-container-group.is-empty .dust-alert-container,
 .dust-container-group.is-empty .dust-chart-container,
-.alert-item.is-empty .alert-count-number {
+.alert-item.is-empty .alert-count-number,
+.is-empty .weather-air-value .disaster-none-text,
+.main-weather-container.is-empty .slick-weather-slider,
+.main-short-term-container.is-empty .slick-short-term-slider,
+.cctv-container.is-empty .slick-video-slider,
+.cctv-container.is-empty .video-desc {
   display: none;
 }
 
 .-typoon .alert-box.is-empty .alert-count-number {
   display: none;
+}
+
+.main-weather-container .disaster-none-text,
+.main-short-term-container .disaster-none-text {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-md-xl);
+  color: #5a6167;
+  background: var(--panel-bg-light-gray-alpha);
+}
+
+.cctv-container .disaster-none-text {
+  font-size: var(--font-size-md-xl);
+  color: #5a6167;
 }
 
 /* Base Empty State Text */
@@ -2676,6 +2705,7 @@ img {
   display: flex;
   font-size: var(--font-size-md-lg);
   font-weight: var(--font-weight-bold);
+  background: transparent;
 }
 
 .alert-dust-row.is-empty .disaster-none-text {

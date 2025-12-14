@@ -118,22 +118,23 @@
       <main class="main active -main-all">
         <!-- Left Panel -->
         <section class="left-panel">
-          <!-- 전국판 slick-weather-slider-all 클래스로 slick 슬라이더 동작 -->
-          <div class="slick-weather-slider slick-weather-slider-all">
-            <div class="weather-slider-item">
-              <div class="weather-container">
-                <div class="weather-header">
-                  <p class="weather-title">전국 주요 날씨 정보</p>
-                  <span class="weather-time-text">10:20 AM 기준</span>
-                </div>
-                <div class="weather-city">
-                  <div class="weather-title-box">
-                    <p class="weather-label">현재날씨</p>
+          <div class="main-weather-container">
+            <!-- 전국판 slick-weather-slider-all 클래스로 slick 슬라이더 동작 -->
+            <div class="slick-weather-slider slick-weather-slider-all">
+              <div class="weather-slider-item">
+                <div class="weather-container">
+                  <div class="weather-header">
+                    <p class="weather-title">전국 주요 날씨 정보</p>
+                    <span class="weather-time-text">10:20 AM 기준</span>
                   </div>
-                  <div class="weather-city-detail">
-                    <span class="weather-city-text">서울</span>
-                    <div class="weather-value">
-                      <!-- 각 icon 클래스
+                  <div class="weather-city">
+                    <div class="weather-title-box">
+                      <p class="weather-label">현재날씨</p>
+                    </div>
+                    <div class="weather-city-detail">
+                      <span class="weather-city-text">서울</span>
+                      <div class="weather-value">
+                        <!-- 각 icon 클래스
 									-sunny // 맑음
 									-sunny-cloudy // 구름조금 (낮)
 									-mostly-cloudy // 구름많음 (낮)
@@ -158,94 +159,96 @@
 									-snow-drop // 눈날림
 									-mist-heavy // 박무 (짙은 안개)
 									-->
-                      <div class="weather-icon -snow"></div>
-                      <span class="weather-value-number">24.2</span>
-                      <span class="weather-value-unit">°C</span>
+                        <div class="weather-icon -snow"></div>
+                        <span class="weather-value-number">24.2</span>
+                        <span class="weather-value-unit">°C</span>
+                      </div>
                     </div>
+                    <span class="weather-city-state">맑음</span>
                   </div>
-                  <span class="weather-city-state">맑음</span>
-                </div>
-                <div class="weather-air-quality">
-                  <div class="weather-air-box">
-                    <div class="weather-label">
-                      초미세먼지 (PM2.5)
-                      <span class="weather-unit">㎍/m³</span>
-                    </div>
-                    <!--
+                  <div class="weather-air-quality">
+                    <div class="weather-air-box">
+                      <div class="weather-label">
+                        초미세먼지 (PM2.5)
+                        <span class="weather-unit">㎍/m³</span>
+                      </div>
+                      <!--
 									클래스
 									좋음 -good
 									보통 -moderate
 									나쁨 -bad
 									매우나쁨 -very-bad
 									-->
-                    <!--
+                      <!--
 									플레이스 홀더 추가 weather-air-value에 is-empty 추가
 									-->
-                    <div class="weather-air-value is-empty">
-                      <p class="disaster-none-text">데이터 없음</p>
-                      <!-- 아래부분 is-empty 클래스로 안나옵니다.  -->
-                      <span class="weather-air-status">매우나쁨</span>
-                      <span class="weather-air-number">13</span>
+                      <div class="weather-air-value is-empty">
+                        <p class="disaster-none-text">데이터 없음</p>
+                        <!-- 아래부분 is-empty 클래스로 안나옵니다.  -->
+                        <span class="weather-air-status">매우나쁨</span>
+                        <span class="weather-air-number">13</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="weather-air-box">
-                    <div class="weather-label">
-                      미세먼지 (PM10)
-                      <span class="weather-unit">㎍/m³</span>
-                    </div>
-                    <div class="weather-air-value -very-bad">
-                      <span class="weather-air-status">매우나쁨</span>
-                      <span class="weather-air-number">13</span>
+                    <div class="weather-air-box">
+                      <div class="weather-label">
+                        미세먼지 (PM10)
+                        <span class="weather-unit">㎍/m³</span>
+                      </div>
+                      <div class="weather-air-value -very-bad">
+                        <span class="weather-air-status">매우나쁨</span>
+                        <span class="weather-air-number">13</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="weather-slider-item">
-              <div class="weather-container">
-                <div class="weather-header">
-                  <p class="weather-title">전국 주요 날씨 정보</p>
-                  <span class="weather-time-text">10:20 AM 기준</span>
-                </div>
-                <div class="weather-city">
-                  <div class="weather-title-box">
-                    <p class="weather-label">현재날씨</p>
+              <div class="weather-slider-item">
+                <div class="weather-container">
+                  <div class="weather-header">
+                    <p class="weather-title">전국 주요 날씨 정보</p>
+                    <span class="weather-time-text">10:20 AM 기준</span>
                   </div>
-                  <div class="weather-city-detail">
-                    <span class="weather-city-text">부산</span>
-                    <div class="weather-value">
-                      <div class="weather-icon -sunny-cloudy"></div>
-                      <span class="weather-value-number">18.5</span>
-                      <span class="weather-value-unit">°C</span>
+                  <div class="weather-city">
+                    <div class="weather-title-box">
+                      <p class="weather-label">현재날씨</p>
                     </div>
+                    <div class="weather-city-detail">
+                      <span class="weather-city-text">부산</span>
+                      <div class="weather-value">
+                        <div class="weather-icon -sunny-cloudy"></div>
+                        <span class="weather-value-number">18.5</span>
+                        <span class="weather-value-unit">°C</span>
+                      </div>
+                    </div>
+                    <span class="weather-city-state">구름조금</span>
                   </div>
-                  <span class="weather-city-state">구름조금</span>
-                </div>
-                <div class="weather-air-quality">
-                  <div class="weather-air-box">
-                    <div class="weather-label">
-                      초미세먼지 (PM2.5)
-                      <span class="weather-unit">㎍/m³</span>
+                  <div class="weather-air-quality">
+                    <div class="weather-air-box">
+                      <div class="weather-label">
+                        초미세먼지 (PM2.5)
+                        <span class="weather-unit">㎍/m³</span>
+                      </div>
+                      <div class="weather-air-value -good">
+                        <span class="weather-air-status">좋음</span>
+                        <span class="weather-air-number">8</span>
+                      </div>
                     </div>
-                    <div class="weather-air-value -good">
-                      <span class="weather-air-status">좋음</span>
-                      <span class="weather-air-number">8</span>
-                    </div>
-                  </div>
-                  <div class="weather-air-box">
-                    <div class="weather-label">
-                      미세먼지 (PM10)
-                      <span class="weather-unit">㎍/m³</span>
-                    </div>
-                    <div class="weather-air-value -moderate">
-                      <span class="weather-air-status">보통</span>
-                      <span class="weather-air-number">35</span>
+                    <div class="weather-air-box">
+                      <div class="weather-label">
+                        미세먼지 (PM10)
+                        <span class="weather-unit">㎍/m³</span>
+                      </div>
+                      <div class="weather-air-value -moderate">
+                        <span class="weather-air-status">보통</span>
+                        <span class="weather-air-number">35</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <p class="disaster-none-text">데이터 없음</p>
           </div>
 
           <div class="cctv-container">
@@ -278,6 +281,7 @@
                 </div>
               </div>
             </div>
+            <p class="disaster-none-text">데이터 없음</p>
           </div>
         </section>
 

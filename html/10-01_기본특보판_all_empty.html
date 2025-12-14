@@ -118,9 +118,9 @@
       <main class="main active -main-all">
         <!-- Left Panel -->
         <section class="left-panel">
-          <div class="main-weather-container">
+          <div class="main-weather-container is-empty">
             <!-- 전국판 slick-weather-slider-all 클래스로 slick 슬라이더 동작 -->
-            <div class="slick-weather-slider slick-weather-slider-all">
+            <div class="slick-weather-slider slick-weather-slider-all is-empty">
               <div class="weather-slider-item">
                 <div class="weather-container">
                   <div class="weather-header">
@@ -250,8 +250,7 @@
             </div>
             <p class="disaster-none-text">데이터 없음</p>
           </div>
-
-          <div class="cctv-container">
+          <div class="cctv-container is-empty">
             <div class="video-desc">
               <p>실시간 <strong>KBS</strong> 재난 CCTV</p>
             </div>
@@ -357,7 +356,7 @@
 										-none 클래스 붙임
 										-->
                   <!-- 한파 -->
-                  <div class="disaster-content -cold">
+                  <div class="disaster-content -cold is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -390,7 +389,7 @@
                   </div>
 
                   <!-- 대설 -->
-                  <div class="disaster-content -snow">
+                  <div class="disaster-content -snow is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -519,7 +518,7 @@
                   </div>
 
                   <!-- 황사 -->
-                  <div class="disaster-content -dust">
+                  <div class="disaster-content -dust is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -572,7 +571,7 @@
 								-->
                 <div class="disaster-card -heat">
                   <!-- 폭염 -->
-                  <div class="disaster-content -heat">
+                  <div class="disaster-content -heat is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -615,7 +614,7 @@
                   </div>
 
                   <!-- 호우 -->
-                  <div class="disaster-content -rain">
+                  <div class="disaster-content -rain is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -659,7 +658,7 @@
                   </div>
 
                   <!-- 풍랑 -->
-                  <div class="disaster-content -storm">
+                  <div class="disaster-content -storm is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -703,7 +702,7 @@
                   </div>
 
                   <!-- 폭풍해일 -->
-                  <div class="disaster-content -tsunami">
+                  <div class="disaster-content -tsunami is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -746,7 +745,7 @@
                   </div>
 
                   <!-- 태풍 -->
-                  <div class="disaster-content -typoon">
+                  <div class="disaster-content -typoon is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
                         <span class="disaster-icon"></span>
@@ -793,31 +792,6 @@
           </div>
         </section>
       </main>
-
-      <!-- alert -->
-
-      <!-- occur 가 block 클래스 입니다.
-		따로 인라인에서 속도를 조절하려면
-		style = "animation-duration: 1s;" 값으로 조절하면 됩니다.
-		-->
-      <!-- 강풍/폭염 -wind , -heat 클래스 추가합니다.
-		지진이 기본으로 클래스가 없고 (-low, -high 로 컬러 구분됩니다.)
-		호우 : -rain
-		강풍 : -wind
-		폭염 : -heat 클래스 추가해서 컬러 변경합니다.
-    민방공 : -civil 클래스 추가해서 폰트 사이즈를 변경합니다.
-    산불 : 컬러가 동일해서 -high 로 사용합니다.
-		위 3개는 -low 필요없습니다. -rain에 붙어있는데 삭제해도 상관없습니다.
-		-->
-      <div class="alert-popup -full -civil occur">
-        <p class="alert-popup-label">민방공 경보</p>
-        <div class="alert-popup-box">
-          <p class="alert-popup-title">경계경보 발령</p>
-          <p class="alert-popup-desc">오늘 06:59 백령 지역에 북한 정찰 위성 발사에 따른 대비 준비 방송 송출 중</p>
-        </div>
-      </div>
-
-      <!-- //alert -->
     </div>
 
     <!-- jQuery (Slick 의존성) slick 사용시 html버전 기준 제이쿼리 있어야함 -->
