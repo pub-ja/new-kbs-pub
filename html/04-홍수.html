@@ -228,6 +228,49 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- 지역 3: 인접댐 정보 없음 수위 -->
+                <div class="flood-level-item" data-region-code="example">
+                  <div class="flood-level-header">
+                    <div class="flood-level-title">
+                      <span class="badge -alert">경보</span>
+                      <p class="flood-level-title-text">인접댐 정보 없음수위</p>
+                    </div>
+                    <div class="data-info-wrap">
+                      <p class="data-info-timestamp">
+                        <span class="data-info-timestamp-label">관측시각 : </span>2025-11-05 10:30
+                      </p>
+                      <span class="value-unit">(단위:m)</span>
+                    </div>
+                  </div>
+                  <div class="flood-level-chart">
+                    <div class="flood-level-container -lv4">
+                      <div class="flood-value-base">
+                        <ul class="flood-level-wrap">
+                          <li class="level-item"></li>
+                          <li class="level-item -alert">
+                            <p class="value">7.80</p>
+                            <span class="level-info">경보</span>
+                          </li>
+                          <li class="level-item"></li>
+                          <li class="level-item -warning">
+                            <p class="value">6.50</p>
+                            <span class="level-info">주의보</span>
+                          </li>
+                          <li class="level-item"></li>
+                        </ul>
+                      </div>
+
+                      <div class="flood-value-current">
+                        <p class="level-info">현재 수위</p>
+                        <div class="flood-value-box">
+                          <span class="value">8.12</span>
+                          <span class="status-icon -up"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <p class="disaster-none-text">데이터 없음</p>
             </div>
@@ -375,6 +418,7 @@
                   </div>
                   <!-- CCTV 없음 -->
                 </div>
+                <p class="disaster-none-text">인접 댐 없음</p>
               </div>
 
               <!-- 한탄강 인접댐: 한탄강댐 (CCTV 있음) -->
@@ -437,6 +481,74 @@
                     <img src="../assets/images/temp/img_cctv_sample.jpg" alt="한탄강댐 이미지" />
                   </div>
                 </div>
+                <p class="disaster-none-text">인접 댐 없음</p>
+              </div>
+
+              <!-- 인접 댐 정보가 없는 경우 (샘플 data-region-code="example") -->
+              <!-- 수위 정보는 있지만 인접 댐 데이터가 없을 때 사용 dam-item 에 is-empty 추가 -->
+              <div class="dam-item is-empty" data-region-code="example" data-has-cctv="false">
+                <!--
+                인접 댐이 없을 때
+                아래 dam-title 과 dam-content-area 를 없앨 수 있으면 마크업 삭제 하시고 disaster-none-text만 있어도 되고,
+                놔둬야 하면 둬도 됩니다. css로 삭제 -->
+                <p class="dam-title">한탄강댐</p>
+                <div class="dam-content-area">
+                  <div class="dam-data-wrap">
+                    <div class="data-info-wrap">
+                      <p class="data-info-timestamp">
+                        <span class="data-info-timestamp-label">관측시각 : </span>2025-11-05 10:30
+                      </p>
+                      <span class="value-unit">(단위:m)</span>
+                    </div>
+
+                    <table class="data-table table-flood">
+                      <tbody>
+                        <tr>
+                          <th class="data-label">현재 수위</th>
+                          <td>
+                            <p class="value -current">162.34<span class="status-icon -up"></span></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="data-label">홍수기 제한 수위</th>
+                          <td><p class="value">157.0</p></td>
+                        </tr>
+                        <tr>
+                          <th class="data-label">계획 홍수위</th>
+                          <td><p class="value">165.0</p></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table class="data-table table-flood-center">
+                      <thead>
+                        <tr>
+                          <th>저수율<span class="value-unit">(%)</span></th>
+                          <th>총방류량<span class="value-unit">(톤/초)</span></th>
+                          <th>유입량<span class="value-unit">(톤/초)</span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <p class="value">85.3</p>
+                          </td>
+                          <td>
+                            <p class="value">245.8</p>
+                          </td>
+                          <td>
+                            <p class="value">238.2</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="dam-img-wrap">
+                    <img src="../assets/images/temp/img_cctv_sample.jpg" alt="한탄강댐 이미지" />
+                  </div>
+                </div>
+                <!-- dam-item is-empty 안에 disaster-none-text 만 있으면 됩니다. -->
+                <p class="disaster-none-text">인접 댐 없음</p>
               </div>
             </div>
             <p class="disaster-none-text">데이터 없음</p>

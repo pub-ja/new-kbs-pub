@@ -2643,7 +2643,9 @@ img {
 .main-weather-container.is-empty .slick-weather-slider,
 .main-short-term-container.is-empty .slick-short-term-slider,
 .cctv-container.is-empty .slick-video-slider,
-.cctv-container.is-empty .video-desc {
+.cctv-container.is-empty .video-desc,
+.dam-item.is-empty .dam-title,
+.dam-item.is-empty .dam-content-area {
   display: none;
 }
 
