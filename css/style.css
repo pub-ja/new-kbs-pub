@@ -1106,17 +1106,17 @@ img {
   width: 100%;
 }
 
-.flex-container.alert-current-text {
+.flex-container.snow-cctv-container {
   flex: 1;
 }
 
-.flex-container.alert-current-text .flex-item {
+.flex-container.snow-cctv-container .flex-item {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.flex-container.alert-current-text .alert-item {
+.flex-container.snow-cctv-container .alert-item {
   display: flex !important;
   flex-direction: column;
   justify-content: center;
@@ -2381,18 +2381,18 @@ img {
   font-style: normal;
 }
 
-.alert-current-text {
+.snow-cctv-container {
   height: 210px;
 }
 
-.alert-current-text .alert-text-title {
+.snow-cctv-container .alert-text-title {
   margin-bottom: 10px;
   font-size: var(--font-size-md-lg);
   font-weight: var(--font-weight-bold);
   color: #becbd6;
 }
 
-.alert-current-text .alert-text-desc {
+.snow-cctv-container .alert-text-desc {
   text-align: center;
   font-size: var(--font-size-sm-lg);
   color: #fff;
@@ -2631,7 +2631,7 @@ img {
 .weather-air-value.is-empty .weather-air-number,
 .alert-dust-row.is-empty .alert-dust-slider,
 .data-table-container.is-empty .data-table-slider,
-.alert-current-text.is-empty .traffic-control-slider,
+.snow-cctv-container.is-empty .snow-cctv-slider,
 .container-detail-content.is-empty .detail-list,
 .container-detail-content.is-empty .text-desc,
 .flood-level-box.is-empty .flood-level-slider,
@@ -2716,7 +2716,7 @@ img {
   padding-left: 8px;
 }
 
-.alert-current-text.is-empty .disaster-none-text {
+.snow-cctv-container.is-empty .disaster-none-text {
   background: var(--panel-bg-light-gray);
   font-size: var(--font-size-md-xl);
 }
@@ -4464,4 +4464,31 @@ img {
   font-size: var(--font-size-xs);
   text-align: center;
   color: #999999;
+}
+
+.cctv-item {
+  position: relative;
+}
+
+.cctv-img-wrap {
+  width: 100%;
+  height: 203px !important;
+  overflow: hidden;
+}
+
+.cctv-img-wrap > img {
+  object-fit: cover;
+}
+
+.cctv-img-desc {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: var(--font-size-sm-xs);
 }

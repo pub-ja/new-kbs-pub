@@ -98,7 +98,7 @@
 /* 가로형 slider */
 .slick-weather-slider,
 .slick-short-terms-slider,
-.traffic-control-slider,
+.snow-cctv-slider,
 .data-table-slider,
 .flood-level-slider,
 .dam-slider {
@@ -109,7 +109,7 @@
 
 .slick-weather-slider .slick-list,
 .slick-short-term-slider .slick-list,
-.traffic-control-slider .slick-list,
+.snow-cctv-slider .slick-list,
 .data-table-slider .slick-list,
 .flood-level-slider .slick-list,
 .dam-slider .slick-list {
@@ -118,7 +118,7 @@
 
 .slick-weather-slider .slick-track,
 .slick-short-term-slider .slick-track,
-.traffic-control-slider .slick-track,
+.snow-cctv-slider .slick-track,
 .data-table-slider .slick-track,
 .flood-level-slider .slick-track,
 .dam-slider .slick-track {
