@@ -363,4 +363,5 @@
 
 .alert-grid:not(.-row) .alert-location-slider .slick-list {
   height: 48px !important;
+  width: 100%;
 }
