@@ -1973,6 +1973,14 @@ img {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+.map-timestamp-location {
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm-lg);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #ffb139;
+}
+
 .map-btn-group {
   position: absolute;
   z-index: 10;
@@ -3004,10 +3012,6 @@ img {
   min-height: 46px;
 }
 
-.content-setting-header.-space-between .content-setting-info-group {
-  max-width: 385px;
-}
-
 .content-setting-section-desc {
   font-size: var(--font-size-xxs);
   color: #c3c3c3;
@@ -3178,7 +3182,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 475px;
+  height: 470px;
 }
 
 .map-preview {
