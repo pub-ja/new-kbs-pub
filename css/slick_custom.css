@@ -180,6 +180,10 @@
   width: 100%;
 }
 
+.slick-disaster-slider .disaster-list-container .slick-slide {
+  height: auto;
+}
+
 .slick-disaster-slider .disaster-slider-item {
   display: block !important;
   height: 100%;
