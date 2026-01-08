@@ -1028,6 +1028,7 @@ img {
   padding-left: 8px;
   font-size: var(--font-size-sm);
   line-height: 1.4;
+  height: 54px;
 }
 
 .alert-box {
@@ -1472,7 +1473,7 @@ img {
 .video-wrap {
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   height: 280px;
   width: 100%;
@@ -2475,7 +2476,7 @@ img {
 }
 
 .list-dust .value-box.-good .value,
-.alert-count-number.-good {
+.dust-container-wrap .alert-count-number.-good > span {
   color: var(--color-dust-good);
 }
 

@@ -369,3 +369,9 @@
   height: 48px !important;
   width: 100%;
 }
+
+.alert-dust-row .alert-dust-slider .slick-list,
+.alert-dust-row .alert-dust-slider .slick-slide {
+  height: 54px !important;
+  width: 100%;
+}
