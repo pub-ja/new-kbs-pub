@@ -4204,7 +4204,7 @@ img {
   justify-content: center;
   width: 100%;
   max-width: 100%;
-  height: 100%;
+  height: calc(100% - 94px);
   margin-bottom: 94px;
   overflow: visible;
 }
@@ -4496,4 +4496,196 @@ img {
   background: rgba(0, 0, 0, 0.4);
   color: #fff;
   font-size: var(--font-size-sm-xs);
+}
+
+/* ============================================
+   Coach Mark
+   ============================================ */
+.coach-mark-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  display: none;
+}
+
+.coach-mark-wrap.active {
+  display: block;
+}
+
+/* Dim Background */
+.coach-mark-dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Coach Mark Content Container */
+.coach-mark-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Close Button */
+.btn-coach-mark-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background: url("../assets/images/common/ico-close.svg") no-repeat center;
+  background-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  color: transparent;
+  font-size: 0;
+}
+
+.btn-coach-mark-close:hover {
+  opacity: 0.8;
+}
+
+/* Coach Mark Item */
+.coach-mark-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 5;
+}
+
+/* Coach Mark Image (contains arrow) */
+.coach-mark-img {
+  position: absolute;
+  display: block;
+  height: auto;
+  shape-rendering: geometricPrecision;
+}
+
+/* Coach Mark Text Box */
+.coach-mark-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+}
+
+/* Coach Mark Title */
+.coach-mark-title {
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  color: #18171d;
+  margin: 0;
+}
+
+/* Coach Mark Description */
+.coach-mark-desc {
+  font-size: 16px;
+  font-weight: var(--font-weight-light);
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.coach-mark-desc + .coach-mark-desc {
+  margin-top: 8px;
+}
+
+/* Coach Mark Item Positions - 위치는 수정 가능 */
+.coach-mark-item.-auto-switch {
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.coach-mark-item.-region-toggle {
+  top: 350px;
+  left: 150px;
+}
+
+.coach-mark-item.-region-checkbox {
+  top: 500px;
+  left: 150px;
+}
+
+.coach-mark-item.-map-controls {
+  top: 250px;
+  right: 150px;
+}
+
+.coach-mark-item.-map-center {
+  top: 450px;
+  right: 250px;
+}
+
+.coach-mark-item.-save-button {
+  bottom: 100px;
+  right: 200px;
+}
+
+/* Bottom Checkbox */
+.coach-mark-bottom {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Coach Mark Checkbox */
+.coach-mark-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+}
+
+.coach-mark-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+}
+
+.coach-mark-checkbox input[type="checkbox"]:checked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.coach-mark-checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.coach-mark-checkbox-label {
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: #fff;
+  user-select: none;
 }
