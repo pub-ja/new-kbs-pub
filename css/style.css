@@ -219,6 +219,7 @@ img {
   transform-origin: top left;
   width: 1920px;
   height: 1080px;
+  overflow: hidden;
 }
 
 /* ============================================
@@ -1964,21 +1965,27 @@ img {
 
 .map-timestamp-text {
   font-size: var(--font-size-sm);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+  text-shadow:
+    0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.6);
 }
 
 .map-timestamp-time {
   font-size: var(--font-size-lg);
   margin-top: 3px;
   font-weight: var(--font-weight-medium);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 0 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .map-timestamp-location {
   font-style: normal;
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-sm-lg);
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 0 20px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.3);
   color: #ffb139;
 }
 
@@ -2809,7 +2816,9 @@ img {
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
   z-index: 2000;
 }
 
@@ -3715,7 +3724,9 @@ img {
   font-size: var(--font-size-md-xl);
   color: #fff;
   line-height: 1;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 0 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .flood-level-wrap > .level-item.-warning::after,

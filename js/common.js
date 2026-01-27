@@ -18,20 +18,20 @@ const ScaleManager = {
 
         this.updateScale();
         window.addEventListener('resize', () => this.updateScale());
+        window.addEventListener('orientationchange', () => this.updateScale());
+        window.addEventListener('fullscreenchange', () => this.updateScale());
     },
 
     updateScale() {
-        // 가로 기준으로 스케일 (확대/축소)
-        const scale = window.innerWidth / this.baseWidth;
+        const scaleX = window.innerWidth / this.baseWidth;
+        const scaleY = window.innerHeight / this.baseHeight;
+        const isVertical = scaleY < scaleX;
+
+        const scale = isVertical ? scaleY : scaleX;
 
         this.container.style.transform = `scale(${scale})`;
-        this.container.style.transformOrigin = 'top left';
-
-        // 위치 조정 없음 (좌상단 기준)
-        this.container.style.left = '0px';
-        this.container.style.top = '0px';
-
-        console.log(`Screen: ${window.innerWidth}px, Scale: ${scale.toFixed(3)} (width-based)`);
+        this.container.style.transformOrigin = isVertical ? 'top center' : 'top left';
+        this.container.style.margin = isVertical ? '0 auto' : '0';
     },
 
     cleanup() {
@@ -43,11 +43,6 @@ const ScaleManager = {
 document.addEventListener('DOMContentLoaded', () => {
     ScaleManager.init();
 });
-
-// cleanup 함수 노출
-window.removeScaleListener = () => {
-    ScaleManager.cleanup();
-};
 
 // Side Menu 기능
 const SideMenu = {
