@@ -8,6 +8,7 @@ const ScaleManager = {
     baseWidth: 1920,
     baseHeight: 1080,
     container: null,
+    scaleMode: 'crop', // 'crop' (기본값, 가로 꽉참) 또는 'fit' (전체 보임, crop 안됨)
 
     init() {
         this.container = document.querySelector('.scale-container');
@@ -15,6 +16,9 @@ const ScaleManager = {
             console.warn('scale-container not found');
             return;
         }
+
+        // data-scale 속성 확인: "fit" 또는 "crop" (기본값)
+        this.scaleMode = this.container.dataset.scale || 'crop';
 
         this.updateScale();
         window.addEventListener('resize', () => this.updateScale());
@@ -25,13 +29,21 @@ const ScaleManager = {
     updateScale() {
         const scaleX = window.innerWidth / this.baseWidth;
         const scaleY = window.innerHeight / this.baseHeight;
-        const isVertical = scaleY < scaleX;
 
-        const scale = isVertical ? scaleY : scaleX;
+        if (this.scaleMode === 'fit') {
+            // fit 모드: 전체가 보이도록 (crop 안됨)
+            const isVertical = scaleY < scaleX;
+            const scale = isVertical ? scaleY : scaleX;
 
-        this.container.style.transform = `scale(${scale})`;
-        this.container.style.transformOrigin = isVertical ? 'top center' : 'top left';
-        this.container.style.margin = isVertical ? '0 auto' : '0';
+            this.container.style.transform = `scale(${scale})`;
+            this.container.style.transformOrigin = isVertical ? 'top center' : 'top left';
+            this.container.style.margin = isVertical ? '0 auto' : '0';
+        } else {
+            // crop 모드 (기본값): 가로 꽉 채움, 세로는 잘릴 수 있음
+            this.container.style.transform = `scale(${scaleX})`;
+            this.container.style.transformOrigin = 'top left';
+            this.container.style.margin = '0';
+        }
     },
 
     cleanup() {
