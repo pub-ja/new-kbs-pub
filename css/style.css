@@ -2834,7 +2834,6 @@ img {
   width: 260px;
   height: 100%;
   background: #080911;
-  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.3);
   transition: right 0.3s ease-in-out;
   z-index: 2001;
   display: flex;
@@ -2843,6 +2842,7 @@ img {
 
 .side-menu-container.active {
   right: 0;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.3);
 }
 
 .side-menu-header {
@@ -3311,7 +3311,7 @@ img {
 
 .footer-notice .copyright {
   font-size: var(--font-size-tiny);
-  color: #999999;
+  color: #c3c3c3;
   text-align: center;
 }
 
@@ -3326,22 +3326,36 @@ img {
   transition: all 0.2s;
 }
 
-.btn-page.-large.-primary {
+.btn-page.-primary {
   background: #4763ff;
   color: #fff;
 }
 
-.btn-page.-large.-primary:hover {
-  background: #4a6eee;
+.btn-page.-primary:hover {
+  background: #3655c9;
 }
 
-.btn-page.-large.-secondary {
-  background: rgba(255, 255, 255, 0.1);
+.btn-page.-primary:disabled:hover,
+.btn-page.-primary:disabled {
+  background: #6575b1;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: not-allowed;
+}
+
+.btn-page.-secondary {
+  background: #35383b;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.btn-page.-large.-secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
+.btn-page.-secondary:hover {
+  background: #414447;
+}
+
+.btn-page.-secondary:disabled:hover,
+.btn-page.-secondary:disabled {
+  background: #676767;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
 }
 
 /* ================================================
@@ -4510,24 +4524,25 @@ img {
 }
 
 /* ============================================
-   Coach Mark
+   Layer Popup (접근제한 인증코드 팝업)
    ============================================ */
-.coach-mark-wrap {
+.layer-popup-wrap {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2000;
-  display: none;
+  z-index: 3100;
 }
 
-.coach-mark-wrap.active {
-  display: block;
+.layer-popup-wrap.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Dim Background */
-.coach-mark-dim {
+.layer-popup-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -4536,167 +4551,132 @@ img {
   background: rgba(0, 0, 0, 0.7);
 }
 
-/* Coach Mark Content Container */
-.coach-mark-content {
+.layer-popup {
   position: relative;
   width: 100%;
-  height: 100%;
+  width: 620px;
+  background: var(--panel-bg-light-gray);
+  overflow: hidden;
+  border: 1px solid #515151;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Close Button */
-.btn-coach-mark-close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 40px;
-  height: 40px;
-  background: url("../assets/images/common/ico-close.svg") no-repeat center;
-  background-size: 24px;
-  cursor: pointer;
-  z-index: 10;
-  color: transparent;
-  font-size: 0;
-}
-
-.btn-coach-mark-close:hover {
-  opacity: 0.8;
-}
-
-/* Coach Mark Item */
-.coach-mark-item {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  z-index: 5;
-}
-
-/* Coach Mark Image (contains arrow) */
-.coach-mark-img {
-  position: absolute;
-  display: block;
-  height: auto;
-  shape-rendering: geometricPrecision;
-}
-
-/* Coach Mark Text Box */
-.coach-mark-text {
-  position: absolute;
+.layer-popup-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 20px 24px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
-}
-
-/* Coach Mark Title */
-.coach-mark-title {
-  font-size: 20px;
-  font-weight: var(--font-weight-bold);
-  color: #18171d;
-  margin: 0;
-}
-
-/* Coach Mark Description */
-.coach-mark-desc {
-  font-size: 16px;
-  font-weight: var(--font-weight-light);
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.coach-mark-desc + .coach-mark-desc {
-  margin-top: 8px;
-}
-
-/* Coach Mark Item Positions - 위치는 수정 가능 */
-.coach-mark-item.-auto-switch {
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.coach-mark-item.-region-toggle {
-  top: 350px;
-  left: 150px;
-}
-
-.coach-mark-item.-region-checkbox {
-  top: 500px;
-  left: 150px;
-}
-
-.coach-mark-item.-map-controls {
-  top: 250px;
-  right: 150px;
-}
-
-.coach-mark-item.-map-center {
-  top: 450px;
-  right: 250px;
-}
-
-.coach-mark-item.-save-button {
-  bottom: 100px;
-  right: 200px;
-}
-
-/* Bottom Checkbox */
-.coach-mark-bottom {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-/* Coach Mark Checkbox */
-.coach-mark-checkbox {
-  display: flex;
   align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  backdrop-filter: blur(10px);
+  justify-content: center;
+  padding: 50px 40px;
+  text-align: center;
 }
 
-.coach-mark-checkbox input[type="checkbox"] {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  position: relative;
-  background: transparent;
+.layer-popup-title {
+  font-size: var(--font-size-md-sm);
+  font-weight: var(--font-weight-medium);
+  color: #fff;
+  margin-bottom: 24px;
 }
 
-.coach-mark-checkbox input[type="checkbox"]:checked {
-  background: var(--color-primary);
+.layer-popup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  row-gap: 20px;
+  max-width: 480px;
+}
+
+.layer-popup-form .form-box {
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  font-weight: var(--font-weight-medium);
+  color: #fff;
+  background: #171717;
+  border: 1px solid #464646;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.form-input.-large {
+  padding: 11px 20px;
+  font-size: var(--font-size-sm-xs);
+}
+
+.form-input.-number {
+  letter-spacing: 1px;
+}
+
+.form-input::placeholder {
+  color: #8b8b8b;
+}
+
+.form-input:focus {
   border-color: var(--color-primary);
 }
 
-.coach-mark-checkbox input[type="checkbox"]:checked::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 6px;
-  width: 4px;
-  height: 8px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+.form-box.error .form-input {
+  border-color: var(--color-font-alert);
 }
 
-.coach-mark-checkbox-label {
-  font-size: 16px;
-  font-weight: var(--font-weight-medium);
-  color: #fff;
-  user-select: none;
+.form-error-text {
+  display: none;
+  margin-top: 8px;
+  font-size: var(--font-size-xxs);
+  color: #e74c3c;
+  text-align: left;
+}
+
+.layer-popup-form .form-box.error .form-error-text {
+  display: block;
+}
+
+.layer-popup-form-info {
+  font-size: var(--font-size-xxs);
+  color: #c3c3c3;
+  line-height: 1.6;
+}
+
+.layer-popup-btn-group {
+  display: flex;
+  column-gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.layer-popup-footer {
+  padding: 20px 40px;
+  border-top: 1px solid #414141;
+}
+
+.layer-popup-copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: var(--font-size-tiny);
+}
+
+.layer-popup-footer .copyright-label {
+  color: #c3c3c3;
+}
+
+.layer-popup-footer .copyright-value {
+  color: #999999;
+}
+
+.layer-popup-footer .copyright-value a:hover {
+  text-decoration: underline;
+}
+
+.layer-popup-btn-group {
+  margin-top: 40px;
+}
+
+.layer-popup-btn-group .btn-page {
+  font-size: var(--font-size-xs);
+  min-width: 200px;
 }
