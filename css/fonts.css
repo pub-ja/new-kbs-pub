@@ -1,26 +1,36 @@
 @font-face {
-  font-family: 'Spoqa Han Sans Neo';
+  font-family: "Spoqa Han Sans Neo";
   font-weight: 700;
   font-display: swap;
   src:
-    url('../assets/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
-    url('../assets/fonts/SpoqaHanSansNeo-Bold.woff') format('woff');
+    url("../assets/fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2"),
+    url("../assets/fonts/SpoqaHanSansNeo-Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Spoqa Han Sans Neo';
+  font-family: "Spoqa Han Sans Neo";
   font-weight: 500;
   font-display: swap;
   src:
-    url('../assets/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
-    url('../assets/fonts/SpoqaHanSansNeo-Medium.woff') format('woff');
+    url("../assets/fonts/SpoqaHanSansNeo-Medium.woff2") format("woff2"),
+    url("../assets/fonts/SpoqaHanSansNeo-Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Spoqa Han Sans Neo';
+  font-family: "Spoqa Han Sans Neo";
   font-weight: 400;
   font-display: swap;
   src:
-    url('../assets/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
-    url('../assets/fonts/SpoqaHanSansNeo-Regular.woff') format('woff');
+    url("../assets/fonts/SpoqaHanSansNeo-Regular.woff2") format("woff2"),
+    url("../assets/fonts/SpoqaHanSansNeo-Regular.woff") format("woff");
+}
+
+/* 코치마크 필기체용 font 추가 */
+@font-face {
+  font-family: "Cafe24Shiningstar";
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("../assets/fonts/Cafe24Shiningstar-v2.0.woff2") format("woff2"),
+    url("../assets/fonts/Cafe24Shiningstar-v2.0.woff") format("woff");
 }
