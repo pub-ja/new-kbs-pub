@@ -29,7 +29,7 @@
 @font-face {
   font-family: "Cafe24Shiningstar";
   font-weight: 400;
-  font-display: swap;
+  font-display: block; /* 폰트 로딩 전에는 숨김 */
   src:
     url("../assets/fonts/Cafe24Shiningstar-v2.0.woff2") format("woff2"),
     url("../assets/fonts/Cafe24Shiningstar-v2.0.woff") format("woff");
