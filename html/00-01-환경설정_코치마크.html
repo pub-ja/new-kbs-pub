@@ -491,5 +491,12 @@
     <script src="../js/common.js"></script>
     <!-- Settings Page JS -->
     <script src="../js/settings.js"></script>
+
+    <!-- 임시: 코치마크 닫기 -->
+    <script>
+      document.querySelector(".btn-coach-mark-close").addEventListener("click", function () {
+        document.querySelector(".coach-mark-wrap").classList.remove("active");
+      });
+    </script>
   </body>
 </html>
