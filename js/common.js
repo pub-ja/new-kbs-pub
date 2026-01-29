@@ -32,12 +32,13 @@ const ScaleManager = {
 
         if (this.scaleMode === 'fit') {
             // fit 모드: 전체가 보이도록 (crop 안됨)
-            const isVertical = scaleY < scaleX;
-            const scale = isVertical ? scaleY : scaleX;
+            // margin: 0 auto와 transform: scale() 충돌로 중앙정렬 깨짐 → left offset으로 직접 계산
+            const scale = Math.min(scaleX, scaleY);
+            const offsetX = (window.innerWidth - this.baseWidth * scale) / 2;
 
             this.container.style.transform = `scale(${scale})`;
-            this.container.style.transformOrigin = isVertical ? 'top center' : 'top left';
-            this.container.style.margin = isVertical ? '0 auto' : '0';
+            this.container.style.transformOrigin = 'top left';
+            this.container.style.left = offsetX > 0 ? offsetX + 'px' : '0px';
         } else {
             // crop 모드 (기본값): 가로 꽉 채움, 세로는 잘릴 수 있음
             this.container.style.transform = `scale(${scaleX})`;
