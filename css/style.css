@@ -4911,30 +4911,3 @@ img {
   font-weight: var(--font-weight-medium);
   color: #fff;
 }
-
-/* 필기체 버전 - coach-mark-wrap에 -handwriting 클래스 추가 */
-.coach-mark-wrap.-handwriting .coach-mark-text,
-.coach-mark-wrap.-handwriting .coach-mark-text em {
-  font-family: "Cafe24Shiningstar";
-  font-weight: normal;
-  line-height: 1.2;
-}
-
-.coach-mark-wrap.-handwriting .coach-mark-text {
-  font-size: 32px;
-}
-
-.coach-mark-wrap.-handwriting
-  .coach-mark-item.-region-checkbox
-  .coach-mark-text {
-  left: 363px;
-  bottom: 298px;
-  width: 480px;
-}
-.coach-mark-wrap.-handwriting .coach-mark-item.-map-controls .coach-mark-text {
-  top: -64px;
-}
-
-.coach-mark-wrap.-handwriting .coach-mark-item.-map-center .coach-mark-text {
-  left: -100px;
-}
