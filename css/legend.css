@@ -198,34 +198,49 @@
   padding: 20px;
 }
 
-.map-legend.-fire .legend_icontable .icon_wrap,
-.map-legend.-typoon .legend_icontable .icon_wrap {
+.map-legend.-fire .legend_icontable .icon_wrap {
   min-width: 24px;
   width: 24px;
 }
 
-.map-legend.-fire .legend-list,
-.map-legend.-typoon .legend-list {
+.map-legend.-fire .legend-list {
   row-gap: 10px;
 }
 
 /* Typhoon */
 .map-legend.-typoon {
-  width: 200px;
+  width: 245px;
   padding: 15px;
   top: 125px;
   bottom: initial;
 }
 
+.map-legend.-typoon .legend-list {
+  row-gap: 5px;
+}
+
+.map-legend.-typoon .legend_icontable .icon_wrap {
+  min-width: 30px;
+  width: 30px;
+  height: 24px;
+  justify-content: center;
+}
+
 .icon_typhoon {
-  width: 18px;
+  width: 21px;
   -webkit-transform: rotate(50deg);
   transform: rotate(50deg);
 }
 
-.icon_typhoon.-strong,
-.icon_typhoon.-mild {
-  width: 16px;
+.icon_typhoon.-lv1,
+.icon_typhoon.-lv2,
+.icon_typhoon.-lv3,
+.icon_typhoon.-lv4,
+.icon_typhoon.-lv5 {
+  width: 30px;
+  height: 24px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 /* Flood */

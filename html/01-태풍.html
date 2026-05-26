@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -244,7 +244,7 @@
               <p class="map-timestamp-time">08-03 10:00</p>
             </div>
 
-            <!-- 태풍 범례 -->
+            <!-- 태풍 범례 수정 : 260526 -->
             <div class="map-legend -typoon">
               <div class="legend_icontable">
                 <ul class="legend-list">
@@ -262,15 +262,33 @@
                   </li>
                   <li>
                     <div class="icon_wrap">
-                      <img class="icon_typhoon -mild" src="../assets/images/legend/TYPH_mild.svg" />
+                      <img class="icon_typhoon -lv1" src="../assets/images/legend/TYPH_lv1.svg" />
                     </div>
-                    <span>중심풍속 17~24m/s</span>
+                    <span>강도1(중심풍속17~24m/s)</span>
                   </li>
                   <li>
                     <div class="icon_wrap">
-                      <img class="icon_typhoon -strong" src="../assets/images/legend/TYPH_strong.svg" />
+                      <img class="icon_typhoon -lv2" src="../assets/images/legend/TYPH_lv2.svg" />
                     </div>
-                    <span>중심풍속 24m/s 이상</span>
+                    <span>강도2(중심풍속25~32m/s)</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <img class="icon_typhoon -lv3" src="../assets/images/legend/TYPH_lv3.svg" />
+                    </div>
+                    <span>강도3(중심풍속33~43m/s)</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <img class="icon_typhoon -lv4" src="../assets/images/legend/TYPH_lv4.svg" />
+                    </div>
+                    <span>강도4(중심풍속44~53m/s)</span>
+                  </li>
+                  <li>
+                    <div class="icon_wrap">
+                      <img class="icon_typhoon -lv5" src="../assets/images/legend/TYPH_lv5.svg" />
+                    </div>
+                    <span>강도5(중심풍속54m/s 이상)</span>
                   </li>
                   <li>
                     <div class="icon_wrap">
@@ -305,6 +323,7 @@
                 </ul>
               </div>
             </div>
+            <!-- // 태풍 범례 수정 : 260526 -->
             <!-- map-btn-->
             <div class="map-btn-group">
               <button type="button" class="btn-map -reset"></button>

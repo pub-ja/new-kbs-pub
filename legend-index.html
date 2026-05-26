@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -455,9 +455,8 @@
           }
         </style>
 
-        <div class="legend-section">
-          <h2>태풍</h2>
-          <!-- 태풍 범례 -->
+        <!-- <div class="legend-section">
+          <h2>태풍 (구)</h2>
           <div class="map-legend -typoon">
             <div class="legend_icontable">
               <ul class="legend-list">
@@ -518,6 +517,92 @@
               </ul>
             </div>
           </div>
+        </div> -->
+
+        <div class="legend-section">
+          <h2>태풍</h2>
+          <!-- 태풍 범례 수정 : 260526 -->
+          <div class="map-legend -typoon">
+            <div class="legend_icontable">
+              <ul class="legend-list">
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon" src="../assets/images/legend/TYPH_TD.svg" />
+                  </div>
+                  <span>열대저압부</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -past" src="../assets/images/legend/TYPH_past.svg" />
+                  </div>
+                  <span>태풍중심 이동경로</span>
+                </li>
+                <!-- 변경 부분[s] -->
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -lv1" src="../assets/images/legend/TYPH_lv1.svg" />
+                  </div>
+                  <span>강도1(중심풍속17~24m/s)</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -lv2" src="../assets/images/legend/TYPH_lv2.svg" />
+                  </div>
+                  <span>강도2(중심풍속25~32m/s)</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -lv3" src="../assets/images/legend/TYPH_lv3.svg" />
+                  </div>
+                  <span>강도3(중심풍속33~43m/s)</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -lv4" src="../assets/images/legend/TYPH_lv4.svg" />
+                  </div>
+                  <span>강도4(중심풍속44~53m/s)</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <img class="icon_typhoon -lv5" src="../assets/images/legend/TYPH_lv5.svg" />
+                  </div>
+                  <span>강도5(중심풍속54m/s 이상)</span>
+                </li>
+                <!-- 변경 부분[e] -->
+                <li>
+                  <div class="icon_wrap">
+                    <div class="borderline -dark">dark border</div>
+                  </div>
+                  <span>태풍 과거 이동 경로</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="borderline -dashred">red border</div>
+                  </div>
+                  <span>태풍 이동 경로</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="circleicon -yellowline">yellow circle</div>
+                  </div>
+                  <span>강풍 15m/s 이상</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="circleicon -orangeline">orangeline circle</div>
+                  </div>
+                  <span>강풍 25m/s 이상</span>
+                </li>
+                <li>
+                  <div class="icon_wrap">
+                    <div class="circleicon -purple">purple circle</div>
+                  </div>
+                  <span>70% 확률 예상 위치</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- // 태풍 범례 수정 : 260526 -->
         </div>
 
         <div class="legend-section">
