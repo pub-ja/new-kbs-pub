@@ -1629,37 +1629,6 @@ img {
   color: var(--heat-warning);
 }
 
-/* 열대야 주의보 */
-.disaster-card .disaster-content.-heat .ticker-item.-tropical {
-  color: var(--heat-tropical);
-}
-
-/* 중대경보 */
-.disaster-card .disaster-content.-heat .ticker-item.-critical {
-  color: var(--heat-critical);
-  /* background: var(--heat-critical-bg); */
-}
-
-/* 열대야 주의보 발령 시 disaster-content에 -tropical-night 클래스 추가 */
-.disaster-tropical-text {
-  display: none;
-}
-
-.disaster-content.-tropical-night .disaster-text-wrap {
-  position: relative;
-}
-
-.disaster-content.-tropical-night .disaster-tropical-text {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 18px;
-  transform: translateY(-50%);
-  font-size: var(--font-size-xs);
-  color: var(--heat-tropical);
-  white-space: nowrap;
-}
-
 .disaster-card .disaster-content.-rain .ticker-item.-alert {
   color: var(--rain-alert);
 }
@@ -4944,4 +4913,160 @@ img {
 .checkbox input[type="checkbox"]:checked + .checkbox-label {
   font-weight: var(--font-weight-medium);
   color: #fff;
+}
+
+/* ============================================
+   폭염 특보 발효 지역 (alert-grid -heat-vertical)
+   -dust-vertical 과 동일한 패턴
+   ============================================ */
+
+/* 열대야 주의보 */
+.disaster-card .disaster-content.-heat .ticker-item.-tropical {
+  color: var(--heat-tropical);
+}
+
+/* 중대경보 */
+.disaster-card .disaster-content.-heat .ticker-item.-critical {
+  color: var(--heat-critical);
+  /* background: var(--heat-critical-bg); */
+}
+
+/* 열대야 주의보 발령 시 disaster-content에 -tropical-night 클래스 추가 */
+.disaster-tropical-text {
+  display: none;
+}
+
+.disaster-content.-tropical-night .disaster-text-wrap {
+  position: relative;
+}
+
+.disaster-content.-tropical-night .disaster-tropical-text {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  font-size: var(--font-size-xs);
+  color: var(--heat-tropical);
+  white-space: nowrap;
+}
+
+.alert-grid.-heat-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--panel-bg-light-gray-alpha);
+}
+
+.alert-heat-column {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2px;
+}
+
+.alert-heat-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel-bg-light-gray);
+  width: 80px;
+  min-width: 80px;
+}
+
+.heat-type-title {
+  font-size: var(--font-size-sm-xs);
+  font-weight: var(--font-weight-light);
+  color: #fff;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.alert-heat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: calc(100% - 82px);
+}
+
+.alert-heat-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 92px;
+  gap: 2px;
+  position: relative;
+  background: var(--panel-bg-dark);
+}
+
+.alert-heat-row .alert-label {
+  padding: 0 10px;
+  width: 110px;
+  min-width: 110px;
+  height: 92px;
+  font-size: var(--font-size-xs);
+  background: #191b2a;
+}
+
+/* 열대야 주의보 행: 폭염 헤더(80) + 간격(2) + 라벨(110) 폭만큼 라벨 확장, 배경은 폭염 헤더와 동일 레벨 */
+.alert-heat-row.-full .alert-label {
+  width: 192px;
+  min-width: 192px;
+  background: var(--panel-bg-light-gray);
+}
+
+/* 중대경보: 기본특보판 ticker value와 동일하게 배경 + 크리티컬 컬러 폰트 (span에 적용) */
+.alert-heat-row .alert-label.-critical span {
+  color: var(--heat-critical);
+  background: var(--heat-critical-bg);
+}
+
+.alert-heat-row .alert-label.-alert {
+  color: var(--color-font-alert);
+}
+
+.alert-heat-row .alert-label.-warning {
+  color: var(--color-font-warning);
+}
+
+.alert-heat-row .alert-label.-tropical {
+  color: var(--heat-tropical);
+  font-size: var(--font-size-sm-xs);
+}
+
+.alert-heat-slider {
+  display: flex;
+  flex: 1;
+  width: calc(100% - 112px);
+}
+
+.alert-heat-slider .alert-text-location {
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  height: 92px;
+}
+
+/* 특보 없는 행 (is-empty) */
+.alert-heat-row.is-empty .alert-heat-slider {
+  display: none;
+}
+
+.alert-heat-row.is-empty .disaster-none-text {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  padding-left: 12px;
+}
+
+/* 기본특보판 중대경보 ticker: value 안 span에 배경 + 크리티컬 컬러 폰트 */
+.disaster-card .disaster-content.-heat .ticker-item.-critical .value span {
+  display: inline-flex;
+  width: fit-content;
+  align-self: center;
+  color: var(--heat-critical);
+  background: var(--heat-critical-bg);
+  line-height: 1.2;
 }

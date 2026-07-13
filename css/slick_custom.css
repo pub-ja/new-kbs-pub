@@ -375,3 +375,10 @@
   height: 54px !important;
   width: 100%;
 }
+
+/* 폭염 특보 발효 지역 (alert-grid -heat-vertical) 행별 ticker */
+.alert-heat-row .alert-heat-slider .slick-list,
+.alert-heat-row .alert-heat-slider .slick-slide {
+  height: 92px !important;
+  width: 100%;
+}
