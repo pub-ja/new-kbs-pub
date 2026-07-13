@@ -123,6 +123,9 @@ img {
   --heat: #6118d1;
   --heat-alert: #6018d1;
   --heat-warning: #ac7cdc;
+  --heat-tropical: #d8de8a;
+  --heat-critical: #3c0050;
+  --heat-critical-bg: #8f6ebd;
 
   /* 풍랑 */
   --storm: #0345ff;
@@ -1624,6 +1627,37 @@ img {
 
 .disaster-card .disaster-content.-heat .ticker-item.-warning {
   color: var(--heat-warning);
+}
+
+/* 열대야 주의보 */
+.disaster-card .disaster-content.-heat .ticker-item.-tropical {
+  color: var(--heat-tropical);
+}
+
+/* 중대경보 */
+.disaster-card .disaster-content.-heat .ticker-item.-critical {
+  color: var(--heat-critical);
+  /* background: var(--heat-critical-bg); */
+}
+
+/* 열대야 주의보 발령 시 disaster-content에 -tropical-night 클래스 추가 */
+.disaster-tropical-text {
+  display: none;
+}
+
+.disaster-content.-tropical-night .disaster-text-wrap {
+  position: relative;
+}
+
+.disaster-content.-tropical-night .disaster-tropical-text {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  font-size: var(--font-size-xs);
+  color: var(--heat-tropical);
+  white-space: nowrap;
 }
 
 .disaster-card .disaster-content.-rain .ticker-item.-alert {
