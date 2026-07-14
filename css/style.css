@@ -125,7 +125,7 @@ img {
   --heat-warning: #ac7cdc;
   --heat-tropical: #d8de8a;
   --heat-critical: #3c0050;
-  --heat-critical-bg: #a184cc;
+  --heat-critical-bg: #8f6ebd;
 
   /* 풍랑 */
   --storm: #0345ff;
@@ -5011,7 +5011,7 @@ img {
   padding: 0 2px;
   color: var(--heat-critical);
   background: var(--heat-critical-bg);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
 }
 
 .alert-heat-row .alert-label.-alert {
@@ -5059,7 +5059,7 @@ img {
   align-self: center;
   padding: 0 2px;
   color: var(--heat-critical);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
   background: var(--heat-critical-bg);
   line-height: 1.2;
 }
