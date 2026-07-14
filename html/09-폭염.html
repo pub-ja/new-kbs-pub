@@ -132,7 +132,7 @@
              세로형의 경우 alert-grid에 -row 클래스를 추가합니다.
              -row 클래스 여부에 따라 스타일 변경과 함께  slick 슬라이더 vertical 로 동작합니다. >> script_slick.js 참고
             -->
-            <!-- 기존 카운트형 그리드 (backup)
+            <!-- 260714 기존 주의보/경보 카운트형 (backup)
             <div class="alert-grid -row">
               <div class="alert-box">
                 <div class="alert-label">경보</div>
@@ -182,11 +182,11 @@
               </div>
             </div>
             -->
-            <!-- alert-grid -heat-vertical
-             폭염 전용 세로형 그리드 (미세먼지 -dust-vertical 구조와 동일한 패턴)
-             폭염(중대경보/경보/주의보) 3행 + 열대야 주의보 1행
-             각 행의 지역명은 개별 slick vertical ticker로 동작 (data-slick-* 속성)
-             특보 없는 행은 alert-heat-row에 is-empty 클래스 추가
+            <!-- 260714 alert-grid -heat-vertical
+              폭염 전용 세로형 그리드 (미세먼지 -dust-vertical 구조와 동일한 패턴)
+              폭염(중대경보/경보/주의보) 3행 + 열대야 주의보 1행
+              각 행의 지역명은 개별 slick vertical ticker로 동작 (data-slick-* 속성)
+              특보 없는 행은 alert-heat-row에 is-empty 클래스 추가
             -->
             <div class="alert-grid -heat-vertical">
               <div class="alert-heat-column">
@@ -194,9 +194,10 @@
                   <p class="heat-type-title">폭염</p>
                 </div>
                 <div class="alert-heat-body">
-                  <!-- 중대경보 -->
                   <div class="alert-heat-row">
-                    <div class="alert-label -critical"><span>중대경보</span></div>
+                    <div class="alert-label -critical">
+                      <span>중대경보</span>
+                    </div>
                     <div
                       class="alert-heat-slider"
                       data-slick-vertical="true"

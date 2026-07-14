@@ -125,7 +125,7 @@ img {
   --heat-warning: #ac7cdc;
   --heat-tropical: #d8de8a;
   --heat-critical: #3c0050;
-  --heat-critical-bg: #8f6ebd;
+  --heat-critical-bg: #a184cc;
 
   /* 풍랑 */
   --storm: #0345ff;
@@ -4915,25 +4915,17 @@ img {
   color: #fff;
 }
 
-/* ============================================
-   폭염 특보 발효 지역 (alert-grid -heat-vertical)
-   -dust-vertical 과 동일한 패턴
-   ============================================ */
-
-/* 열대야 주의보 */
+/* 260714 update heat tropical/critical */
 .disaster-card .disaster-content.-heat .ticker-item.-tropical {
   color: var(--heat-tropical);
 }
 
-/* 중대경보 */
-.disaster-card .disaster-content.-heat .ticker-item.-critical {
-  color: var(--heat-critical);
-  /* background: var(--heat-critical-bg); */
-}
-
-/* 열대야 주의보 발령 시 disaster-content에 -tropical-night 클래스 추가 */
 .disaster-tropical-text {
   display: none;
+}
+
+.disaster-tropical-text {
+  animation: flashtext 4s ease-in-out infinite;
 }
 
 .disaster-content.-tropical-night .disaster-text-wrap {
@@ -4947,6 +4939,7 @@ img {
   right: 18px;
   transform: translateY(-50%);
   font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
   color: var(--heat-tropical);
   white-space: nowrap;
 }
@@ -5001,24 +4994,24 @@ img {
 
 .alert-heat-row .alert-label {
   padding: 0 10px;
-  width: 110px;
-  min-width: 110px;
+  width: 84px;
+  min-width: 84px;
   height: 92px;
   font-size: var(--font-size-xs);
   background: #191b2a;
 }
 
-/* 열대야 주의보 행: 폭염 헤더(80) + 간격(2) + 라벨(110) 폭만큼 라벨 확장, 배경은 폭염 헤더와 동일 레벨 */
 .alert-heat-row.-full .alert-label {
-  width: 192px;
-  min-width: 192px;
+  width: 166px;
+  min-width: 166px;
   background: var(--panel-bg-light-gray);
 }
 
-/* 중대경보: 기본특보판 ticker value와 동일하게 배경 + 크리티컬 컬러 폰트 (span에 적용) */
 .alert-heat-row .alert-label.-critical span {
+  padding: 0 2px;
   color: var(--heat-critical);
   background: var(--heat-critical-bg);
+  font-weight: var(--font-weight-medium);
 }
 
 .alert-heat-row .alert-label.-alert {
@@ -5049,7 +5042,6 @@ img {
   height: 92px;
 }
 
-/* 특보 없는 행 (is-empty) */
 .alert-heat-row.is-empty .alert-heat-slider {
   display: none;
 }
@@ -5061,12 +5053,13 @@ img {
   padding-left: 12px;
 }
 
-/* 기본특보판 중대경보 ticker: value 안 span에 배경 + 크리티컬 컬러 폰트 */
 .disaster-card .disaster-content.-heat .ticker-item.-critical .value span {
   display: inline-flex;
   width: fit-content;
   align-self: center;
+  padding: 0 2px;
   color: var(--heat-critical);
+  font-weight: var(--font-weight-medium);
   background: var(--heat-critical-bg);
   line-height: 1.2;
 }

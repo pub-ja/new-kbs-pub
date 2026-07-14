@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -333,6 +333,7 @@
         <!-- Right  Panel : 기존 동일 하고 slick 을 쓴것만 다릅니다. -->
         <section class="right-panel">
           <div class="slick-disaster-slider">
+            <!-- 260714 : 폭염에 중대경보 디자인 추가로 인해 전체 ticker-item value (지역명) 안에 span 태그 추가했습니다. -->
             <div class="disaster-slider-item">
               <div class="disaster-container">
                 <!-- disaster-card 안에 리스트 li에
@@ -380,7 +381,7 @@
 												-warning : 주의보
 												-->
                           <div class="ticker-item -alert">
-                            <div class="value">인천</div>
+                            <div class="value"><span>인천</span></div>
                           </div>
                         </div>
                       </div>
@@ -408,22 +409,22 @@
                       <div class="slick-ticker-wrap slick-disaster-snow">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
-                            <div class="value">서울</div>
+                            <div class="value"><span>서울</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">파주</div>
+                            <div class="value"><span>파주</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">인천</div>
+                            <div class="value"><span>인천</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">강원</div>
+                            <div class="value"><span>강원</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">속초</div>
+                            <div class="value"><span>속초</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">양양</div>
+                            <div class="value"><span>양양</span></div>
                           </div>
                         </div>
                       </div>
@@ -451,22 +452,22 @@
                       <div class="slick-ticker-wrap slick-disaster-wind">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -warning">
-                            <div class="value">전남 가거도</div>
+                            <div class="value"><span>전남 가거도</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">완도</div>
+                            <div class="value"><span>완도</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">울릉도 독도</div>
+                            <div class="value"><span>울릉도 독도</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">목포</div>
+                            <div class="value"><span>목포</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">여수</div>
+                            <div class="value"><span>여수</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">거제</div>
+                            <div class="value"><span>거제</span></div>
                           </div>
                         </div>
                       </div>
@@ -494,22 +495,22 @@
                       <div class="slick-ticker-wrap slick-disaster-dry">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
-                            <div class="value">서울</div>
+                            <div class="value"><span>서울</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">인천</div>
+                            <div class="value"><span>인천</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">파주</div>
+                            <div class="value"><span>파주</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">강릉</div>
+                            <div class="value"><span>강릉</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">동해</div>
+                            <div class="value"><span>동해</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">삼척</div>
+                            <div class="value"><span>삼척</span></div>
                           </div>
                         </div>
                       </div>
@@ -537,22 +538,22 @@
                       <div class="slick-ticker-wrap slick-disaster-dust">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
-                            <div class="value">서울</div>
+                            <div class="value"><span>서울</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">인천</div>
+                            <div class="value"><span>인천</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">파주</div>
+                            <div class="value"><span>파주</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">대전</div>
+                            <div class="value"><span>대전</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">청주</div>
+                            <div class="value"><span>청주</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">세종</div>
+                            <div class="value"><span>세종</span></div>
                           </div>
                         </div>
                       </div>
@@ -571,6 +572,13 @@
 								-->
                 <div class="disaster-card -heat">
                   <!-- 폭염 -->
+                  <!-- 260714 : 폭염 전용 추가 클래스
+                  	열대야 주의보 발령 시 disaster-content에 -tropical-night 클래스 추가 (disaster-tropical-text 텍스트 표시됨)
+                  	ticker-item 등급 클래스
+                  	-alert : 경보 / -warning : 주의보
+                  	-critical : 중대경보 (value > span 에 배경 칩 스타일 적용)
+                  	-tropical : 열대야 주의보
+                  -->
                   <div class="disaster-content -heat is-empty">
                     <div class="disaster-text-wrap">
                       <div class="disaster-top">
@@ -590,22 +598,22 @@
                       <div class="slick-ticker-wrap slick-disaster-heat">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
-                            <div class="value">양산</div>
+                            <div class="value"><span>양산</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">북창원</div>
+                            <div class="value"><span>북창원</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">학산</div>
+                            <div class="value"><span>학산</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">대구</div>
+                            <div class="value"><span>대구</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">구미</div>
+                            <div class="value"><span>구미</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">포항</div>
+                            <div class="value"><span>포항</span></div>
                           </div>
                         </div>
                       </div>
@@ -634,22 +642,22 @@
                       <div class="slick-ticker-wrap slick-disaster-rain">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
-                            <div class="value">부산</div>
+                            <div class="value"><span>부산</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">원주</div>
+                            <div class="value"><span>원주</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">영월</div>
+                            <div class="value"><span>영월</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">춘천</div>
+                            <div class="value"><span>춘천</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">홍천</div>
+                            <div class="value"><span>홍천</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">횡성</div>
+                            <div class="value"><span>횡성</span></div>
                           </div>
                         </div>
                       </div>
@@ -678,22 +686,22 @@
                       <div class="slick-ticker-wrap slick-disaster-storm">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
-                            <div class="value">강원 남부</div>
+                            <div class="value"><span>강원 남부</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">남해 동부 바깥 먼바다</div>
+                            <div class="value"><span>남해 동부 바깥 먼바다</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">남해 동부 안쪽 먼바다</div>
+                            <div class="value"><span>남해 동부 안쪽 먼바다</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">동해 남부</div>
+                            <div class="value"><span>동해 남부</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">제주 남쪽</div>
+                            <div class="value"><span>제주 남쪽</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">서해 중부</div>
+                            <div class="value"><span>서해 중부</span></div>
                           </div>
                         </div>
                       </div>
@@ -721,22 +729,22 @@
                       <div class="slick-ticker-wrap slick-disaster-tsunami">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
-                            <div class="value">목포</div>
+                            <div class="value"><span>목포</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">무안</div>
+                            <div class="value"><span>무안</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">여수</div>
+                            <div class="value"><span>여수</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">순천</div>
+                            <div class="value"><span>순천</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">광양</div>
+                            <div class="value"><span>광양</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">통영</div>
+                            <div class="value"><span>통영</span></div>
                           </div>
                         </div>
                       </div>
@@ -764,22 +772,22 @@
                       <div class="slick-ticker-wrap slick-disaster-typoon">
                         <div class="slick-ticker-list -center">
                           <div class="ticker-item -alert">
-                            <div class="value">서울</div>
+                            <div class="value"><span>서울</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">인천</div>
+                            <div class="value"><span>인천</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">파주</div>
+                            <div class="value"><span>파주</span></div>
                           </div>
                           <div class="ticker-item -alert">
-                            <div class="value">제주</div>
+                            <div class="value"><span>제주</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">서귀포</div>
+                            <div class="value"><span>서귀포</span></div>
                           </div>
                           <div class="ticker-item -warning">
-                            <div class="value">성산</div>
+                            <div class="value"><span>성산</span></div>
                           </div>
                         </div>
                       </div>
