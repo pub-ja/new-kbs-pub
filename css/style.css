@@ -5030,7 +5030,7 @@ img {
 .alert-heat-slider {
   display: flex;
   flex: 1;
-  width: calc(100% - 112px);
+  min-width: 0;
 }
 
 .alert-heat-slider .alert-text-location {
